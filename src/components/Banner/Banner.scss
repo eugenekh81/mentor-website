@@ -1,0 +1,19 @@
+.banner {
+  &__content {
+    
+    width: 100%;
+    border: 1px solid red;
+    background: url('../../assets/images/banner/animated.gif'),
+      url('../../assets/images/banner/static.gif');
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 48px;
+  }
+}
