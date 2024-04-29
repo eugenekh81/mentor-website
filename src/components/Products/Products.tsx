@@ -1,3 +1,5 @@
+import sprite from '../../assets/images/icons/sprite.svg';
+
 export const Products = () => {
   return (
     <section className='section products'>
@@ -8,21 +10,71 @@ export const Products = () => {
             Загальний курс складається з наступних розділів:
           </p>
           <ul className='products__list'>
-            <li className='products__item'>HTML</li>
-            <li className='products__item'>CSS</li>
-            <li className='products__item'>JavaScript</li>
-            <li className='products__item'>React</li>
-            <li className='products__item'>Node.JS</li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#html`}></use>
+              </svg>
+              HTML
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#css`}></use>
+              </svg>
+              CSS
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#js`}></use>
+              </svg>
+              JavaScript
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#react`}></use>
+              </svg>
+              React
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#nodejs`}></use>
+              </svg>
+              Node.JS
+            </li>
           </ul>
           <p className='section__description'>
             Також у процесі курсу ми будемо розглядати такі теми:
           </p>
           <ul className='products__list'>
-            <li className='products__item'>GitHub</li>
-            <li className='products__item'>Figma</li>
-            <li className='products__item'>Bootstrap</li>
-            <li className='products__item'>API</li>
-            <li className='products__item'>SQL</li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#github`}></use>
+              </svg>
+              GitHub
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#figma`}></use>
+              </svg>
+              Figma
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#bootstrap`}></use>
+              </svg>
+              Bootstrap
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#api`}></use>
+              </svg>
+              API
+            </li>
+            <li className='products__item'>
+              <svg className='products__icon'>
+                <use href={`${sprite}#sql`}></use>
+              </svg>
+              SQL
+            </li>
           </ul>
         </div>
       </div>
