@@ -19,9 +19,10 @@ export const Products = () => {
           </p>
           <ul className='products__list'>
             <li className='products__item'>GitHub</li>
+            <li className='products__item'>Figma</li>
+            <li className='products__item'>Bootstrap</li>
             <li className='products__item'>API</li>
             <li className='products__item'>SQL</li>
-            <li className='products__item'>Bootstrap</li>
           </ul>
         </div>
       </div>
