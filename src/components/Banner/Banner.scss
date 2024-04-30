@@ -1,6 +1,6 @@
+
 .banner {
   &__content {
-
     width: 100%;
     // border: 1px solid red;
     background: url('../../assets/images/banner/animated.gif'),
@@ -14,6 +14,8 @@
   }
 
   &__title {
+    font-family: 'Play';
+    font-weight: 600;
     font-size: 48px;
   }
 }
