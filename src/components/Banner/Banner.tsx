@@ -11,7 +11,7 @@ export const Banner: React.FC = () => {
             <br />
             Мене звати Євген,
             <br />
-            <br />я - ментор з веб-розробки
+            <br />я - ментор з веб-розробки<span className='cursor'>&nbsp;</span>
           </h1>
         </div>
       </div>

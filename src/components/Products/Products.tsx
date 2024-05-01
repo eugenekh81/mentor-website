@@ -1,3 +1,4 @@
+import './Products.scss';
 import sprite from '../../assets/images/icons/sprite.svg';
 
 export const Products = () => {
@@ -6,7 +7,7 @@ export const Products = () => {
       <div className='container'>
         <div className='section__content'>
           <h2 className='section__title'>Які технології я викладаю</h2>
-          <p className='section__description'>
+          <p className='section__subtitle'>
             Загальний курс складається з наступних розділів:
           </p>
           <ul className='products__list'>
@@ -41,8 +42,8 @@ export const Products = () => {
               Node.JS
             </li>
           </ul>
-          <p className='section__description'>
-            Також у процесі курсу ми будемо розглядати такі теми:
+          <p className='section__subtitle'>
+            Також ми будемо розглядати такі теми:
           </p>
           <ul className='products__list'>
             <li className='products__item'>

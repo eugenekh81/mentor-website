@@ -1,12 +1,17 @@
 @import './utils/reset';
 @import './components/container';
 @import './components/section';
+@import './components/cursor';
 @import './components/products';
 @import './components/reviews';
 
 @font-face {
   font-family: 'Play';
   src: local('Play') url('/fonts/Play/Play-Bold.ttf') format('truetype');
+}
+
+html {
+  font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 :root {
