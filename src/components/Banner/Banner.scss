@@ -1,19 +1,23 @@
 
 .banner {
+  padding: 0;
   &__content {
+    height: 400px;
     width: 100%;
     // border: 1px solid red;
     background: url('../../assets/images/banner/animated.gif'),
       url('../../assets/images/banner/static.gif');
     background-size: contain;
-    background-position: center right;
+    background-position: bottom right;
     background-repeat: no-repeat;
 
     display: flex;
-    align-items: center;
+    align-items: end;
   }
 
   &__title {
+    padding: 0 0 20px;
+
     font-family: 'Play';
     font-weight: 600;
     font-size: 48px;

@@ -10,7 +10,7 @@
 }
 
 :root {
-  font-family: 'Play', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -39,6 +39,10 @@ body {
   /* place-items: center; */
 
   min-height: 100vh;
+
+  &:first-child {
+    padding: 0 0 50px;
+  }
 }
 
 h1 {
