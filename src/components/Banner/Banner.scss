@@ -1,5 +1,5 @@
-
 .banner {
+
   padding: 0;
   &__content {
     height: 400px;
@@ -18,11 +18,16 @@
   &__title {
     padding: 0 0 20px;
 
+    color: #2a2a2a;
+
     position: relative;
 
     font-family: 'Play';
     font-weight: 600;
     font-size: 48px;
+
+    animation-delay: 5000ms;
+
 
     &::after {
       position: absolute;
@@ -30,24 +35,25 @@
 
       height: 36px;
       width: 18px;
-      background-color: black;
+      background-color: #2a2a2a;
 
       content: ' ';
       display: inline-block;
       animation: cursor-blink 1s steps(1) infinite;
-      opacity: 0;
+      animation-delay: inherit;
+      opacity: 1;
     }
   }
 }
 
 @keyframes cursor-blink {
   0% {
-    opacity: 0;
-  }
-  50% {
     opacity: 1;
   }
-  100% {
+  50% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
