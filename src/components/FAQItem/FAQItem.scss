@@ -25,7 +25,7 @@
   }
   &__question {
     position: relative;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     font-weight: 700;
 
@@ -35,7 +35,6 @@
     padding: 20px;
     border-radius: 30px;
 
-    &::before,
     &::after {
       content: '';
       position: absolute;
@@ -61,17 +60,11 @@
       transition: all 0.3s ease;
     }
 
-    &::before {
-      left: 20px;
-    }
 
     &::after {
       right: 20px;
     }
 
-    &--open::before {
-      transform: translateY(-50%) rotate(45deg);
-    }
 
     &--open::after {
       transform: translateY(-50%) rotate(-45deg);
