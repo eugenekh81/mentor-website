@@ -46,12 +46,8 @@ export const FAQItem: React.FC<Props> = ({
         className='FAQ__answer'
         style={{ height }}
         ref={content}
-        dangerouslySetInnerHTML={{ __html: a}}
-      >
-        {/* <br />
-        <br />
-        <br /> */}
-      </p>
+        dangerouslySetInnerHTML={{ __html: a }}
+      ></p>
     </li>
   );
 };

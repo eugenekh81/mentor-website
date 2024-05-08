@@ -9,6 +9,10 @@
   src: local('Play') url('/fonts/Play/Play-Bold.ttf') format('truetype');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }

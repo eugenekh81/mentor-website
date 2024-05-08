@@ -1,4 +1,6 @@
 .products {
+  $screen-size: 1170px;
+
   &__list:not(:last-child) {
     margin: 0 0 50px;
   }
@@ -10,8 +12,8 @@
   }
 
   &__item {
-    height: 200px;
-    width: 200px;
+    height: calc(($screen-size - 20px * 4) / 5);
+    width: calc(($screen-size - 20px * 4) / 5);
 
     display: flex;
     justify-content: center;
