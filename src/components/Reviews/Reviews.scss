@@ -1,6 +1,12 @@
 .reviews {
   &__list {
-columns: 3;
-gap: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    gap: 30px;
+    height: 1300px;
+
+
   }
 }

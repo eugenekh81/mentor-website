@@ -2,19 +2,20 @@ import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
+import './FAQItem.scss';
 
 type Props = {
   id: number;
-  title: string;
-  text: string;
+  q: string;
+  a: string;
   selectedId: number;
-  setSelectedId: (id: number | null) => void;
+  setSelectedId: (id: number) => void;
 };
 
 export const FAQItem: React.FC<Props> = ({
   id,
-  title,
-  text,
+  q,
+  a,
   selectedId,
   setSelectedId,
 }) => {
@@ -29,25 +30,21 @@ export const FAQItem: React.FC<Props> = ({
 
   return (
     <li
-      className='consultations__item'
+      className='FAQ__item'
       onClick={() => {
-        setSelectedId(selectedId === id ? null : id);
+        setSelectedId(selectedId === id ? 0 : id);
       }}
     >
       <h3
-        className={classNames('consultations__topic', {
-          'consultations__topic--open': id === selectedId,
+        className={classNames('FAQ__question', {
+          'FAQ__question--open': id === selectedId,
         })}
       >
-        {title}
+        {q}
       </h3>
-      <p
-        className='consultations__description'
-        style={{ height }}
-        ref={content}
-      >
+      <p className='FAQ__answer' style={{ height }} ref={content}>
         <br />
-        {text}
+        {a}
         <br />
         <br />
       </p>
