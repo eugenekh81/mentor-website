@@ -42,11 +42,15 @@ export const FAQItem: React.FC<Props> = ({
       >
         {q}
       </h3>
-      <p className='FAQ__answer' style={{ height }} ref={content}>
+      <p
+        className='FAQ__answer'
+        style={{ height }}
+        ref={content}
+        dangerouslySetInnerHTML={{ __html: a}}
+      >
+        {/* <br />
         <br />
-        {a}
-        <br />
-        <br />
+        <br /> */}
       </p>
     </li>
   );
