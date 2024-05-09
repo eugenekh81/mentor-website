@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
+import girl from '../../assets/images/services/girl.gif';
 // import beginner from '../../assets/images/services/beginner.gif';
 import classNames from 'classnames';
 const titleText = 'Чим я можу тобі допомогти';
@@ -61,7 +62,7 @@ export const Services = () => {
           >
             <li className='services__item'>
               <div className='services__image-container'>
-                <img src={beginner} alt='' className='services__image' />
+                <img src={girl} alt='' className='services__image' />
               </div>
               <div className='services__content'>
                 <h3 className="services__title">Менторінґ</h3>

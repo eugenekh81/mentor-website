@@ -40,17 +40,44 @@
 
     border-radius: 12px;
     box-shadow: 0 8px 30px 1px rgba(0, 0, 0, 0.25);
-
+    overflow: hidden;
     transform: translateY(20%);
     transition: all 1s ease;
+
+    &:nth-child(1) {
+      .services__image {
+        top: -10px;
+      }
+    }
+
+    &:nth-child(2) {
+      .services__image {
+        top: 16px;
+      }
+    }
+
+    &:nth-child(3) {
+      .services__image {
+        top: 33px;
+      }
+    }
   }
 
+
+
   &__image-container {
+    position: relative;
     height: 240px;
     width: 100%;
+    overflow: hidden;
+
+    align-items: end;
+
+
   }
+
   &__image {
-    border-radius: 20px;
+    position: absolute;
 
     width: 100%;
   }
