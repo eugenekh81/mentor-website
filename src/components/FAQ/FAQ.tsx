@@ -6,7 +6,6 @@ export const FAQ = () => {
       <div className='container'>
         <div className='section__content'>
           <h2 className='section__title'>ЧАсті ПИтання (ЧаПи)</h2>
-
           <FAQList />
         </div>
       </div>

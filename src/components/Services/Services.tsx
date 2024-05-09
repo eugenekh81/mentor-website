@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './Services.scss';
+import beginner from '../../assets/images/services/beginner.gif';
+import switcher from '../../assets/images/services/switcher.gif';
+// import beginner from '../../assets/images/services/beginner.gif';
 import classNames from 'classnames';
 const titleText = 'Чим я можу тобі допомогти';
 
@@ -11,18 +14,17 @@ export const Services = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowTitle(true);
-    }, 7000);
+    }, 4000);
 
     setTimeout(() => {
-
       setShowList(true);
-    }, 10000);
+    }, 5600);
   }, []);
 
   const textAnimation = () => {
     if (sectionTitle.current) {
       for (let i = 0; i < titleText.length; i++) {
-        const delay = 120 * i + 120 * Math.random();
+        const delay = 60 * i + 60 * Math.random();
         setTimeout(() => {
           if (sectionTitle.current) {
             sectionTitle.current.innerHTML += titleText[i];
@@ -39,7 +41,7 @@ export const Services = () => {
       if (sectionTitle.current) {
         sectionTitle.current.classList.add('section__title--no-cursor');
       }
-    }, 18000);
+    }, 10600);
   }, [showTitle]);
 
   return (
@@ -58,30 +60,56 @@ export const Services = () => {
             })}
           >
             <li className='services__item'>
-              Моя "фішка" - допомагати тим, хто вже навчається на курсах
-              програмування. За свою багаторічну практику я познайомився з
-              основними курсами з веб-програмування та з їх сильними та слабкими
-              сторонами. Зможу пояснити тобі будь-яку складну тему простою
-              мовою, допомогти з вирішенням домашніх завдань та заповнити
-              прогалини в твоїх знаннях - і все це в рамках твого курсу.
+              <div className='services__image-container'>
+                <img src={beginner} alt='' className='services__image' />
+              </div>
+              <div className='services__content'>
+                <h3 className="services__title">Менторінґ</h3>
+                <p className='services__description'>
+                  Моя "фішка" - допомагати тим, хто вже навчається на курсах
+                  програмування. За свою багаторічну практику я познайомився з
+                  основними курсами з веб-програмування та з їх сильними та
+                  слабкими сторонами. Зможу пояснити тобі будь-яку складну тему
+                  простою мовою, допомогти з вирішенням домашніх завдань та
+                  заповнити прогалини в твоїх знаннях - і все це в рамках твого
+                  курсу.
+                </p>
+              </div>
             </li>
             <li className='services__item'>
-              Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не впевнений,
+              <div className='services__image-container'>
+                <img src={beginner} alt='' className='services__image' />
+              </div>
+              <div className='services__content'>
+                <h3 className="services__title">Початківець</h3>
+                <p className='services__description'>
+                Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не впевнений,
               чи це "твоє" та чи сподобається тобі ця діяльність - можеш
               спробувати позайматись зі мною без того, щоб вкладати великі гроші
               у повноцінний курс, і матимеш змогу швидко зрозуміти, чи
               подобається тобі веб-розробка та чи хочеш ти входити в неї всерйоз
               та надовго.
+                </p>
+              </div>
             </li>
             <li className='services__item'>
-              Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
+              <div className='services__image-container'>
+                <img src={switcher} alt='' className='services__image' />
+              </div>
+              <div className='services__content'>
+                <h3 className="services__title">Свічер</h3>
+                <p className='services__description'>
+                Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
               тобі цікаві комп'ютери та програмування - я зможу допомогти тобі
               пройти цей шлях у комфортному для тебе темпі, без стресу,
               дедлайнів та інших обмежень, які так чи інакше притаманні
               традиційним курсам програмування. По закінченню курсу в твоєму
               портфоліо буде 5 робіт, які тобі не соромно буде показати своєму
               майбутньому роботодавцю.
+                </p>
+              </div>
             </li>
+
           </ul>
 
           <p className='section__description'>

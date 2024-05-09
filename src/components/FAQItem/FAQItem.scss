@@ -1,6 +1,6 @@
 .FAQ {
   &__item {
-    // margin-bottom: 50px;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -9,65 +9,40 @@
 
     border-top: 1px solid #b3b3b3;
 
-    /* border-radius: 33px; */
-    /* background-color: beige; */
-
     &:last-child {
       border-bottom: 1px solid #b3b3b3;
+    }
+
+    &:hover .FAQ__icon {
+      background-color: blue;
+      color: #fff;
+      stroke-width: 3px;
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-
-    /* gap: 20px; */
   }
+
+
+
   &__question {
+    padding: 20px;
+
     position: relative;
     text-align: left;
+
     font-size: 22px;
     font-weight: 500;
 
-    /* color: beige;
-    background-color: green; */
-
-    padding: 20px;
     border-radius: 30px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      font-weight: 400;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      height: 28px;
-      width: 28px;
-
-      background-image: url('../../assets/images/icons/plus.svg');
-      background-size: 18px;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      color: #b3b3b3;
-      border: 1px solid #b3b3b3;
-      border-radius: 50%;
-
-      top: 50%;
-      transform: translateY(-50%) rotate(0deg);
-      transition: all 0.3s ease;
-    }
-
-
-    &::after {
-      right: 20px;
-    }
-
-
-    &--open::after {
+    &--open .FAQ__icon {
       transform: translateY(-50%) rotate(-45deg);
+      background-color: blue;
+      color: #fff;
+      stroke-width: 3px;
     }
   }
 
@@ -83,5 +58,32 @@
     &--open {
       height: 100%;
     }
+  }
+
+  &__icon {
+    padding: 4px;
+    position: absolute;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 28px;
+    width: 28px;
+    stroke-width: 2px;
+
+    background-image: url('../../assets/images/icons/plus.svg');
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
+    border-radius: 50%;
+
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: all 0.3s ease;
+    right: 20px;
   }
 }

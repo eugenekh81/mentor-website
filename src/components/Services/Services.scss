@@ -5,31 +5,53 @@
     gap: 30px;
 
     &--activate {
-
       @for $n from 1 through 3 {
-          & .services__item:nth-child(#{$n}) {
-            transform: translateY(0);
-              opacity: 1;
+        & .services__item:nth-child(#{$n}) {
+          transform: translateY(0);
+          opacity: 1;
 
-              $delay: ($n - 1) * 0.2;
+          $delay: ($n - 1) * 0.2;
 
           transition: all 0.7s ease #{$delay + s};
         }
       }
     }
   }
+  &__content {
+    padding: 0 30px 30px;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+  }
 
   &__item {
     width: 33%;
     border-radius: 20px;
     text-align: justify;
-    padding: 30px;
     font-size: 20px;
 
-    background-color: lightblue;
+    /* background-color: lightblue; */
     line-height: 1.5;
     opacity: 0;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 30px 1px rgba(0, 0, 0, 0.25);
+
     transform: translateY(20%);
     transition: all 1s ease;
+  }
+
+  &__image-container {
+    height: 240px;
+    width: 100%;
+  }
+  &__image {
+    border-radius: 20px;
+
+    width: 100%;
   }
 }

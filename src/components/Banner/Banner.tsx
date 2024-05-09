@@ -54,19 +54,25 @@ const titleText = [
   'к',
   'и',
 ];
-export const Banner: React.FC = () => {
+/*
+type Props = {
+  delay: number;
+  setDelay: CallableFunction;
+};
+ */
+export const Banner: React.FC = (/* { delay, setDelay } */) => {
   const title = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
     if (title.current) {
       for (let i = 0; i < titleText.length; i++) {
-        const delay = 120 * i + 120 * Math.random();
+        const currentDelay = 60 * i + 60 * Math.random();
         setTimeout(() => {
           if (title.current) {
             title.current.innerHTML += titleText[i];
           }
-        }, delay);
-        title.current.style.animationDelay = `${delay}ms`;
+        }, currentDelay);
+        title.current.style.animationDelay = `${currentDelay}ms`;
       }
       setTimeout(() => {
         console.log('setting no cursor class');
@@ -74,7 +80,7 @@ export const Banner: React.FC = () => {
         if (title.current) {
           title.current.classList.add('banner__title--no-cursor');
         }
-      }, 7000);
+      }, 4000);
     }
   }, [title]);
 
