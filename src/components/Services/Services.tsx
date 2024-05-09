@@ -14,10 +14,9 @@ export const Services = () => {
     }, 7000);
 
     setTimeout(() => {
-      console.log('setting show list');
 
       setShowList(true);
-    }, 14000);
+    }, 10000);
   }, []);
 
   const textAnimation = () => {

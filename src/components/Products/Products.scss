@@ -29,14 +29,14 @@
 
       .products__title {
         color: #fff;
-        background-color: rgba(239, 101, 42);;
+        background-color: rgba(239, 101, 42);
       }
     }
     &--css {
       background-color: rgba(41, 101, 241, 0.1);
       .products__title {
         color: #fff;
-        background-color: rgba(41, 101, 241);;
+        background-color: rgba(41, 101, 241);
       }
     }
     &--js {
@@ -45,13 +45,12 @@
         color: #212121;
         background-color: rgba(247, 223, 30);
       }
-
     }
     &--react {
       background-color: rgba(97, 218, 251, 0.1);
       .products__title {
         color: rgb(0, 27, 150);
-        background-color: rgba(97, 218, 251)
+        background-color: rgba(97, 218, 251);
       }
     }
     &--nodejs {
@@ -101,7 +100,7 @@
 
   &__title {
     padding: 8px 16px;
-    background-color: transparent;
+    box-shadow: 0px 0px 10px #999;
     border-radius: 8px;
     font-size: 24px;
     font-weight: 600;
@@ -110,5 +109,6 @@
   &__icon {
     height: 100px;
     width: 100px;
+
   }
 }
