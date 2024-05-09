@@ -1,5 +1,5 @@
 .review {
-width: calc((100% - 30px * 2) / 3);
+  width: calc((100% - 30px * 2) / 3);
 
   padding: 24px;
   display: flex;
@@ -10,9 +10,6 @@ width: calc((100% - 30px * 2) / 3);
 
   box-sizing: border-box;
   display: flex;
-
-  // width: calc((100% - 60px) / 3);
-  // height: 100%;
 
   background-image: url('../../assets/images/icons/quote.svg');
   background-repeat: no-repeat;
@@ -66,7 +63,7 @@ width: calc((100% - 30px * 2) / 3);
 
   &__text {
     text-align: justify;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.3;
   }
 }

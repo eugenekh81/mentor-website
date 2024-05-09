@@ -1,5 +1,6 @@
-.banner {
+@import '../../assets/styles/utils/animations';
 
+.banner {
   padding: 0;
   &__content {
     height: 400px;
@@ -28,7 +29,6 @@
 
     animation-delay: 5000ms;
 
-
     &::after {
       position: absolute;
       bottom: 24px;
@@ -39,21 +39,15 @@
 
       content: ' ';
       display: inline-block;
-      animation: cursor-blink 1s steps(1) infinite;
+      animation: cursor-blink 1s steps(1) 10, make-tranparent 1s steps(1) 1;
       animation-delay: inherit;
       opacity: 1;
     }
-  }
-}
 
-@keyframes cursor-blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+    &--no-cursor {
+      &::after {
+        content: unset;
+      }
+    }
   }
 }

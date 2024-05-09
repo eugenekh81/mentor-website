@@ -1,0 +1,35 @@
+.services {
+  &__list {
+    margin: 0 0 30px;
+    display: flex;
+    gap: 30px;
+
+    &--activate {
+
+      @for $n from 1 through 3 {
+          & .services__item:nth-child(#{$n}) {
+            transform: translateY(0);
+              opacity: 1;
+
+              $delay: ($n - 1) * 0.2;
+
+          transition: all 0.7s ease #{$delay + s};
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: 33%;
+    border-radius: 20px;
+    text-align: justify;
+    padding: 30px;
+    font-size: 20px;
+
+    background-color: lightblue;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 1s ease;
+  }
+}
