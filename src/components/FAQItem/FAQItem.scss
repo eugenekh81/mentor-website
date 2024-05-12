@@ -14,9 +14,10 @@
     }
 
     &:hover .FAQ__icon {
-      background-color: blue;
+      background-color: #97B6FD;;
       color: #fff;
       stroke-width: 3px;
+      border-color: #97B6FD;
     }
   }
 
@@ -40,9 +41,11 @@
 
     &--open .FAQ__icon {
       transform: translateY(-50%) rotate(-45deg);
-      background-color: blue;
+      background-color: #97B6FD;
       color: #fff;
       stroke-width: 3px;
+
+      border-color: #97B6FD;
     }
   }
 
