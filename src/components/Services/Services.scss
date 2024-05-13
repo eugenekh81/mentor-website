@@ -1,6 +1,17 @@
 .services {
+  &__content {
+    padding: 0 30px 30px;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
   &__list {
-    margin: 0 0 30px;
+    margin: 0 0 94px;
     display: flex;
     gap: 30px;
 
@@ -17,16 +28,6 @@
       }
     }
   }
-  &__content {
-    padding: 0 30px 30px;
-  }
-
-  &__title {
-    margin: 0 0 12px;
-    text-align: center;
-    font-size: 36px;
-    font-weight: 600;
-  }
 
   &__item {
     width: 33%;
@@ -34,7 +35,6 @@
     text-align: justify;
     font-size: 20px;
 
-    /* background-color: lightblue; */
     line-height: 1.5;
     opacity: 0;
 
@@ -63,8 +63,6 @@
     }
   }
 
-
-
   &__image-container {
     position: relative;
     height: 240px;
@@ -72,13 +70,47 @@
     overflow: hidden;
 
     align-items: end;
-
-
   }
 
   &__image {
     position: absolute;
 
     width: 100%;
+  }
+
+  &__guarantee {
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 30px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &__guarantee-container {
+    height: 150px;
+    width: 150px;
+    margin: 0 0 50px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    padding: 20px;
+    display: flex;
+  }
+
+  &__guarantee-icon {
+
+
+
+
+
+  }
+
+  &__guarantee-text {
+    font-size: 46px;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.5;
   }
 }

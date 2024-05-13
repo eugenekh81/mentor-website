@@ -16,9 +16,13 @@
     align-items: end;
   }
 
-  &__title {
-    padding: 0 0 20px;
+  &__title-container {
+    position: relative;
+  }
 
+  &__title {
+    position: absolute;
+    bottom: 20px;
     color: #2a2a2a;
 
     position: relative;
@@ -31,7 +35,7 @@
 
     &::after {
       position: absolute;
-      bottom: 24px;
+      bottom: 4px;
 
       height: 36px;
       width: 18px;

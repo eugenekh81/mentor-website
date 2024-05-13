@@ -3,7 +3,7 @@ import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
-// import beginner from '../../assets/images/services/beginner.gif';
+import sprite from '../../assets/images/icons/sprite.svg';
 import classNames from 'classnames';
 const titleText = 'Чим я можу тобі допомогти';
 
@@ -65,7 +65,7 @@ export const Services = () => {
                 <img src={girl} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className="services__title">Менторінґ</h3>
+                <h3 className='services__title'>Менторінґ</h3>
                 <p className='services__description'>
                   Моя "фішка" - допомагати тим, хто вже навчається на курсах
                   програмування. За свою багаторічну практику я познайомився з
@@ -82,14 +82,14 @@ export const Services = () => {
                 <img src={beginner} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className="services__title">Початківець</h3>
+                <h3 className='services__title'>Початківець</h3>
                 <p className='services__description'>
-                Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не впевнений,
-              чи це "твоє" та чи сподобається тобі ця діяльність - можеш
-              спробувати позайматись зі мною без того, щоб вкладати великі гроші
-              у повноцінний курс, і матимеш змогу швидко зрозуміти, чи
-              подобається тобі веб-розробка та чи хочеш ти входити в неї всерйоз
-              та надовго.
+                  Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не
+                  впевнений, чи це "твоє" та чи сподобається тобі ця діяльність
+                  - можеш спробувати позайматись зі мною без того, щоб вкладати
+                  великі гроші у повноцінний курс, і матимеш змогу швидко
+                  зрозуміти, чи подобається тобі веб-розробка та чи хочеш ти
+                  входити в неї всерйоз та надовго.
                 </p>
               </div>
             </li>
@@ -98,26 +98,32 @@ export const Services = () => {
                 <img src={switcher} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className="services__title">Свічер</h3>
+                <h3 className='services__title'>Свічер</h3>
                 <p className='services__description'>
-                Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
-              тобі цікаві комп'ютери та програмування - я зможу допомогти тобі
-              пройти цей шлях у комфортному для тебе темпі, без стресу,
-              дедлайнів та інших обмежень, які так чи інакше притаманні
-              традиційним курсам програмування. По закінченню курсу в твоєму
-              портфоліо буде 5 робіт, які тобі не соромно буде показати своєму
-              майбутньому роботодавцю.
+                  Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
+                  тобі цікаві комп'ютери та програмування - я зможу допомогти
+                  тобі пройти цей шлях у комфортному для тебе темпі, без стресу,
+                  дедлайнів та інших обмежень, які так чи інакше притаманні
+                  традиційним курсам програмування. По закінченню курсу в твоєму
+                  портфоліо буде 5 робіт, які тобі не соромно буде показати
+                  своєму майбутньому роботодавцю.
                 </p>
               </div>
             </li>
-
           </ul>
 
-          <p className='section__description'>
-            Я гарантую, що ти зможеш вивчити веб-розробку зі мною, якщо будеш
-            систематично та старанно вчитися, виконувати домашні завдання та
-            регулярно займатися зі мною два рази на тиждень.
-          </p>
+          <div className='services__guarantee'>
+            <div className="services__guarantee-container">
+            <svg className='services__guarantee-icon'>
+              <use href={`${sprite}#guarantee`}></use>
+            </svg>
+            </div>
+            <p className='services__guarantee-text'>
+              Я гарантую, що ти вивчиш веб-розробку зі мною, якщо будеш
+              систематично та старанно вчитися, виконувати домашні завдання та
+              регулярно займатися зі мною два рази на тиждень.
+            </p>
+          </div>
         </div>
       </div>
     </section>
