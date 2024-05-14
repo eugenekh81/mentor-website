@@ -3,7 +3,11 @@ import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
-import sprite from '../../assets/images/icons/sprite.svg';
+// import sprite from '../../assets/images/icons/sprite.svg';
+import diploma from '../../assets/images/services/diploma.png';
+import graduate from '../../assets/images/services/graduate.png';
+import laptop from '../../assets/images/services/laptop.png';
+
 import classNames from 'classnames';
 const titleText = 'Чим я можу тобі допомогти';
 
@@ -114,9 +118,12 @@ export const Services = () => {
 
           <div className='services__guarantee'>
             <div className="services__guarantee-container">
-            <svg className='services__guarantee-icon'>
+            {/* <svg className='services__guarantee-icon'>
               <use href={`${sprite}#guarantee`}></use>
-            </svg>
+            </svg> */}
+            <img src={laptop} alt="" className="services__guarantee-image" />
+            <img src={graduate} alt="" className="services__guarantee-image" />
+            <img src={diploma} alt="" className="services__guarantee-image" />
             </div>
             <p className='services__guarantee-text'>
               Я гарантую, що ти вивчиш веб-розробку зі мною, якщо будеш
