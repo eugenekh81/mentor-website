@@ -1,5 +1,9 @@
 .about {
-  background-color: black;
+  background-color: #282828;
+  color: #78cde8;
 
-  color: #fff;
+  &__title {
+    color: #fc9867
+  }
+
 }

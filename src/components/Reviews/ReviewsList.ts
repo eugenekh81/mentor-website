@@ -6,6 +6,7 @@ import ivan from '../../assets/images/reviews/avatar--ivan.png';
 import olga from '../../assets/images/reviews/avatar--olga.png';
 import valentyna from '../../assets/images/reviews/avatar--valentyna.png';
 import katya from '../../assets/images/reviews/avatar--katya.png';
+import oleksii from '../../assets/images/reviews/avatar--oleksii.png';
 
 export const ReviewsList = [
   {
@@ -72,7 +73,7 @@ export const ReviewsList = [
     reviewDate: '1 рік тому',
     reviewText:
       'Дякую за навчання, Євгене. За допомогою прикладів у ДЗ, розібрався з базовою логікою в Javascript. А без впевненої бази в Javascript вивчення React було б дуже складним. Добре, що базу React вивчали детально, зараз розумію наскільки це важливо. Шукав роботу 2 місяці, працюю зараз у Відні. (Фантастичний офіс у центрі міста)',
-    avatarSrc: null,
+    avatarSrc: oleksii,
   },
   {
     id: 'olha',
