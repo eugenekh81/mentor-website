@@ -15,20 +15,32 @@
   src: url('../../assets/fonts/Play/Play-Regular.ttf') format('truetype');
   font-weight: 400;
 }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../../assets/fonts/Gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../../assets/fonts/Gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Gilroy, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #282828;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 :root {
-  font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  // font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
 
   /*  color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
