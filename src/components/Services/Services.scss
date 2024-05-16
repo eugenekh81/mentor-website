@@ -115,3 +115,41 @@
     line-height: 1.1;
   }
 }
+
+.guarantee {
+&__title {
+  font-size: 48px;
+  margin: 0 0 50px;
+  font-weight: 600;
+}
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 50px;
+  }
+
+  &__item {
+    width: 150px;
+    height: 150px;
+    background-image: url('../../assets/images/icons/certificate--star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    height: 50%;
+    width: 50%;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 30px;
+  }
+}

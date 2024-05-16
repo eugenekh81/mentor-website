@@ -6,7 +6,14 @@
 
 @font-face {
   font-family: 'Play';
-  src: local('Play') url('/fonts/Play/Play-Bold.ttf') format('truetype');
+  src: url('../../assets/fonts/Play/Play-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('../../assets/fonts/Play/Play-Regular.ttf') format('truetype');
+  font-weight: 400;
 }
 
 * {

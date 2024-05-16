@@ -3,10 +3,10 @@ import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
-// import sprite from '../../assets/images/icons/sprite.svg';
-import diploma from '../../assets/images/services/diploma.png';
-import graduate from '../../assets/images/services/graduate.png';
-import laptop from '../../assets/images/services/laptop.png';
+
+import check from '../../assets/images/icons/check--white.svg';
+import shield from '../../assets/images/icons/shield--white.svg';
+import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
 const titleText = 'Чим я можу тобі допомогти';
@@ -116,19 +116,34 @@ export const Services = () => {
             </li>
           </ul>
 
-          <div className='services__guarantee'>
-            <div className="services__guarantee-container">
-            {/* <svg className='services__guarantee-icon'>
-              <use href={`${sprite}#guarantee`}></use>
-            </svg> */}
-            <img src={laptop} alt="" className="services__guarantee-image" />
-            <img src={graduate} alt="" className="services__guarantee-image" />
-            <img src={diploma} alt="" className="services__guarantee-image" />
-            </div>
-            <p className='services__guarantee-text'>
-              Я гарантую, що ти вивчиш веб-розробку зі мною, якщо будеш
-              систематично та старанно вчитися, виконувати домашні завдання та
-              регулярно займатися зі мною два рази на тиждень.
+          <div className='services__guarantee guarantee'>
+            <h2 className="guarantee__title">Я гарантую, що ти вивчиш веб-розробку</h2>
+              <ul className='guarantee__list'>
+                <li className='guarantee__item'>
+                  <img
+                    className='guarantee__image'
+                    src={check}
+                    alt='Guarantee'
+                  />
+                </li>
+                <li className='guarantee__item'>
+                  <img
+                    className='guarantee__image'
+                    src={shield}
+                    alt='Guarantee'
+                  />
+                </li>
+                <li className='guarantee__item'>
+                  <img
+                    className='guarantee__image'
+                    src={thumb}
+                    alt='Guarantee'
+                  />
+                </li>
+              </ul>
+            <p className='guarantee__text'>
+              якщо будеш систематично та старанно вчитися, виконувати домашні завдання та
+              регулярно займатися зі мною два рази на тиждень
             </p>
           </div>
         </div>
