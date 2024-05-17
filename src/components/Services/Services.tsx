@@ -51,14 +51,14 @@ export const Services = () => {
 
   return (
     <section className='section services'>
-      <div className='container'>
-        <div className='section__content'>
           {showTitle && (
             <h2
               className='section__title section__title--animated'
               ref={sectionTitle}
             ></h2>
           )}
+      <div className='container'>
+        <div className='section__content'>
           <ul
             className={classNames('services__list', {
               'services__list--activate': showList,

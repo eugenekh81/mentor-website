@@ -19,9 +19,11 @@
 
     &--animated {
       position: relative;
+
       &::after {
         position: absolute;
-        bottom: 2px;
+
+        top: 5px;
 
         height: 36px;
         width: 18px;
