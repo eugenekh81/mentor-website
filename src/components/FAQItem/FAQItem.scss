@@ -1,3 +1,5 @@
+@import '../../assets/styles/utils/vars';
+
 .FAQ {
   &__item {
     position: relative;
@@ -14,10 +16,10 @@
     }
 
     &:hover .FAQ__icon {
-      background-color: #97B6FD;;
+      background-color: $color--light-blue;;
       color: #fff;
       stroke-width: 3px;
-      border-color: #97B6FD;
+      border-color: $color--light-blue;
     }
   }
 
@@ -41,11 +43,11 @@
 
     &--open .FAQ__icon {
       transform: translateY(-50%) rotate(-45deg);
-      background-color: #97B6FD;
+      background-color: $color--light-blue;
       color: #fff;
       stroke-width: 3px;
 
-      border-color: #97B6FD;
+      border-color: $color--light-blue;
     }
   }
 

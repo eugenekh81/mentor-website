@@ -1,7 +1,7 @@
 @import './utils/reset';
+@import './utils/vars';
 @import './components/container';
 @import './components/section';
-@import './components/cursor';
 @import './components/products';
 
 @font-face {
@@ -33,7 +33,7 @@
 
 html {
   font-family: Gilroy, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: #282828;
+  color: $color--dark-violet;
   line-height: 1.5;
   font-weight: 400;
 }

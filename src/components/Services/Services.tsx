@@ -117,7 +117,7 @@ export const Services = () => {
           </ul>
 
           <div className='services__guarantee guarantee'>
-            <h2 className="guarantee__title">Я гарантую, що ти вивчиш веб-розробку</h2>
+            <h2 className="guarantee__title">Я <span className='vivid-red'>гарантую</span>, що ти вивчиш веб-розробку</h2>
               <ul className='guarantee__list'>
                 <li className='guarantee__item'>
                   <img

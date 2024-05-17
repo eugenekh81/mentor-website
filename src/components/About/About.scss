@@ -1,9 +1,10 @@
+@import '../../assets/styles/utils/vars';
+
 .about {
-  background-color: #282828;
-  color: #78cde8;
+  background-color: $color--dark-grey;
+  color: $color--vscode-blue;
 
   &__title {
-    color: #fc9867
+    color: $color--vscode-orange;
   }
-
 }
