@@ -43,11 +43,11 @@
 
     &--open .FAQ__icon {
       transform: translateY(-50%) rotate(-45deg);
-      background-color: $color--light-blue;
+      background-color: $color--dark-violet;
       color: #fff;
       stroke-width: 3px;
 
-      border-color: $color--light-blue;
+      border-color: $color--dark-violet;
     }
   }
 
