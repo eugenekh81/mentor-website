@@ -9,7 +9,15 @@
   }
 
   &__description {
+    position: relative;
+    padding-left: 430px;
     display: flex;
     gap: 50px;
+  }
+
+  &__image {
+    position: absolute;
+    left:0;
+    bottom: 0;
   }
 }
