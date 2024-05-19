@@ -7,4 +7,9 @@
   &__title {
     color: $color--vscode-orange;
   }
+
+  &__description {
+    display: flex;
+    gap: 50px;
+  }
 }

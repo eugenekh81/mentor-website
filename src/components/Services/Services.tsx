@@ -9,6 +9,7 @@ import shield from '../../assets/images/icons/shield--white.svg';
 import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
+import CountUp from 'react-countup';
 const titleText = 'Чим я можу тобі допомогти';
 
 export const Services = () => {
@@ -147,6 +148,9 @@ export const Services = () => {
             </p>
           </div>
         </div>
+
+        <CountUp start={0} end={100} duration={3} />
+        <p>учнів</p>
       </div>
     </section>
   );
