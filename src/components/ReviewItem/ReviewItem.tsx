@@ -30,7 +30,10 @@ export const ReviewItem: React.FC<Props> = ({
           </div>
         </div>
       </div>
-      <p className='review__text'>{reviewText}</p>
+      <p
+        className='review__text'
+        dangerouslySetInnerHTML={{ __html: reviewText }}
+      />
     </li>
   );
 };
