@@ -1,5 +1,4 @@
 .statistics {
-
   &__list {
     display: flex;
     justify-content: space-around;
@@ -11,6 +10,18 @@
     align-items: center;
     padding: 40px;
 
+    opacity: 0;
+    transform: translateY(50%);
+
+    transition: all 1s ease;
+
+    @for $i from 1 through 3 {
+      &--appear:nth-child(#{$i}) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(100ms * #{$i});
+      }
+    }
   }
 
   &__number {

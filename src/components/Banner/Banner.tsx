@@ -75,8 +75,6 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
         title.current.style.animationDelay = `${currentDelay}ms`;
       }
       setTimeout(() => {
-        console.log('setting no cursor class');
-
         if (title.current) {
           title.current.classList.add('banner__title--no-cursor');
         }
