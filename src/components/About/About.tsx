@@ -1,5 +1,6 @@
 import './About.scss';
 import avatar from '../../assets/images/about/avatar.png';
+import { Statistics } from '../Statistics';
 
 export const About: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ export const About: React.FC = () => {
             усіх початківців та зберегти тобі багато часу на пошук правильного
             шляху.
           </p>
+
+          <Statistics />
         </div>
       </div>
     </section>
