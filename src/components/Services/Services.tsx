@@ -14,6 +14,7 @@ const titleText = 'Чим я можу тобі допомогти';
 
 export const Services = () => {
   const sectionTitle = useRef<HTMLHeadingElement | null>(null);
+  const guarantee = useRef<HTMLHeadingElement | null>(null);
   const [showTitle, setShowTitle] = useState(false);
   const [showList, setShowList] = useState(false);
 
@@ -50,14 +51,31 @@ export const Services = () => {
     }, 10600);
   }, [showTitle]);
 
+  const handleScroll = () => {
+    if (guarantee.current !== null) {
+      const blockPosition = guarantee.current.getBoundingClientRect().top;
+      if (blockPosition < window.innerHeight - 50) {
+
+        guarantee.current.style.opacity = '1';
+        guarantee.current.style.transform = 'translateY(0)';
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (guarantee.current !== null) {
+      window.addEventListener('scroll', handleScroll);
+    }
+  }, [guarantee.current]);
+
   return (
     <section className='section services'>
-          {showTitle && (
-            <h2
-              className='section__title section__title--animated'
-              ref={sectionTitle}
-            ></h2>
-          )}
+      {showTitle && (
+        <h2
+          className='section__title section__title--animated'
+          ref={sectionTitle}
+        ></h2>
+      )}
       <div className='container'>
         <div className='section__content'>
           <ul
@@ -117,34 +135,35 @@ export const Services = () => {
             </li>
           </ul>
 
-          <div className='services__guarantee guarantee'>
-            <h2 className="guarantee__title">Я <span className='vivid-red'>гарантую</span>, що ти вивчиш веб-розробку</h2>
-              <ul className='guarantee__list'>
-                <li className='guarantee__item'>
-                  <img
-                    className='guarantee__image'
-                    src={check}
-                    alt='Guarantee'
-                  />
-                </li>
-                <li className='guarantee__item'>
-                  <img
-                    className='guarantee__image'
-                    src={shield}
-                    alt='Guarantee'
-                  />
-                </li>
-                <li className='guarantee__item'>
-                  <img
-                    className='guarantee__image'
-                    src={thumb}
-                    alt='Guarantee'
-                  />
-                </li>
-              </ul>
+          <div
+            className='services__guarantee guarantee'
+            ref={guarantee}
+            onScroll={(e) => {
+              console.log(e.target, 'scrolling');
+            }}
+          >
+            <h2 className='guarantee__title'>
+              Я <span className='vivid-red'>гарантую</span>, що ти вивчиш
+              веб-розробку
+            </h2>
+            <ul className='guarantee__list'>
+              <li className='guarantee__item'>
+                <img className='guarantee__image' src={check} alt='Guarantee' />
+              </li>
+              <li className='guarantee__item'>
+                <img
+                  className='guarantee__image'
+                  src={shield}
+                  alt='Guarantee'
+                />
+              </li>
+              <li className='guarantee__item'>
+                <img className='guarantee__image' src={thumb} alt='Guarantee' />
+              </li>
+            </ul>
             <p className='guarantee__text'>
-              якщо будеш систематично та старанно вчитися, виконувати домашні завдання та
-              регулярно займатися зі мною два рази на тиждень
+              якщо будеш систематично та старанно вчитися, виконувати домашні
+              завдання та регулярно займатися зі мною два рази на тиждень
             </p>
           </div>
         </div>

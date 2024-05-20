@@ -116,6 +116,11 @@
 }
 
 .guarantee {
+  opacity: 0;
+  transform: translateY(50%);
+
+  transition: opacity 1s linear, transform 1s ease;
+
 &__title {
   font-size: 48px;
   margin: 0 0 50px;
