@@ -50,7 +50,7 @@ export const Statistics: React.FC = () => {
                   end={100}
                   duration={10}
                   formattingFn={(value) =>
-                    `${value.toLocaleString().replace(',', ' ')}+`
+                    `${value.toLocaleString().replace(',', ' ')}`
                   }
                 />
               </p>
@@ -63,7 +63,7 @@ export const Statistics: React.FC = () => {
                   end={1200}
                   duration={10}
                   formattingFn={(value) =>
-                    `${value.toLocaleString().replace(',', ' ')}+`
+                    `${value.toLocaleString().replace(',', ' ')}`
                   }
                 />
               </p>
@@ -76,7 +76,7 @@ export const Statistics: React.FC = () => {
                   end={1500}
                   duration={10}
                   formattingFn={(value) =>
-                    `${value.toLocaleString().replace(',', ' ')}+`
+                    `${value.toLocaleString().replace(',', ' ')}`
                   }
                 />
               </p>
