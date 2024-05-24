@@ -1,15 +1,16 @@
-.review {
-  width: calc((100% - 30px * 2) / 3);
+@import '../../assets/styles/utils/_vars.scss';
 
+.review {
+  box-sizing: border-box;
   padding: 24px;
+
   display: flex;
   flex-direction: column;
 
+  width: calc((100% - 30px * 2) / 3);
   border-radius: 12px;
-  box-shadow: 0 6px 30px 1px rgba(0, 0, 0, 0.25);
-
-  box-sizing: border-box;
-  display: flex;
+  // box-shadow: 0 6px 30px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow--card;
 
   background-image: url('../../assets/images/icons/quote.svg');
   background-repeat: no-repeat;

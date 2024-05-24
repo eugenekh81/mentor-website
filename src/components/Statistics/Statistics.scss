@@ -13,7 +13,7 @@
 
     opacity: 0;
     transform: translateY(50%);
-    width: 152px;
+    width: 160px;
     transition: all 1s ease;
 
     @for $i from 1 through 3 {
@@ -22,6 +22,33 @@
         transform: translateY(0);
         transition-delay: calc(100ms * #{$i});
       }
+    }
+
+    &:nth-child(1) .statistics__number {
+      position: relative;
+      right: 16px
+    }
+    &:nth-child(2) .statistics__number {
+      position: relative;
+      right: 8px;
+    }
+    &:nth-child(3) .statistics__number {
+      position: relative;
+      right: 4px;
+    }
+
+
+  }
+
+  &__number {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    width: fit-content;
+
+    span {
+      position: relative;
+      right: 10px;
     }
 
     &::after {
@@ -42,17 +69,6 @@
 
     &:nth-child(3)::after {
       left: calc(100% - 6px);
-    }
-  }
-
-  &__number {
-    font-size: 60px;
-    font-weight: 600;
-    color: #fff;
-
-    span {
-      position: relative;
-      right: 10px;
     }
   }
 
