@@ -1,117 +1,18 @@
 @import '../../assets/styles/utils/_vars.scss';
 
 .products {
-  $screen-size: 1170px;
-
   &__list:not(:last-child) {
     margin: 0 0 50px;
   }
 
   &__list {
+    margin: 0 auto;
     list-style: none;
     flex-wrap: wrap;
     display: flex;
     gap: 20px;
-  }
 
-  &__item {
-    padding: 20px;
-
-    width: calc(($screen-size - 20px * 4) / 5);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-
-    border-radius: 12px;
-    // box-shadow: 0 8px 30px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: $shadow--card;
-
-    &--html {
-      background-color: rgba(239, 101, 42, 0.1);
-
-      .products__title {
-        // color: #fff;
-        color: rgba(239, 101, 42);
-      }
-    }
-    &--css {
-      background-color: rgba(41, 101, 241, 0.1);
-      .products__title {
-        // color: #fff;
-        color: rgba(41, 101, 241);
-      }
-    }
-    &--js {
-      background-color: rgba(247, 223, 30, 0.1);
-      .products__title {
-        color: #212121;
-        // color: rgba(247, 223, 30);
-      }
-    }
-    &--react {
-      background-color: rgba(97, 218, 251, 0.1);
-      .products__title {
-        // color: rgb(0, 27, 150);
-        color: rgba(97, 218, 251);
-      }
-    }
-    &--nodejs {
-      background-color: rgb(83, 158, 67, 0.1);
-      .products__title {
-        // color: lightgreen;
-        color: rgb(83, 158, 67);
-      }
-    }
-
-    &--github {
-      // background-color: rgb(36, 41, 47, 0.05);
-      .products__title {
-        color: rgb(36, 41, 47);
-        // background-color: rgb(36, 41, 47);
-      }
-    }
-    &--figma {
-      background-color: rgb(255, 114, 98, 0.1);
-      .products__title {
-        // color: #fff;
-        color: rgb(255, 114, 98);
-      }
-    }
-    &--bootstrap {
-      background-color: rgb(86, 61, 124, 0.1);
-      .products__title {
-        // color: #fff;
-        color: rgb(86, 61, 124);
-      }
-    }
-    &--api {
-      background-color: rgb(105, 227, 255, 0.1);
-      .products__title {
-        // background-color: rgb(105, 227, 255);
-      }
-    }
-    &--sql {
-      background-color: rgb(0, 188, 242, 0.1);
-      .products__title {
-        color: rgb(0, 188, 242);
-        // color: #fff;
-        // background-color: rgb(0, 188, 242);
-      }
-    }
-  }
-
-  &__title {
-    // padding: 8px 16px;
-    // box-shadow: 0px 0px 10px #999;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-
-  &__icon {
-    height: 40px;
-    width: 40px;
+    width: 80%;
   }
 }
+

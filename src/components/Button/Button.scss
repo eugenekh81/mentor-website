@@ -4,6 +4,11 @@
   padding: 12px 24px;
   width: max-content;
 
+  position: relative;
+
+  display: flex;
+  gap: 16px;
+
   font-size: 32px;
   font-weight: 400;
   text-align: left;
@@ -19,5 +24,48 @@
 
   &:hover {
     background-color: #c52a20;
+
+    & .button__arrow {
+      width: 44px;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    align-self: center;
+    top: 2px;
+    height: 4px;
+    width: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+
+    transition: width 0.25s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+
+      position: absolute;
+
+      height: 4px;
+      width: 16px;
+
+      background-color: #fff;
+      border-radius: 4px;
+
+      transform-origin: right;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      right: -2px;
+      top: 1px;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      top: -1px;
+      right: -2px;
+    }
   }
 }

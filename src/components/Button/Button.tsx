@@ -6,5 +6,8 @@ type Props = {
 };
 
 export const Button: React.FC<Props> = ({ content }) => {
-  return <button className='button'>{content}</button>;
+  return <button className='button'>
+    {content}
+    <div className="button__arrow"></div>
+  </button>;
 };

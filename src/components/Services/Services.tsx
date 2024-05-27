@@ -24,7 +24,7 @@ export const Services = () => {
         servicesTitle.current.style.transform = 'translateY(0)';
         servicesTitle.current.style.opacity = '1';
       }
-    }, 4200);
+    }, 4400);
   }, [servicesTitle]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const Services = () => {
 
     setTimeout(() => {
       setShowList(true);
-    }, 4400);
+    }, 4700);
   }, []);
 
   /* const textAnimation = () => {
