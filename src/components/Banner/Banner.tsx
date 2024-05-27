@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Banner.scss';
+import { Button } from '../Button';
 const titleText = [
   'П',
   'р',
@@ -57,7 +58,7 @@ type Props = {
  */
 export const Banner: React.FC = (/* { delay, setDelay } */) => {
   const title = useRef<HTMLHeadingElement | null>(null);
-  const button = useRef<HTMLButtonElement | null>(null);
+  const button = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (title.current) {
@@ -94,9 +95,9 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
           <div className='banner__title-container'>
             <h1 className='banner__title' ref={title}></h1>
           </div>
-          <button className='banner__button button' ref={button}>
-            Безкоштовний пробний урок
-          </button>
+          <div className='banner__button' ref={button}>
+            <Button content='Безкоштовний урок' />
+          </div>
         </div>
       </div>
     </section>

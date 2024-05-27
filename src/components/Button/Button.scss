@@ -1,0 +1,23 @@
+@import '../../assets/styles/utils/vars';
+
+.button {
+  padding: 12px 24px;
+  width: max-content;
+
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+
+  border: none;
+  outline: none;
+  background-color: #e25544;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: #c52a20;
+  }
+}
