@@ -1,0 +1,18 @@
+@import '../../styles/utils/_vars.scss';
+
+.button {
+  padding: 12px 24px;
+  width: max-content;
+
+
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+
+  border: none;
+  outline: none;
+  background-color: $color--vivid-red;
+  color: #fff;
+
+  cursor: pointer;
+}

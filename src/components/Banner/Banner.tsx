@@ -7,10 +7,7 @@ const titleText = [
   'в',
   'і',
   'т',
-  '!',
-  '<br />',
-  '<br />',
-  'М',
+  '!<br /><br />М',
   'е',
   'н',
   'е',
@@ -25,9 +22,7 @@ const titleText = [
   '<span class="vivid-red">в</span>',
   '<span class="vivid-red">г</span>',
   '<span class="vivid-red">е</span>',
-  '<span class="vivid-red">н</span>',
-  '<br />',
-  '<br />',
+  '<span class="vivid-red">н</span><br /><br />',
   'я',
   ' ',
   '-',
@@ -62,6 +57,7 @@ type Props = {
  */
 export const Banner: React.FC = (/* { delay, setDelay } */) => {
   const title = useRef<HTMLHeadingElement | null>(null);
+  const button = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (title.current) {
@@ -78,9 +74,18 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
         if (title.current) {
           title.current.classList.add('banner__title--no-cursor');
         }
-      }, 4000);
+      }, 4200);
     }
   }, [title]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (button.current) {
+        button.current.style.transform = 'translateY(0)';
+        button.current.style.opacity = '1';
+      }
+    }, 4000);
+  }, [button]);
 
   return (
     <section className='section banner'>
@@ -89,6 +94,9 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
           <div className='banner__title-container'>
             <h1 className='banner__title' ref={title}></h1>
           </div>
+          <button className='banner__button button' ref={button}>
+            Безкоштовний пробний урок
+          </button>
         </div>
       </div>
     </section>

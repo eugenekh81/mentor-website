@@ -2,19 +2,20 @@
 @import '../../assets/styles/utils/animations';
 
 .banner {
-  padding: 0;
+  padding: 100px 0 0;
   &__content {
-    height: 400px;
+    height: 418px;
     width: 100%;
     // border: 1px solid red;
-    background: url('../../assets/images/banner/animated.gif'),
+        background: url('../../assets/images/banner/animated.gif'),
       url('../../assets/images/banner/static.gif');
+    // background-image: url('../../assets/images/banner/avatar--greet.png');
     background-size: contain;
-    background-position: bottom right;
+    background-position: top 0 right 0;
     background-repeat: no-repeat;
 
     display: flex;
-    align-items: end;
+    flex-direction: column;
   }
 
   &__title-container {
@@ -22,14 +23,12 @@
   }
 
   &__title {
-    position: absolute;
-    bottom: 20px;
-    // color: $color--dark-grey;
-
+    margin: 0 0 50px;
     position: relative;
+    // bottom: 20px;
 
     font-weight: 700;
-    font-size: 48px;
+    font-size: 50px;
 
     animation-delay: 5000ms;
 
@@ -53,5 +52,12 @@
         content: unset;
       }
     }
+  }
+
+  &__button {
+    opacity: 0;
+    transform: translateY(40%);
+
+    transition: all 0.9s;
   }
 }

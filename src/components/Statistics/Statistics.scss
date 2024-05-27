@@ -26,7 +26,7 @@
 
     &:nth-child(1) .statistics__number {
       position: relative;
-      right: 16px
+      right: 16px;
     }
     &:nth-child(2) .statistics__number {
       position: relative;
@@ -36,8 +36,6 @@
       position: relative;
       right: 4px;
     }
-
-
   }
 
   &__number {
@@ -49,6 +47,9 @@
     span {
       position: relative;
       right: 10px;
+
+      font-feature-settings: 'tnum';
+      font-variant-numeric: tabular-nums;
     }
 
     &::after {

@@ -2,6 +2,7 @@
 @import './utils/vars';
 @import './components/container';
 @import './components/section';
+@import './components/button';
 @import './components/products';
 
 @font-face {
@@ -40,7 +41,6 @@ html {
 
 :root {
   // font-family: Play, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
 
   /*  color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */

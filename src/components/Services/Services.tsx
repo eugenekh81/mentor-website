@@ -10,25 +10,34 @@ import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
 
-const titleText = 'Чим я можу тобі допомогти';
+// const titleText = 'Чим я можу тобі допомогти';
 
 export const Services = () => {
-  const sectionTitle = useRef<HTMLHeadingElement | null>(null);
+  const servicesTitle = useRef<HTMLHeadingElement | null>(null);
   const guarantee = useRef<HTMLHeadingElement | null>(null);
-  const [showTitle, setShowTitle] = useState(false);
+  // const [showTitle, setShowTitle] = useState(false);
   const [showList, setShowList] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
+      if (servicesTitle.current) {
+        servicesTitle.current.style.transform = 'translateY(0)';
+        servicesTitle.current.style.opacity = '1';
+      }
+    }, 4200);
+  }, [servicesTitle]);
+
+  useEffect(() => {
+/*     setTimeout(() => {
       setShowTitle(true);
-    }, 4000);
+    }, 4000); */
 
     setTimeout(() => {
       setShowList(true);
-    }, 5600);
+    }, 4400);
   }, []);
 
-  const textAnimation = () => {
+  /* const textAnimation = () => {
     if (sectionTitle.current) {
       for (let i = 0; i < titleText.length; i++) {
         const delay = 60 * i + 60 * Math.random();
@@ -40,22 +49,24 @@ export const Services = () => {
         sectionTitle.current.style.animationDelay = `${delay}ms`;
       }
     }
-  };
+  }; */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     textAnimation();
+
     setTimeout(() => {
       if (sectionTitle.current) {
         sectionTitle.current.classList.add('section__title--no-cursor');
       }
     }, 10600);
-  }, [showTitle]);
+  }, [showTitle]); */
+
+
 
   const handleScroll = () => {
     if (guarantee.current !== null) {
       const blockPosition = guarantee.current.getBoundingClientRect().top;
       if (blockPosition < window.innerHeight - 50) {
-
         guarantee.current.style.opacity = '1';
         guarantee.current.style.transform = 'translateY(0)';
       }
@@ -70,12 +81,19 @@ export const Services = () => {
 
   return (
     <section className='section services'>
-      {showTitle && (
+      {/*       {showTitle && (
         <h2
           className='section__title section__title--animated'
           ref={sectionTitle}
         ></h2>
-      )}
+      )} */}
+      <h2
+        // className='section__title section__title--animated'
+        className='section__title services__title'
+        ref={servicesTitle}
+      >
+        Чим я можу тобі допомогти
+      </h2>
       <div className='container'>
         <div className='section__content'>
           <ul
@@ -88,7 +106,10 @@ export const Services = () => {
                 <img src={girl} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__title'>Менторінґ</h3>
+                <h3 className='services__item-title'>
+                  <span>програма</span>
+                  Менторінґ
+                </h3>
                 <p className='services__description'>
                   Моя "фішка" - допомагати тим, хто вже навчається на курсах
                   програмування. За свою багаторічну практику я познайомився з
@@ -105,7 +126,10 @@ export const Services = () => {
                 <img src={beginner} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__title'>Початківець</h3>
+                <h3 className='services__item-title'>
+                  <span>програма</span>
+                  Початківець
+                </h3>
                 <p className='services__description'>
                   Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не
                   впевнений, чи це "твоє" та чи сподобається тобі ця діяльність
@@ -121,7 +145,10 @@ export const Services = () => {
                 <img src={switcher} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__title'>Свічер</h3>
+                <h3 className='services__item-title'>
+                  <span>програма</span>
+                  Свічер
+                </h3>
                 <p className='services__description'>
                   Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
                   тобі цікаві комп'ютери та програмування - я зможу допомогти
