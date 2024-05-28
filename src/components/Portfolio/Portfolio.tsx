@@ -5,7 +5,7 @@ import ecommerce from '../../assets/images/portfolio/ecommerce.jpg';
 
 export const Portfolio = () => {
   return (
-    <section className='section portfolio'>
+    <section className='section portfolio' id="portfolio">
       <div className='container'>
         <div className='section__content'>
           <h2 className='section__title'>Мої роботи</h2>
