@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
     <header className='header'>
       <div className='container'>
         <div className='header__content'>
-          <a href='/' className='header__logo logo'>
+          <a href='/mentor-website' className='header__logo logo'>
             <svg>
               <use href={`${sprite}#main-logo`}></use>
             </svg>
