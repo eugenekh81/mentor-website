@@ -4,14 +4,15 @@
 .banner {
   padding: 0;
   &__content {
-    height: 418px;
+    padding: 40px 0 0;
+
+    height: 350px;
     width: 100%;
-    // border: 1px solid red;
-        background: url('../../assets/images/banner/animated.gif'),
+    background: url('../../assets/images/banner/animated.gif'),
       url('../../assets/images/banner/static.gif');
     // background-image: url('../../assets/images/banner/avatar--greet.png');
-    background-size: contain;
-    background-position: top 0 right 0;
+    background-size: 530px;
+    background-position: top -30px right 0;
     background-repeat: no-repeat;
 
     display: flex;
@@ -21,14 +22,11 @@
 
   &__title-container {
     position: relative;
-  padding: 50px 0 0;
-
   }
 
   &__title {
-    margin: 0 0 50px;
+    margin: 0;
     position: relative;
-    // bottom: 20px;
 
     font-weight: 700;
     font-size: 50px;
@@ -58,7 +56,7 @@
   }
 
   &__button {
-    margin: 0 0 30px;
+    margin: 0 0 10px;
     opacity: 0;
     transform: translateY(40%);
 

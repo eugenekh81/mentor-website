@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Banner } from '../../components/Banner';
 import { Services } from '../../components/Services';
 import { Products } from '../../components/Products';
@@ -10,15 +10,15 @@ import { FAQ } from '../../components/FAQ';
 import { Header } from '../../components/Header';
 
 export const HomePage: React.FC = () => (
-  <>
-    <Header />
-    <Banner />
-    <Services />
-    <Products />
-    <About />
-    <Portfolio />
-    <Reviews />
-    <FAQ />
-    <Contacts />
-  </>
-);
+    <>
+      <Header />
+        <Banner />
+      <Services />
+      <Products />
+      <About />
+      <Portfolio />
+      <Reviews />
+      <FAQ />
+      <Contacts />
+    </>
+  );
