@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
                     'nav__link--active': hash === '#portfolio',
                   })}
                 >
-                  Порфтфоліо
+                  Портфоліо
                 </a>
               </li>
               <li className='nav__item'>

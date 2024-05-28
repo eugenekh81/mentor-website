@@ -23,8 +23,6 @@ export const FAQItem: React.FC<Props> = ({
   const [height, setHeight] = useState<string>('0');
 
   const content = useRef<HTMLHeadingElement | null>(null);
-
-  console.log(content.current?.scrollHeight);
   useEffect(() => {
     setHeight(selectedId === id ? `${content.current?.scrollHeight}px` : '0');
   }, [selectedId]);

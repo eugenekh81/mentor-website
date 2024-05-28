@@ -14,13 +14,11 @@ export const Statistics: React.FC = () => {
       if (blockPosition && blockPosition < window.innerHeight - 50) {
         const items = document.querySelectorAll('.statistics__item');
         if (items.length) {
-          console.log(items);
           items.forEach((item) => {
             item.classList.add('statistics__item--appear');
           });
         }
       }
-      console.log();
     });
   }, [listRef.current]);
 
