@@ -1,6 +1,11 @@
 @import '../../assets/styles/utils/vars';
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+
   &__content {
     height: 80px;
     display: flex;
@@ -60,7 +65,8 @@
       transition: transform 0.3s;
     }
 
-    &:hover {
+    &:hover,
+    &--active {
       color: $color--vivid-red;
 
       &::after {
