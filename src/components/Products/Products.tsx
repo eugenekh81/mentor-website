@@ -1,12 +1,10 @@
-
-
 import './Products.scss';
 import { productsList } from './productsList';
-import { ProductsItem } from '../ProductsItem/ProductsItem';
+import { ProductsItem } from '../ProductsItem';
 
 export const Products = () => {
   return (
-    <section className='section products'>
+    <section className='section products' id='products'>
       <div className='container'>
         <div className='section__content'>
           <h2 className='section__title'>Які технології я викладаю</h2>

@@ -28,40 +28,10 @@ export const Services = () => {
   }, [servicesTitle]);
 
   useEffect(() => {
-/*     setTimeout(() => {
-      setShowTitle(true);
-    }, 4000); */
-
     setTimeout(() => {
       setShowList(true);
     }, 4700);
   }, []);
-
-  /* const textAnimation = () => {
-    if (sectionTitle.current) {
-      for (let i = 0; i < titleText.length; i++) {
-        const delay = 60 * i + 60 * Math.random();
-        setTimeout(() => {
-          if (sectionTitle.current) {
-            sectionTitle.current.innerHTML += titleText[i];
-          }
-        }, delay);
-        sectionTitle.current.style.animationDelay = `${delay}ms`;
-      }
-    }
-  }; */
-
-  /*   useEffect(() => {
-    textAnimation();
-
-    setTimeout(() => {
-      if (sectionTitle.current) {
-        sectionTitle.current.classList.add('section__title--no-cursor');
-      }
-    }, 10600);
-  }, [showTitle]); */
-
-
 
   const handleScroll = () => {
     if (guarantee.current !== null) {
@@ -80,18 +50,8 @@ export const Services = () => {
   }, [guarantee.current]);
 
   return (
-    <section className='section services'>
-      {/*       {showTitle && (
-        <h2
-          className='section__title section__title--animated'
-          ref={sectionTitle}
-        ></h2>
-      )} */}
-      <h2
-        // className='section__title section__title--animated'
-        className='section__title services__title'
-        ref={servicesTitle}
-      >
+    <section className='section services' id='services'>
+      <h2 className='section__title services__title' ref={servicesTitle}>
         Чим я можу тобі допомогти
       </h2>
       <div className='container'>
@@ -165,9 +125,6 @@ export const Services = () => {
           <div
             className='services__guarantee guarantee'
             ref={guarantee}
-            onScroll={(e) => {
-              console.log(e.target, 'scrolling');
-            }}
           >
             <h2 className='guarantee__title'>
               Я <span className='vivid-red'>гарантую</span>, що ти вивчиш
