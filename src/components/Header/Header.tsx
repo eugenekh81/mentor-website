@@ -1,20 +1,23 @@
 import React from 'react';
 import './Header.scss';
 import sprite from '../../assets/images/icons/sprite.svg';
-import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
 type Props = {
   currentSection: string | null;
   handleScroll: () => void;
+  onSelect: (id: string) => void;
 };
 
-export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
-  const { hash } = useLocation();
-
-  const handleClick = () => {
-    console.log('clicked on the link');
+export const Header: React.FC<Props> = ({
+  currentSection,
+  handleScroll,
+  onSelect,
+}) => {
+  const handleClick = (id: string) => {
     window.removeEventListener('scroll', handleScroll);
+
+    onSelect(id);
 
     setTimeout(() => {
       window.addEventListener('scroll', handleScroll);
@@ -36,14 +39,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('services');
                 }}
               >
                 <a
                   href='#services'
                   className={classNames('nav__link', {
-                    'nav__link--active':
-                      hash === '#services' || currentSection === '#services',
+                    'nav__link--active': currentSection === '#services',
                   })}
                 >
                   Допомога
@@ -52,13 +54,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('products');
                 }}
               >
                 <a
                   href='#products'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#products',
+                    'nav__link--active': currentSection === '#products',
                   })}
                 >
                   Технології
@@ -67,13 +69,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('about');
                 }}
               >
                 <a
                   href='#about'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#about',
+                    'nav__link--active': currentSection === '#about',
                   })}
                 >
                   Про мене
@@ -82,13 +84,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('portfolio');
                 }}
               >
                 <a
                   href='#portfolio'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#portfolio',
+                    'nav__link--active': currentSection === '#portfolio',
                   })}
                 >
                   Портфоліо
@@ -97,13 +99,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('reviews');
                 }}
               >
                 <a
                   href='#reviews'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#reviews',
+                    'nav__link--active': currentSection === '#reviews',
                   })}
                 >
                   Відгуки
@@ -112,13 +114,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('faq');
                 }}
               >
                 <a
                   href='#faq'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#faq',
+                    'nav__link--active': currentSection === '#faq',
                   })}
                 >
                   ЧаПи
@@ -127,13 +129,13 @@ export const Header: React.FC<Props> = ({ currentSection, handleScroll }) => {
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick();
+                  handleClick('contacts');
                 }}
               >
                 <a
                   href='#contacts'
                   className={classNames('nav__link', {
-                    'nav__link--active': hash === '#contacts',
+                    'nav__link--active': currentSection === '#contacts',
                   })}
                 >
                   Контакти

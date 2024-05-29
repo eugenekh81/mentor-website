@@ -65,6 +65,10 @@
       transition: transform 0.3s;
     }
 
+    &--current {
+      
+    }
+
     &:hover,
     &--active {
       color: $color--vivid-red;

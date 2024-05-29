@@ -14,8 +14,6 @@ export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
 
   const handleScroll = useCallback(() => {
-    console.log('scrolling');
-
     const sections = document.querySelectorAll('.section');
     const scrollSection = [...sections].find((section) => {
       if (section instanceof HTMLElement) {
@@ -28,9 +26,13 @@ export const HomePage: React.FC = () => {
 
     if (scrollSection && scrollSection.id !== currentSection) {
       setCurrentSection(() => `#${scrollSection.id}`);
-      window.location.hash = scrollSection.id;
+      // window.location.hash = scrollSection.id;
     }
   }, []);
+
+  const handleSelect = (id: string) => {
+    setCurrentSection(id);
+  };
 
   useEffect(() => {
     /*
@@ -50,7 +52,11 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <Header currentSection={currentSection} handleScroll={handleScroll} />
+      <Header
+        currentSection={currentSection}
+        handleScroll={handleScroll}
+        onSelect={handleSelect}
+      />
       <Banner />
       <Services />
       <Products />

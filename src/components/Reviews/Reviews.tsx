@@ -1,8 +1,9 @@
+import React from 'react';
 import { ReviewItem } from '../ReviewItem';
 import './Reviews.scss';
 import { ReviewsList } from './ReviewsList';
 
-export const Reviews = () => {
+export const Reviews:React.FC = React.memo(() => {
   return (
     <section className='section reviews' id="reviews">
       <div className='container'>
@@ -18,4 +19,4 @@ export const Reviews = () => {
       </div>
     </section>
   );
-};
+});

@@ -1,8 +1,9 @@
 import './About.scss';
 import avatar from '../../assets/images/about/avatar.png';
 import { Statistics } from '../Statistics';
+import React from 'react';
 
-export const About: React.FC = () => {
+export const About: React.FC = React.memo(() => {
   return (
     <section className='section about' id='about'>
       <div className='container'>
@@ -24,4 +25,4 @@ export const About: React.FC = () => {
       </div>
     </section>
   );
-};
+});

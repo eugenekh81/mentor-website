@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useRef } from 'react';
 import './Banner.scss';
 import { Button } from '../Button';
@@ -56,7 +57,7 @@ type Props = {
   setDelay: CallableFunction;
 };
  */
-export const Banner: React.FC = (/* { delay, setDelay } */) => {
+export const Banner: React.FC = React.memo(() => {
   const title = useRef<HTMLHeadingElement | null>(null);
   const button = useRef<HTMLDivElement | null>(null);
 
@@ -102,4 +103,4 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
       </div>
     </section>
   );
-};
+});

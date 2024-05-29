@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
@@ -10,7 +10,7 @@ import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
 
-export const Services = () => {
+export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
   const guarantee = useRef<HTMLHeadingElement | null>(null);
   const [showList, setShowList] = useState(false);
@@ -119,10 +119,7 @@ export const Services = () => {
             </li>
           </ul>
 
-          <div
-            className='services__guarantee guarantee'
-            ref={guarantee}
-          >
+          <div className='services__guarantee guarantee' ref={guarantee}>
             <h2 className='guarantee__title'>
               Я <span className='vivid-red'>гарантую</span>, що ти вивчиш
               веб-розробку
@@ -151,4 +148,4 @@ export const Services = () => {
       </div>
     </section>
   );
-};
+});

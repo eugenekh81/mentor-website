@@ -1,8 +1,9 @@
 import './Products.scss';
 import { productsList } from './productsList';
 import { ProductsItem } from '../ProductsItem';
+import React from 'react';
 
-export const Products = () => {
+export const Products: React.FC = React.memo(() => {
   return (
     <section className='section products' id='products'>
       <div className='container'>
@@ -18,4 +19,4 @@ export const Products = () => {
       </div>
     </section>
   );
-};
+});
