@@ -17,11 +17,16 @@ export const HomePage: React.FC = () => {
     const sections = document.querySelectorAll('.section');
     const scrollSection = [...sections].find((section) => {
       if (section instanceof HTMLElement) {
-        console.log(window.scrollY, section.offsetTop, section.scrollHeight);
+        const sectionStart = section.offsetTop;
+        const sectionHeight = section.scrollHeight;
+        const sectionEnd = sectionStart + sectionHeight;
+        console.log(
+          `Window scroll: ${window.scrollY}, Section offsetTop: ${sectionStart}, Section scroll height: ${sectionEnd}, Current section: ${section.id}`
+        );
 
         return (
           // window.scrollY >= section.offsetTop
-          window.scrollY < section.offsetTop
+          window.scrollY < sectionEnd
         );
       }
     });
@@ -33,6 +38,11 @@ export const HomePage: React.FC = () => {
 
   const handleSelect = (id: string) => {
     setCurrentSection(id);
+    const sections = document.querySelectorAll('.section');
+    const section = [...sections].find((s) => s.id === id);
+    if (section instanceof HTMLElement) {
+      window.scrollTo({ top: section.offsetTop - 80 });
+    }
   };
 
   useEffect(() => {

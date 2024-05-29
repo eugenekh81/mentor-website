@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 import sprite from '../../assets/images/icons/sprite.svg';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 type Props = {
   currentSection: string | null;
@@ -28,14 +29,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('services');
                 }}
               >
-                <a
-                  href='#services'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#services',
                   })}
                 >
                   Допомога
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -43,14 +44,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('products');
                 }}
               >
-                <a
-                  href='#products'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#products',
                   })}
                 >
                   Технології
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -58,14 +59,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('about');
                 }}
               >
-                <a
-                  href='#about'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#about',
                   })}
                 >
                   Про мене
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -73,14 +74,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('portfolio');
                 }}
               >
-                <a
-                  href='#portfolio'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#portfolio',
                   })}
                 >
                   Портфоліо
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -88,14 +89,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('reviews');
                 }}
               >
-                <a
-                  href='#reviews'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#reviews',
                   })}
                 >
                   Відгуки
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -103,14 +104,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('faq');
                 }}
               >
-                <a
-                  href='#faq'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#faq',
                   })}
                 >
                   ЧаПи
-                </a>
+                </NavLink>
               </li>
               <li
                 className='nav__item'
@@ -118,14 +119,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   onSelect('contacts');
                 }}
               >
-                <a
-                  href='#contacts'
+                <NavLink
+                  to=''
                   className={classNames('nav__link', {
                     'nav__link--active': currentSection === '#contacts',
                   })}
                 >
                   Контакти
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>
