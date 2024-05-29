@@ -89,7 +89,7 @@ export const Banner: React.FC = (/* { delay, setDelay } */) => {
   }, [button]);
 
   return (
-    <section className='section banner'>
+    <section className='section banner' id='banner'>
       <div className='container'>
         <div className='banner__content'>
           <div className='banner__title-container'>

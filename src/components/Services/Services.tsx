@@ -10,12 +10,9 @@ import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
 
-// const titleText = 'Чим я можу тобі допомогти';
-
 export const Services = () => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
   const guarantee = useRef<HTMLHeadingElement | null>(null);
-  // const [showTitle, setShowTitle] = useState(false);
   const [showList, setShowList] = useState(false);
 
   useEffect(() => {
