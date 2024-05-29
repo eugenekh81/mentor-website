@@ -17,16 +17,17 @@ export const HomePage: React.FC = () => {
     const sections = document.querySelectorAll('.section');
     const scrollSection = [...sections].find((section) => {
       if (section instanceof HTMLElement) {
+        console.log(window.scrollY, section.offsetTop, section.scrollHeight);
+
         return (
-          section.offsetTop >= window.scrollY &&
-          window.scrollY < section.offsetTop + section.scrollHeight
+          // window.scrollY >= section.offsetTop
+          window.scrollY < section.offsetTop
         );
       }
     });
 
     if (scrollSection && scrollSection.id !== currentSection) {
       setCurrentSection(() => `#${scrollSection.id}`);
-      // window.location.hash = scrollSection.id;
     }
   }, []);
 

@@ -9,21 +9,7 @@ type Props = {
   onSelect: (id: string) => void;
 };
 
-export const Header: React.FC<Props> = ({
-  currentSection,
-  handleScroll,
-  onSelect,
-}) => {
-  const handleClick = (id: string) => {
-    window.removeEventListener('scroll', handleScroll);
-
-    onSelect(id);
-
-    setTimeout(() => {
-      window.addEventListener('scroll', handleScroll);
-    }, 1000);
-  };
-
+export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
   return (
     <header className='header'>
       <div className='container'>
@@ -39,7 +25,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('services');
+                  onSelect('services');
                 }}
               >
                 <a
@@ -54,7 +40,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('products');
+                  onSelect('products');
                 }}
               >
                 <a
@@ -69,7 +55,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('about');
+                  onSelect('about');
                 }}
               >
                 <a
@@ -84,7 +70,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('portfolio');
+                  onSelect('portfolio');
                 }}
               >
                 <a
@@ -99,7 +85,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('reviews');
+                  onSelect('reviews');
                 }}
               >
                 <a
@@ -114,7 +100,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('faq');
+                  onSelect('faq');
                 }}
               >
                 <a
@@ -129,7 +115,7 @@ export const Header: React.FC<Props> = ({
               <li
                 className='nav__item'
                 onClick={() => {
-                  handleClick('contacts');
+                  onSelect('contacts');
                 }}
               >
                 <a
