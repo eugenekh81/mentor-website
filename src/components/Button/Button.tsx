@@ -1,13 +1,21 @@
 import React from 'react';
 import './Button.scss';
+import classNames from 'classnames';
 
 type Props = {
   content: string;
+  variant?: string;
 };
 
-export const Button: React.FC<Props> = ({ content }) => {
-  return <button className='button'>
-    {content}
-    <div className="button__arrow"></div>
-  </button>;
+export const Button: React.FC<Props> = ({ content, variant }) => {
+  return (
+    <button
+      className={classNames('button', {
+        'button--header': variant === 'button--header',
+      })}
+    >
+      {content}
+      <div className='button__arrow'></div>
+    </button>
+  );
 };

@@ -3,10 +3,10 @@ import './Header.scss';
 import sprite from '../../assets/images/icons/sprite.svg';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { Button } from '../Button';
 
 type Props = {
   currentSection: string | null;
-  handleScroll: () => void;
   onSelect: (id: string) => void;
 };
 
@@ -130,6 +130,18 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               </li>
             </ul>
           </nav>
+          <div className='header__buttons'>
+            <a
+              href='https://t.me/js_mentor'
+              target='_blank'
+              className='header__link tg'
+            >
+              <svg className='header__icon'>
+                <use href={`${sprite}#telegram`}></use>
+              </svg>
+            </a>
+            <Button content='Пробний урок' variant='button--header' />
+          </div>
         </div>
       </div>
     </header>

@@ -51,12 +51,7 @@ const titleText = [
   '<span class="vivid-red">к</span>',
   '<span class="vivid-red">и</span>',
 ];
-/*
-type Props = {
-  delay: number;
-  setDelay: CallableFunction;
-};
- */
+
 export const Banner: React.FC = React.memo(() => {
   const title = useRef<HTMLHeadingElement | null>(null);
   const button = useRef<HTMLDivElement | null>(null);

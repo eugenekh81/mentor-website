@@ -5,9 +5,10 @@
     padding: 72px 0 0;
   }
 
+  &:nth-child(6),
   &:nth-child(7),
-  &:nth-child(9) {
-    padding: 0;
+  &:nth-child(8)   {
+    padding-bottom: 0;
   }
 
   &__title {

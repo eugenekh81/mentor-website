@@ -125,10 +125,13 @@ export const Services: React.FC = React.memo(() => {
               веб-розробку
             </h2>
             <ul className='guarantee__list'>
+
               <li className='guarantee__item'>
+                <div className="guarantee__background"></div>
                 <img className='guarantee__image' src={check} alt='Guarantee' />
               </li>
               <li className='guarantee__item'>
+              <div className="guarantee__background"></div>
                 <img
                   className='guarantee__image'
                   src={shield}
@@ -136,6 +139,7 @@ export const Services: React.FC = React.memo(() => {
                 />
               </li>
               <li className='guarantee__item'>
+              <div className="guarantee__background"></div>
                 <img className='guarantee__image' src={thumb} alt='Guarantee' />
               </li>
             </ul>

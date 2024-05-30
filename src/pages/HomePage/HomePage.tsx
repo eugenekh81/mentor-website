@@ -65,7 +65,6 @@ export const HomePage: React.FC = () => {
     <>
       <Header
         currentSection={currentSection}
-        handleScroll={handleScroll}
         onSelect={handleSelect}
       />
       <Banner />

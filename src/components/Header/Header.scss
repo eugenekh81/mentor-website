@@ -6,6 +6,8 @@
   z-index: 10;
   background-color: #fff;
 
+  box-shadow: 0 1px 10px #0000000d;
+
   &__content {
     height: 80px;
     display: flex;
@@ -14,6 +16,32 @@
   &__logo {
     margin: 0;
     margin-right: 90px;
+  }
+
+&__buttons {
+  margin: 0;
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+  &__link {
+    width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    width: 40px;
   }
 }
 
@@ -66,7 +94,7 @@
     }
 
     &--current {
-      
+
     }
 
     &:hover,
