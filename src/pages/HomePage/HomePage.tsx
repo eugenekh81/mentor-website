@@ -26,7 +26,7 @@ export const HomePage: React.FC = () => {
 
         return (
           // window.scrollY >= section.offsetTop
-          window.scrollY < sectionEnd
+          window.scrollY < sectionEnd - 94
         );
       }
     });
@@ -63,10 +63,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <Header
-        currentSection={currentSection}
-        onSelect={handleSelect}
-      />
+      <Header currentSection={currentSection} onSelect={handleSelect} />
       <Banner />
       <Services />
       <Products />
