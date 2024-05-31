@@ -58,12 +58,17 @@ export const About: React.FC = React.memo(() => {
           </div>
 
           <p className='about__cta-text'>
-            Зроби крок назустріч своєму майбутньому<br />
-            та забронюй свій перший безкоштовний пробний урок зі мною<br />прямо зараз!
+            Зроби крок назустріч своєму майбутньому
+            <br />
+            та забронюй свій перший пробний урок зі мною
+            <br />
+            <br />
+            <br />
+            <span>просто зараз!</span>
           </p>
 
           <div className='about__cta-button' ref={ctaButton}>
-            <Button content='Безкоштовний урок' />
+            <Button content='Пробний урок' />
           </div>
         </div>
       </div>

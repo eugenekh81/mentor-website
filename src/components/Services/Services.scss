@@ -2,9 +2,6 @@
 @import '../../assets//styles/utils/animations';
 
 .services {
-  &__list:hover &__item:not(:hover) {
-    opacity: 0.5;
-  }
   &__content {
     height: 100%;
     padding: 0 30px 30px;
@@ -100,11 +97,11 @@
   }
 
   &__image-container {
+    position: relative;
     height: 270px;
     width: 100%;
     overflow: hidden;
     flex-shrink: 0;
-    align-items: end;
   }
 
   &__image {
@@ -155,6 +152,22 @@
 
   &__button {
     margin: 0 auto;
+  }
+
+  &__list:hover &__item {
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+  }
+
+  &__list:hover &__item:hover {
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+  }
+
+  &__list:hover &__item:not(:hover) {
+    opacity: 0.5;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
   }
 }
 
