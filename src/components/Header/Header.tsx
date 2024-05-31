@@ -140,7 +140,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                 <use href={`${sprite}#telegram`}></use>
               </svg>
             </a>
-            <Button content='Пробний урок' variant='button--header' />
+            <Button content='Пробний урок' variant='small' />
           </div>
         </div>
       </div>

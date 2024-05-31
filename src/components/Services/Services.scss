@@ -3,11 +3,18 @@
 
 .services {
   &__content {
+    height: 100%;
     padding: 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text-container {
+    margin: 0 0 30px;
   }
 
   &__title {
-    position: relative;
     margin: 0 0 94px;
     text-align: center;
     font-size: 36px;
@@ -37,8 +44,10 @@
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+
     width: 33%;
-    border-radius: 20px;
     text-align: justify;
     font-size: 20px;
 
@@ -46,7 +55,6 @@
     opacity: 0;
 
     border-radius: 12px;
-    // box-shadow: 0 8px 30px 1px rgba(0, 0, 0, 0.25);
     box-shadow: $shadow--card;
 
     overflow: hidden;
@@ -73,10 +81,9 @@
   }
 
   &__item-title {
-    position: relative;
     margin: 0 0 12px;
     text-align: center;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
 
     transition: all 0.9s ease;
@@ -90,17 +97,21 @@
   }
 
   &__image-container {
-    height: 240px;
+    height: 270px;
     width: 100%;
     overflow: hidden;
-
+    flex-shrink: 0;
     align-items: end;
   }
 
   &__image {
     position: absolute;
-
+    left: 0;
     width: 100%;
+  }
+
+  &__description {
+    font-size: 16px;
   }
 
   &__guarantee {
@@ -138,6 +149,10 @@
     text-align: justify;
     line-height: 1.1;
   }
+
+  &__button {
+    margin: 0 auto;
+  }
 }
 
 .guarantee {
@@ -164,7 +179,6 @@
 
     width: 150px;
     height: 150px;
-
 
     display: flex;
     justify-content: center;

@@ -11,8 +11,9 @@ export const Button: React.FC<Props> = ({ content, variant }) => {
   return (
     <button
       className={classNames('button', {
-        'button--header': variant === 'button--header',
+        'button--small': variant === 'small' || variant === 'services',
         header__button: variant === 'button--header',
+        services__button: variant === 'services'
       })}
     >
       {content}

@@ -9,6 +9,7 @@ import shield from '../../assets/images/icons/shield--white.svg';
 import thumb from '../../assets/images/icons/thumb--white.svg';
 
 import classNames from 'classnames';
+import { Button } from '../Button';
 
 export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
@@ -28,6 +29,10 @@ export const Services: React.FC = React.memo(() => {
     setTimeout(() => {
       setShowList(true);
     }, 4700);
+
+    if (guarantee.current !== null) {
+      window.addEventListener('scroll', handleScroll);
+    }
   }, []);
 
   const handleScroll = () => {
@@ -39,12 +44,6 @@ export const Services: React.FC = React.memo(() => {
       }
     }
   };
-
-  useEffect(() => {
-    if (guarantee.current !== null) {
-      window.addEventListener('scroll', handleScroll);
-    }
-  }, [guarantee.current]);
 
   return (
     <section className='section services' id='services'>
@@ -63,19 +62,22 @@ export const Services: React.FC = React.memo(() => {
                 <img src={girl} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__item-title'>
-                  <span>програма</span>
-                  Менторінґ
-                </h3>
-                <p className='services__description'>
-                  Моя "фішка" - допомагати тим, хто вже навчається на курсах
-                  програмування. За свою багаторічну практику я познайомився з
-                  основними курсами з веб-програмування та з їх сильними та
-                  слабкими сторонами. Зможу пояснити тобі будь-яку складну тему
-                  простою мовою, допомогти з вирішенням домашніх завдань та
-                  заповнити прогалини в твоїх знаннях - і все це в рамках твого
-                  курсу.
-                </p>
+                <div className='services__text-container'>
+                  <h3 className='services__item-title'>
+                    <span>програма</span>
+                    Менторінґ
+                  </h3>
+                  <p className='services__description'>
+                    Моя "фішка" - допомагати тим, хто вже навчається на курсах
+                    програмування. За свою багаторічну практику я познайомився з
+                    основними курсами з веб-програмування та з їх сильними та
+                    слабкими сторонами. Зможу пояснити тобі будь-яку складну
+                    тему простою мовою, допомогти з вирішенням домашніх завдань
+                    та заповнити прогалини в твоїх знаннях - і все це в рамках
+                    твого курсу.
+                  </p>
+                </div>
+                <Button variant='services' content='Пробний урок' />
               </div>
             </li>
             <li className='services__item'>
@@ -83,18 +85,21 @@ export const Services: React.FC = React.memo(() => {
                 <img src={beginner} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__item-title'>
-                  <span>програма</span>
-                  Початківець
-                </h3>
-                <p className='services__description'>
-                  Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не
-                  впевнений, чи це "твоє" та чи сподобається тобі ця діяльність
-                  - можеш спробувати позайматись зі мною без того, щоб вкладати
-                  великі гроші у повноцінний курс, і матимеш змогу швидко
-                  зрозуміти, чи подобається тобі веб-розробка та чи хочеш ти
-                  входити в неї всерйоз та надовго.
-                </p>
+                <div className='services__text-container'>
+                  <h3 className='services__item-title'>
+                    <span>програма</span>
+                    Початківець
+                  </h3>
+                  <p className='services__description'>
+                    Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не
+                    впевнений, чи це "твоє" та чи сподобається тобі ця
+                    діяльність - можеш спробувати позайматись зі мною без того,
+                    щоб вкладати великі гроші у повноцінний курс, і матимеш
+                    змогу швидко зрозуміти, чи подобається тобі веб-розробка та
+                    чи хочеш ти входити в неї всерйоз та надовго.
+                  </p>
+                </div>
+                <Button variant='services' content='Пробний урок' />
               </div>
             </li>
             <li className='services__item'>
@@ -102,19 +107,21 @@ export const Services: React.FC = React.memo(() => {
                 <img src={switcher} alt='' className='services__image' />
               </div>
               <div className='services__content'>
-                <h3 className='services__item-title'>
-                  <span>програма</span>
-                  Свічер
-                </h3>
-                <p className='services__description'>
-                  Якщо ти - новачок та вже знаєш, що хочеш вивчати веб-розробку,
-                  тобі цікаві комп'ютери та програмування - я зможу допомогти
-                  тобі пройти цей шлях у комфортному для тебе темпі, без стресу,
-                  дедлайнів та інших обмежень, які так чи інакше притаманні
-                  традиційним курсам програмування. По закінченню курсу в твоєму
-                  портфоліо буде 5 робіт, які тобі не соромно буде показати
-                  своєму майбутньому роботодавцю.
-                </p>
+                <div className='services__text-container'>
+                  <h3 className='services__item-title'>
+                    <span>програма</span>
+                    Свічер
+                  </h3>
+                  <p className='services__description'>
+                    Якщо ти - новачок та вже знаєш, що хочеш вивчати
+                    веб-розробку, тобі цікаві комп'ютери та програмування - я
+                    зможу допомогти тобі пройти цей шлях у комфортному для тебе
+                    темпі, без стресу, дедлайнів та інших обмежень. По
+                    закінченню курсу в твоєму портфоліо буде 5 робіт, які тобі
+                    не соромно буде показати своєму майбутньому роботодавцю.
+                  </p>
+                </div>
+                <Button variant='services' content='Пробний урок' />
               </div>
             </li>
           </ul>
@@ -125,13 +132,12 @@ export const Services: React.FC = React.memo(() => {
               веб-розробку
             </h2>
             <ul className='guarantee__list'>
-
               <li className='guarantee__item'>
-                <div className="guarantee__background"></div>
+                <div className='guarantee__background'></div>
                 <img className='guarantee__image' src={check} alt='Guarantee' />
               </li>
               <li className='guarantee__item'>
-              <div className="guarantee__background"></div>
+                <div className='guarantee__background'></div>
                 <img
                   className='guarantee__image'
                   src={shield}
@@ -139,7 +145,7 @@ export const Services: React.FC = React.memo(() => {
                 />
               </li>
               <li className='guarantee__item'>
-              <div className="guarantee__background"></div>
+                <div className='guarantee__background'></div>
                 <img className='guarantee__image' src={thumb} alt='Guarantee' />
               </li>
             </ul>
