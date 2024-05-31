@@ -21,4 +21,30 @@
     left: 0;
     bottom: 0;
   }
+
+  &__statistics {
+    margin-bottom: 94px;
+  }
+
+  &__cta-text {
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 36px;
+    margin: 0 0 50px;
+    line-height: 1.15;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    // background-color: $color--coral-red;
+  }
+
+  &__cta-button {
+    margin: 0 auto;
+    width: min-content;
+
+    opacity: 0;
+    transform: translateY(50%);
+
+    transition: all 0.9s ease;
+  }
 }

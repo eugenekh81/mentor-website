@@ -2,6 +2,9 @@
 @import '../../assets//styles/utils/animations';
 
 .services {
+  &__list:hover &__item:not(:hover) {
+    opacity: 0.5;
+  }
   &__content {
     height: 100%;
     padding: 0 30px 30px;
@@ -37,7 +40,7 @@
 
           $delay: ($n - 1) * 0.2;
 
-          transition: all 0.7s ease #{$delay + s};
+          transition-delay: #{$delay + s};
         }
       }
     }
@@ -59,7 +62,7 @@
 
     overflow: hidden;
     transform: translateY(20%);
-    transition: all 1s ease;
+    transition: all 0.9s ease;
 
     &:nth-child(1) {
       .services__image {
