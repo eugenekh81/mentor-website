@@ -21,7 +21,8 @@
   cursor: pointer;
 
   transition: background-color 0.25s ease, transform 0.25s ease;
-
+  box-shadow: 0 4px 15px #e14b284d;
+  
   &:focus {
     outline: none;
   }
