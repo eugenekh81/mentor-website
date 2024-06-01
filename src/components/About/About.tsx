@@ -41,7 +41,7 @@ export const About: React.FC = React.memo(() => {
     <section className='section about' id='about'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title about__title'>Про мене</h2>
+          <h2 className='section__title about__title'>ПРО МЕНЕ</h2>
 
           <p className='section__description about__description'>
             <img src={avatar} alt='Avatar' className='about__image' />Я вивчаю
@@ -68,7 +68,7 @@ export const About: React.FC = React.memo(() => {
           </p>
 
           <div className='about__cta-button' ref={ctaButton}>
-            <Button content='Пробний урок' />
+            <Button>Пробний урок</Button>
           </div>
         </div>
       </div>

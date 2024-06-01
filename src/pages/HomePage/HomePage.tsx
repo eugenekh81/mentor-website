@@ -41,23 +41,11 @@ export const HomePage: React.FC = () => {
     const sections = document.querySelectorAll('.section');
     const section = [...sections].find((s) => s.id === id);
     if (section instanceof HTMLElement) {
-      window.scrollTo({ top: section.offsetTop - 80 });
+      window.scrollTo({ top: section.offsetTop - 94 });
     }
   };
 
   useEffect(() => {
-    /*
-      80 'banner'
-      430 'services'
-      2223 'products'
-      2928 'about'
-      3768 'portfolio'
-      4497 'reviews'
-      5542 'faq'
-      6583 'contacts'
-    */
-
-    // window.addEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleScroll);
   }, []);
 

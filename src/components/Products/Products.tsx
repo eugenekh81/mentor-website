@@ -8,7 +8,7 @@ export const Products: React.FC = React.memo(() => {
     <section className='section products' id='products'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title'>Які технології я викладаю</h2>
+          <h2 className='section__title'>ТЕХНОЛОГІЇ</h2>
 
           <ul className='products__list'>
             {productsList.map((p) => (

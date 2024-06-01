@@ -92,7 +92,7 @@ export const Banner: React.FC = React.memo(() => {
             <h1 className='banner__title' ref={title}></h1>
           </div>
           <div className='banner__button' ref={button}>
-            <Button content='Пробний урок' />
+            <Button>Пробний урок</Button>
           </div>
         </div>
       </div>

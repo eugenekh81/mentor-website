@@ -48,7 +48,7 @@ export const Services: React.FC = React.memo(() => {
   return (
     <section className='section services' id='services'>
       <h2 className='section__title services__title' ref={servicesTitle}>
-        Чим я можу тобі допомогти
+        ПРОГРАМИ
       </h2>
       <div className='container'>
         <div className='section__content'>
@@ -77,7 +77,7 @@ export const Services: React.FC = React.memo(() => {
                     твого курсу.
                   </p>
                 </div>
-                <Button variant='services' content='Пробний урок' />
+                <Button variant='services'>Пробний урок</Button>
               </div>
             </li>
             <li className='services__item'>
@@ -99,7 +99,7 @@ export const Services: React.FC = React.memo(() => {
                     чи хочеш ти входити в неї всерйоз та надовго.
                   </p>
                 </div>
-                <Button variant='services' content='Пробний урок' />
+                <Button variant='services'>Пробний урок</Button>
               </div>
             </li>
             <li className='services__item'>
@@ -121,7 +121,7 @@ export const Services: React.FC = React.memo(() => {
                     не соромно буде показати своєму майбутньому роботодавцю.
                   </p>
                 </div>
-                <Button variant='services' content='Пробний урок' />
+                <Button variant='services'>Пробний урок</Button>
               </div>
             </li>
           </ul>
