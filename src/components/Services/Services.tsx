@@ -4,16 +4,13 @@ import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
 
-import check from '../../assets/images/icons/check--white.svg';
-import shield from '../../assets/images/icons/shield--white.svg';
-import thumb from '../../assets/images/icons/thumb--white.svg';
-
 import classNames from 'classnames';
 import { Button } from '../Button';
+import Guarantee from '../Guarantee/Guarantee';
 
 export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
-  const guarantee = useRef<HTMLHeadingElement | null>(null);
+
   const [showList, setShowList] = useState(false);
 
   useEffect(() => {
@@ -29,26 +26,13 @@ export const Services: React.FC = React.memo(() => {
     setTimeout(() => {
       setShowList(true);
     }, 4700);
-
-    if (guarantee.current !== null) {
-      window.addEventListener('scroll', handleScroll);
-    }
   }, []);
-
-  const handleScroll = () => {
-    if (guarantee.current !== null) {
-      const blockPosition = guarantee.current.getBoundingClientRect().top;
-      if (blockPosition < window.innerHeight - 50) {
-        guarantee.current.style.opacity = '1';
-        guarantee.current.style.transform = 'translateY(0)';
-      }
-    }
-  };
 
   return (
     <section className='section services' id='services'>
       <h2 className='section__title services__title' ref={servicesTitle}>
-        ПРОГРАМИ
+        {/* ПРОГРАМИ */}
+        Чим я можу тобі допомогти?
       </h2>
       <div className='container'>
         <div className='section__content'>
@@ -71,10 +55,10 @@ export const Services: React.FC = React.memo(() => {
                     Моя "фішка" - допомагати тим, хто вже навчається на курсах
                     програмування. За свою багаторічну практику я познайомився з
                     основними курсами з веб-програмування та з їх сильними та
-                    слабкими сторонами. Зможу пояснити тобі будь-яку складну
-                    тему простою мовою, допомогти з вирішенням домашніх завдань
-                    та заповнити прогалини в твоїх знаннях - і все це в рамках
-                    твого курсу.
+                    слабкими сторонами. Я поясню тобі будь-яку складну тему
+                    простою мовою, допоможу з вирішенням домашніх завдань та
+                    заповню прогалини в твоїх знаннях - і все це в рамках твого
+                    курсу.
                   </p>
                 </div>
                 <Button variant='services'>Пробний урок</Button>
@@ -93,10 +77,10 @@ export const Services: React.FC = React.memo(() => {
                   <p className='services__description'>
                     Якщо ти хочеш почати вивчати веб-розробку з 0 та ще не
                     впевнений, чи це "твоє" та чи сподобається тобі ця
-                    діяльність - можеш спробувати позайматись зі мною без того,
-                    щоб вкладати великі гроші у повноцінний курс, і матимеш
-                    змогу швидко зрозуміти, чи подобається тобі веб-розробка та
-                    чи хочеш ти входити в неї всерйоз та надовго.
+                    діяльність - позаймайся зі мною без того, щоб вкладати
+                    великі гроші у повноцінний курс. Ти швидко зрозумієш, чи
+                    подобається тобі веб-розробка та чи хочеш ти входити в неї
+                    всерйоз та надовго.
                   </p>
                 </div>
                 <Button variant='services'>Пробний урок</Button>
@@ -114,11 +98,11 @@ export const Services: React.FC = React.memo(() => {
                   </h3>
                   <p className='services__description'>
                     Якщо ти - новачок та вже знаєш, що хочеш вивчати
-                    веб-розробку, тобі цікаві комп'ютери та програмування - я
-                    зможу допомогти тобі пройти цей шлях у комфортному для тебе
-                    темпі, без стресу, дедлайнів та інших обмежень. По
-                    закінченню курсу в твоєму портфоліо буде 5 робіт, які тобі
-                    не соромно буде показати своєму майбутньому роботодавцю.
+                    веб-розробку, тобі цікаві комп'ютери та програмування - ми
+                    пройдемо цей шлях у комфортному для тебе темпі, без стресу,
+                    дедлайнів та інших обмежень. По закінченню курсу в твоєму
+                    портфоліо буде 5 робіт, які тобі не соромно буде показати
+                    своєму майбутньому роботодавцю.
                   </p>
                 </div>
                 <Button variant='services'>Пробний урок</Button>
@@ -126,33 +110,8 @@ export const Services: React.FC = React.memo(() => {
             </li>
           </ul>
 
-          <div className='services__guarantee guarantee' ref={guarantee}>
-            <h2 className='guarantee__title'>
-              Я <span className='vivid-red'>гарантую</span>, що ти вивчиш
-              веб-розробку
-            </h2>
-            <ul className='guarantee__list'>
-              <li className='guarantee__item'>
-                <div className='guarantee__background'></div>
-                <img className='guarantee__image' src={check} alt='Guarantee' />
-              </li>
-              <li className='guarantee__item'>
-                <div className='guarantee__background'></div>
-                <img
-                  className='guarantee__image'
-                  src={shield}
-                  alt='Guarantee'
-                />
-              </li>
-              <li className='guarantee__item'>
-                <div className='guarantee__background'></div>
-                <img className='guarantee__image' src={thumb} alt='Guarantee' />
-              </li>
-            </ul>
-            <p className='guarantee__text'>
-              якщо будеш систематично та старанно вчитися, виконувати домашні
-              завдання та регулярно займатися зі мною два рази на тиждень
-            </p>
+          <div className='services__guarantee'>
+            <Guarantee />
           </div>
         </div>
       </div>

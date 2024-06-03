@@ -52,5 +52,14 @@
     transform: translateY(50%);
 
     transition: all 0.9s ease;
+
+/*     animation: appear linear forwards;
+    animation-timeline: view();
+    animation-range: 100px 250px; */
   }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(50%);}
+  to { opacity: 1; transform: translateY(0);}
 }

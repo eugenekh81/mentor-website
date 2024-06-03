@@ -9,7 +9,10 @@ export const Portfolio: React.FC = React.memo(() => {
     <section className='section portfolio' id='portfolio'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title'>ПОРТФОЛІО</h2>
+          <h2 className='section__title'>
+            {/* ПОРТФОЛІО */}
+            Мої роботи
+          </h2>
           <p className='section__description'>
             Нижче ти можеш подивитися на деякі мої роботі. Я не викладаю всі їх
             тут, щоб не перевантажувати тебе інформацією. Якщо тобі цікавий

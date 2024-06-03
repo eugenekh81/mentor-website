@@ -12,23 +12,14 @@ export const About: React.FC = React.memo(() => {
       window.addEventListener('scroll', () => {
         const button: HTMLDivElement | null =
           document.querySelector('.about__cta-button');
-
         if (button) {
+          const buttonHeight = button?.getBoundingClientRect().height;
+          console.log(buttonHeight, '<<<<');
+
           const buttonPosition: number = button.offsetTop;
 
-          const appearY = window.scrollY + window.innerHeight - 94 * 2;
-
-          console.log(
-            'where do I appear?',
-            appearY,
-            'whats the top Y point of the screen?',
-            window.scrollY,
-            'whats the viewport height?',
-            window.innerHeight,
-            'whats the bottom Y point of the screen',
-            window.innerHeight + window.scrollY
-          );
-
+          const appearY =
+            window.scrollY + window.innerHeight - 94;
           if (buttonPosition <= appearY) {
             button.style.opacity = '1';
             button.style.transform = 'translateY(0)';
@@ -41,7 +32,7 @@ export const About: React.FC = React.memo(() => {
     <section className='section about' id='about'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title about__title'>ПРО МЕНЕ</h2>
+          <h2 className='section__title about__title'>Про мене</h2>
 
           <p className='section__description about__description'>
             <img src={avatar} alt='Avatar' className='about__image' />Я вивчаю
