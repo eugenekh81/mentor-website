@@ -7,6 +7,7 @@
   position: relative;
 
   display: flex;
+  align-items: center;
   gap: 16px;
 
   font-size: 32px;
@@ -22,24 +23,19 @@
 
   transition: background-color 0.25s ease, transform 0.25s ease;
   box-shadow: 0 4px 15px #e14b284d;
-  
   &:focus {
     outline: none;
   }
 
   &--small {
     margin: 0;
-    margin-left: auto;
-    align-items: center;
-    align-self: center;
-    padding: 6px 12px;
+
     height: 40px;
 
     font-size: 14px;
     font-weight: 600;
 
-    border: none;
-
+    border-radius: 8px;
     & div {
       display: none;
     }
@@ -55,7 +51,6 @@
 
   &__arrow {
     position: relative;
-    align-self: center;
     top: 2px;
     height: 4px;
     width: 24px;
