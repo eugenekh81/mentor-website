@@ -13,7 +13,6 @@
 
     opacity: 0;
     transform: translateY(50%);
-    width: 160px;
     transition: all 1s ease;
 
     @for $i from 1 through 3 {
@@ -24,18 +23,40 @@
       }
     }
 
-    &:nth-child(1) .statistics__number {
-      position: relative;
-      right: 16px;
+    &:nth-child(1){
+      width: 130px;
+
+      .statistics__number {
+        position: relative;
+        right: 16px;
+      }
     }
-    &:nth-child(2) .statistics__number {
+
+    &:nth-child(2) {
+      width: 172px;
+      .statistics__number {
       position: relative;
       right: 8px;
     }
-    &:nth-child(3) .statistics__number {
+  }
+
+    &:nth-child(3) {
+      width: 168px;
+      .statistics__number {
       position: relative;
       right: 4px;
     }
+  }
+
+  & svg {
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    height: 242px;
+    width: 300px;
+
+  }
   }
 
   &__number {

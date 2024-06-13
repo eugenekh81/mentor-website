@@ -43,14 +43,15 @@
 
       content: ' ';
       display: inline-block;
-      animation: cursor-blink 1s steps(1) 10, make-tranparent 1s steps(1) 1;
+      animation: cursor-blink 1s linear infinite;
       animation-delay: inherit;
       opacity: 1;
     }
 
     &--no-cursor {
       &::after {
-        content: unset;
+        opacity: 0;
+        animation: none;
       }
     }
   }

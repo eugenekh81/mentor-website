@@ -17,7 +17,7 @@
   &__title {
     margin: 0 0 94px;
     text-align: center;
-    font-size: 36px;
+    font-size: $section-title-font-size;
     font-weight: 600;
     opacity: 0;
     transform: translateY(40%);
@@ -153,23 +153,4 @@
   &__button {
     margin: 0 auto;
   }
-
- /*  &__list:hover &__item {
-    transition-delay: 0s;
-    transition-duration: 0.3s;
-  }
-
-  &__list:hover &__item:hover {
-    transform: scale(1.1);
-    transition-duration: 0.4s;
-    transition-delay: 0s;
-  }
-
-  &__list:hover &__item:not(:hover) {
-    opacity: 0.5;
-    transition-delay: 0s !important;
-    transition-duration: 0.4s;
-  } */
 }
-
-

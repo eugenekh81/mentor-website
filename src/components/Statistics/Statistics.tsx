@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Statistics.scss';
+import sprite from '../../assets/images/icons/sprite.svg';
 import CountUp from 'react-countup';
 
 export const Statistics: React.FC = () => {
@@ -40,6 +41,9 @@ export const Statistics: React.FC = () => {
               />
             </p>
             <p className='statistics__text'>Учнів</p>
+            <svg>
+              <use href={`${sprite}#wreath`}></use>
+            </svg>
           </li>
           <li className='statistics__item'>
             <p className='statistics__number'>
@@ -55,6 +59,9 @@ export const Statistics: React.FC = () => {
               />
             </p>
             <p className='statistics__text'>Уроків</p>
+            <svg>
+              <use href={`${sprite}#wreath`}></use>
+            </svg>
           </li>
           <li className='statistics__item'>
             <p className='statistics__number'>
@@ -70,6 +77,9 @@ export const Statistics: React.FC = () => {
               />
             </p>
             <p className='statistics__text'>Годин</p>
+            <svg>
+              <use href={`${sprite}#wreath`}></use>
+            </svg>
           </li>
         </>
       </ul>
