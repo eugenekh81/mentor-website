@@ -1,0 +1,11 @@
+.contacts {
+  &__link {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 900;
+    background: linear-gradient(270deg, #ff4070 6.6%, #934eea 50.38%, #0080ff 93.89%);
+    background-clip: text;
+  }
+}
