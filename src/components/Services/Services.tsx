@@ -7,6 +7,7 @@ import girl from '../../assets/images/services/girl.gif';
 import classNames from 'classnames';
 import { Button } from '../Button';
 import Guarantee from '../Guarantee/Guarantee';
+import { ServicesItem } from '../ServicesItem/ServicesItem';
 
 export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
@@ -32,16 +33,16 @@ export const Services: React.FC = React.memo(() => {
     <section className='section services' id='services'>
       <h2 className='section__title services__title' ref={servicesTitle}>
         {/* ПРОГРАМИ */}
-        Чим я можу тобі допомогти?
+        Для кого?
       </h2>
       <div className='container'>
         <div className='section__content'>
           <ul
             className={classNames('services__list', {
-              'services__list--activate': showList,
+              // 'services__list--activate': showList,
             })}
           >
-            <li className='services__item'>
+            {/* <li className='services__item service'>
               <div className='services__image-container'>
                 <img src={girl} alt='' className='services__image' />
               </div>
@@ -107,7 +108,8 @@ export const Services: React.FC = React.memo(() => {
                 </div>
                 <Button variant='services'>Пробний урок</Button>
               </div>
-            </li>
+            </li> */}
+            <ServicesItem />
           </ul>
 
           <div className='services__guarantee'>
