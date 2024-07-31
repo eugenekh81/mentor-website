@@ -1,30 +1,43 @@
 import { Button } from '../Button';
 import css from './ServicesItem.module.scss';
-import girl from '../../assets/images/services/girl.gif';
 
-//type Props = {};
+interface Problem {
+  id: number;
+  problem: string;
+}
 
-export const ServicesItem: React.FC = () => {
+type Props = {
+  imgUrl: string;
+  title: string;
+  description: string;
+  problems: Problem[];
+};
+
+export const ServicesItem: React.FC<Props> = ({
+  imgUrl,
+  title,
+  description,
+  problems,
+}) => {
   return (
     <li className={css.service}>
       <div className={css.imageContainer}>
-        <img src={girl} alt='' className={css.image} />
+        <img src={imgUrl} alt='' className={css.image} />
       </div>
       <div className={css.content}>
         <h3 className={css.title}>
           <span>для</span>
-          Студентів курсів
+          {title}
         </h3>
 
-        <p className={css.description}>
-          якщо ти навчаєшся на курсах веб-розробки та:
-        </p>
+        <p className={css.description}>{description}</p>
 
         <ul className={css.problems}>
-          <li className={css.problem}>не встигаєш за програмою</li>
-          <li className={css.problem}>маєш прогалини в знаннях</li>
-          <li className={css.problem}>не розумієш завдання</li>
-          <li className={css.problem}>бракує підтримки наставників</li>
+          {problems.map((p) => (
+            <li key={p.id} className={css.problem}>
+              {p.problem}
+            </li>
+          ))}
         </ul>
 
         <Button variant='services'>Пробний урок</Button>

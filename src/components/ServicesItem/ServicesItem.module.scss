@@ -16,23 +16,23 @@
   box-shadow: $shadow--card;
 
   overflow: hidden;
-  transform: translateY(20%);
+  // transform: translateY(20%);
   transition: all 0.9s ease;
 
   &:nth-child(1) {
-    .services__image {
+    .image {
       top: -10px;
     }
   }
 
   &:nth-child(2) {
-    .services__image {
+    .image {
       top: 16px;
     }
   }
 
   &:nth-child(3) {
-    .services__image {
+    .image {
       top: 33px;
     }
   }
