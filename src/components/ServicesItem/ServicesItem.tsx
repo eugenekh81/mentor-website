@@ -24,11 +24,11 @@ export const ServicesItem: React.FC<Props> = ({
       <div className={css.imageContainer}>
         <img src={imgUrl} alt='' className={css.image} />
       </div>
-      <div className={css.content}>
         <h3 className={css.title}>
           <span>для</span>
           {title}
         </h3>
+      <div className={css.content}>
 
         <p className={css.description}>{description}</p>
 
@@ -39,9 +39,9 @@ export const ServicesItem: React.FC<Props> = ({
             </li>
           ))}
         </ul>
+      </div>
 
         <Button variant='services'>Пробний урок</Button>
-      </div>
     </li>
   );
 };

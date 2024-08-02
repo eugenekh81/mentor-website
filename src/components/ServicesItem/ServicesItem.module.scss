@@ -2,14 +2,16 @@
 @import '../../assets//styles/utils/animations';
 
 .service {
+  padding: 0 0 30px;
   display: flex;
   flex-direction: column;
 
   width: 33%;
   text-align: justify;
-  font-size: 20px;
+  font-size: 18px;
 
   line-height: 1.5;
+
   // opacity: 0;
 
   border-radius: 12px;
@@ -40,7 +42,7 @@
 
 .imageContainer {
   position: relative;
-  height: 270px;
+  height: 244px;
   width: 100%;
   overflow: hidden;
   flex-shrink: 0;
@@ -54,18 +56,19 @@
 
 .content {
   height: 100%;
-  padding: 0 30px 30px;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .title {
-  margin: 0 0 24px;
-  text-align: center;
+  margin: 0 0 18px;
+
   font-size: 32px;
   font-weight: 600;
+  line-height: 24px;
 
+  text-align: center;
   transition: all 0.9s ease;
 
   & span {
@@ -83,20 +86,26 @@
 }
 
 .problems {
-  margin: 0 0 56px;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .problem {
   display: flex;
+  gap: 10px;
   justify-content: space-between;
+  text-align: center;
 
   align-items: center;
-  &::before, &::after {
-    content:'';
+  &::before,
+  &::after {
+    content: '';
     display: block;
     height: 8px;
     width: 8px;
     background-color: red;
     border-radius: 50%;
-
+    flex-shrink: 0;
   }
 }

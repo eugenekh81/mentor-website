@@ -21,12 +21,12 @@ export const servicesData = [
     id: 2,
     imgUrl: beginner,
     title: 'Початківців',
-    description: 'якщо ти навчаєшся на курсах веб-розробки та:',
+    description: 'якщо ти хочеш почати вивчати веб-розробку, але ти:',
     problems: [
       { id: 12, problem: 'не впевнений, чи це “твоє”' },
       { id: 22, problem: 'не хочеш купляти курс' },
       { id: 32, problem: 'не знаєш, з чого почати' },
-      { id: 42, problem: 'не впевнений, чи ти подужаєш вивчити веб-розробку' },
+      { id: 42, problem: 'не впевнений, чи подужаєш вивчити веб-розробку' },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const servicesData = [
     title: 'Свічерів',
     description: 'якщо ти обрав формат самоосвіти, але тобі:',
     problems: [
-      { id: 13, problem: 'бракує підтримки та мотивації' },
+      { id: 13, problem: 'бракує підтримки / мотивації' },
       { id: 23, problem: 'важко визначити програму' },
       { id: 33, problem: 'бракує робіт у портфоліо' },
       { id: 43, problem: 'бракує досвіду для самостійного навчання' },
@@ -80,7 +80,6 @@ export const Services: React.FC = React.memo(() => {
               // 'services__list--activate': showList,
             })}
           >
-            
             {servicesData.map((s) => (
               <ServicesItem key={s.id} {...s} />
             ))}
