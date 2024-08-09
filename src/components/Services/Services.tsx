@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './Services.scss';
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
+import './Services.scss';
 
 export const servicesData = [
   {

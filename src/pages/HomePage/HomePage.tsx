@@ -9,6 +9,7 @@ import { Reviews } from '../../components/Reviews';
 import { Contacts } from '../../components/Contacts';
 import { FAQ } from '../../components/FAQ';
 import { Header } from '../../components/Header';
+import { Results } from '../../components/Results';
 
 export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
@@ -54,6 +55,7 @@ export const HomePage: React.FC = () => {
       <Header currentSection={currentSection} onSelect={handleSelect} />
       <Banner />
       <Services />
+      <Results />
       <Products />
       <About />
       <Portfolio />

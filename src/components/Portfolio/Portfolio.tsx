@@ -1,8 +1,8 @@
-import './Portfolio.scss';
+import React from 'react';
 import miami from '../../assets/images/portfolio/miami.jpg';
 import soul from '../../assets/images/portfolio/the-soul.jpg';
 import ecommerce from '../../assets/images/portfolio/ecommerce.jpg';
-import React from 'react';
+import './Portfolio.scss';
 
 export const Portfolio: React.FC = React.memo(() => {
   return (
