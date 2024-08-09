@@ -51,6 +51,7 @@ export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
 
   const [showList, setShowList] = useState(false);
+  console.log(showList);
 
   useEffect(() => {
     setTimeout(() => {
