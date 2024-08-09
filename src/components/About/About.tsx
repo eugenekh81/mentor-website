@@ -51,7 +51,7 @@ export const About: React.FC = React.memo(() => {
           <p className='about__cta-text'>
             Зроби крок назустріч своєму майбутньому
             <br />
-            та забронюй свій перший пробний урок зі мною
+            та забронюй свій перший безкоштовний урок зі мною
             <br />
             <br />
             <br />
@@ -59,7 +59,7 @@ export const About: React.FC = React.memo(() => {
           </p>
 
           <div className='about__cta-button' ref={ctaButton}>
-            <Button>Пробний урок</Button>
+            <Button>Безкоштовний урок</Button>
           </div>
         </div>
       </div>

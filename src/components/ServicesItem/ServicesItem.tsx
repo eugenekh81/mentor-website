@@ -41,7 +41,7 @@ export const ServicesItem: React.FC<Props> = ({
         </ul>
       </div>
 
-        <Button variant='services'>Пробний урок</Button>
+        <Button variant='services'>Безкоштовний урок</Button>
     </li>
   );
 };
