@@ -1,0 +1,65 @@
+@import '../../assets/styles/utils/vars';
+
+.about {
+  background-color: $color--dark-grey;
+  color: $color--vscode-blue;
+}
+
+.title {
+  color: $color--vscode-orange;
+}
+
+.description {
+  margin: 0 0 94px;
+
+  font-size: 28px;
+
+  font-weight: 600;
+  display: flex;
+  gap: 50px;
+}
+
+.statistics {
+  margin-bottom: 144px;
+}
+
+.ctaText {
+  margin: 0 0 94px;
+  border-radius: 20px;
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+
+  span {
+    color: $color--light-blue;
+    text-transform: uppercase;
+    font-size: 50px;
+  }
+}
+
+.ctaButton {
+  margin: 0 auto;
+  width: min-content;
+
+  opacity: 0;
+  transform: translateY(50%);
+
+  transition: all 0.9s ease;
+
+  /*     animation: appear linear forwards;
+  animation-timeline: view();
+  animation-range: 100px 250px; */
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

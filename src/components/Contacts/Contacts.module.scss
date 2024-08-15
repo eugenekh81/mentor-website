@@ -1,0 +1,54 @@
+@import '../../assets/styles/utils/vars';
+
+.contacts {
+  background-color: $color--dark-grey;
+  color: $color--vscode-blue;
+}
+
+.content {
+  display: flex;
+  gap: 70px;
+}
+
+.title {
+  color: $color--vscode-orange;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.text {
+  font-size: 36px;
+  font-weight: 500;
+  text-indent: 50px;
+}
+
+.buttons {
+  width: 540px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.icon {
+  height: 80px;
+  width: 80px;
+}
+
+.link {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 900;
+  background: linear-gradient(
+    270deg,
+    #ff4070 6.6%,
+    #934eea 50.38%,
+    #0080ff 93.89%
+  );
+  background-clip: text;
+}

@@ -1,8 +1,10 @@
-import './About.scss';
-import avatar from '../../assets/images/about/avatar.png';
-import { Statistics } from '../Statistics';
 import React, { useEffect, useRef } from 'react';
+import cn from 'classnames';
+import css from './About.module.scss';
+
+import { Statistics } from '../Statistics';
 import { Button } from '../Button';
+import { Avatar } from '../Avatar';
 
 export const About: React.FC = React.memo(() => {
   const ctaButton = useRef(null);
@@ -10,16 +12,16 @@ export const About: React.FC = React.memo(() => {
   useEffect(() => {
     if (ctaButton.current) {
       window.addEventListener('scroll', () => {
-        const button: HTMLDivElement | null =
-          document.querySelector('.about__cta-button');
+        const button: HTMLDivElement | null = document.querySelector(
+          '.' + css.ctaButton
+        );
         if (button) {
           const buttonHeight = button?.getBoundingClientRect().height;
           console.log(buttonHeight, '<<<<');
 
           const buttonPosition: number = button.offsetTop;
 
-          const appearY =
-            window.scrollY + window.innerHeight - 94;
+          const appearY = window.scrollY + window.innerHeight - 94;
           if (buttonPosition <= appearY) {
             button.style.opacity = '1';
             button.style.transform = 'translateY(0)';
@@ -28,27 +30,27 @@ export const About: React.FC = React.memo(() => {
       });
     }
   }, []);
+
   return (
-    <section className='section about' id='about'>
+    <section className={cn('section', css.about)} id='about'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title about__title'>Про мене</h2>
+          <h2 className={cn('section__title', css.title)}>Про мене</h2>
 
-          <p className='section__description about__description'>
-            <img src={avatar} alt='Avatar' className='about__image' />Я вивчаю
-            веб-розробку з 2020 року, викладаю - з 2022. Я навчався самотужки та
-            витратив на це дуже багато часу. В процесі мені довелося самому
-            стати тим вчителем, якого би я мріяв мати на початку свого шляху -
-            спочатку для самого себе, а потім - для інших. Саме тому я зможу
-            вберегти тебе від найпоширеніших помилок усіх початківців та
-            зберегти тобі багато часу на пошук правильного шляху.
+          <p className={cn('section__description', css.description)}>
+            <Avatar />Я вивчаю веб-розробку з 2020 року, викладаю - з 2022. Я
+            навчався самотужки та витратив на це дуже багато часу. В процесі
+            мені довелося самому стати тим вчителем, якого би я мріяв мати на
+            початку свого шляху - спочатку для самого себе, а потім - для інших.
+            Саме тому я зможу вберегти тебе від найпоширеніших помилок усіх
+            початківців та зберегти тобі багато часу на пошук правильного шляху.
           </p>
 
-          <div className='about__statistics'>
+          <div className={css.statistics}>
             <Statistics />
           </div>
 
-          <p className='about__cta-text'>
+          <p className={css.ctaText}>
             Зроби крок назустріч своєму майбутньому
             <br />
             та забронюй свій перший безкоштовний урок зі мною
@@ -58,7 +60,7 @@ export const About: React.FC = React.memo(() => {
             <span>просто зараз!</span>
           </p>
 
-          <div className='about__cta-button' ref={ctaButton}>
+          <div className={css.ctaButton} ref={ctaButton}>
             <Button>Безкоштовний урок</Button>
           </div>
         </div>

@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+import cn from 'classnames';
+// import Guarantee from '../Guarantee/Guarantee';
+import { ServicesItem } from '../ServicesItem/ServicesItem';
+
 import beginner from '../../assets/images/services/beginner.gif';
 import switcher from '../../assets/images/services/switcher.gif';
 import girl from '../../assets/images/services/girl.gif';
-import './Services.scss';
+
+import css from './Services.module.scss';
 
 export const servicesData = [
   {
@@ -42,11 +47,6 @@ export const servicesData = [
     ],
   },
 ];
-
-import classNames from 'classnames';
-import Guarantee from '../Guarantee/Guarantee';
-import { ServicesItem } from '../ServicesItem/ServicesItem';
-
 export const Services: React.FC = React.memo(() => {
   const servicesTitle = useRef<HTMLHeadingElement | null>(null);
 
@@ -70,14 +70,14 @@ export const Services: React.FC = React.memo(() => {
 
   return (
     <section className='section services' id='services'>
-      <h2 className='section__title services__title' ref={servicesTitle}>
+      <h2 className={cn('section__title', css.title)} ref={servicesTitle}>
         {/* ПРОГРАМИ */}
         Для кого?
       </h2>
       <div className='container'>
         <div className='section__content'>
           <ul
-            className={classNames('services__list', {
+            className={cn(css.list, {
               // 'services__list--activate': showList,
             })}
           >
@@ -86,9 +86,9 @@ export const Services: React.FC = React.memo(() => {
             ))}
           </ul>
 
-          <div className='services__guarantee'>
+          {/* <div className='services__guarantee'>
             <Guarantee />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
