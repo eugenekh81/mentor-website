@@ -8,7 +8,7 @@
   border-radius: 12px;
   box-shadow: $shadow--card;
 
-  width: 100%;
+  width: calc(50% - 10px);
 
   @include onDesktop--m {
     width: calc((1170px * 0.8 - 20px * 3) / 4);
@@ -27,13 +27,19 @@
   }
 
   &__wrapper {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+
+    gap: 10px;
 
     transition: transform 0.9s;
+
+    @include onDesktop--m {
+      padding: 20px;
+      gap: 16px;
+    }
 
     &:hover {
       transform: scale(0.9);
@@ -44,16 +50,28 @@
     position: relative;
     z-index: 5;
     border-radius: 8px;
-    font-size: 24px;
     font-weight: 600;
+
+    font-size: 18px;
+    @include onDesktop--m {
+      font-size: 24px;
+    }
+
     pointer-events: none;
   }
 
   &__icon {
     position: relative;
     z-index: 5;
-    height: 40px;
-    width: 40px;
+
+    height: 30px;
+    width: 30px;
+
+    @include onDesktop--m {
+      height: 40px;
+      width: 40px;
+    }
+
     pointer-events: none;
   }
 }
