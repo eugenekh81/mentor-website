@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-
 import { Header } from '../../components/Header';
 import { Banner } from '../../components/Banner';
-// import { Services } from '../../components/Services';
+import { Services } from '../../components/Services';
 // import { Products } from '../../components/Products';
 // import { About } from '../../components/About';
 // import { Portfolio } from '../../components/Portfolio';
@@ -54,7 +53,7 @@ export const HomePage: React.FC = () => {
     <>
       <Header currentSection={currentSection} onSelect={handleSelect} />
       <Banner />
-      {/* <Services /> */}
+      <Services />
       {/* <Results /> */}
       {/* <Products /> */}
       {/* <About /> */}

@@ -1,4 +1,5 @@
-@import '../../assets/styles/utils/_vars.scss';
+@import '../../assets/styles/utils/vars.scss';
+@import '../../assets/styles/utils/mixins.scss';
 @import '../../assets//styles/utils/animations';
 
 .services {
@@ -13,8 +14,6 @@
   &__text-container {
     margin: 0 0 30px;
   }
-
-
 
   &__item {
     display: flex;
@@ -122,10 +121,6 @@
     text-align: justify;
     line-height: 1.1;
   }
-
-  &__button {
-    margin: 0 auto;
-  }
 }
 
 .title {
@@ -139,8 +134,12 @@
 }
 
 .list {
-  /* margin: 0 0 94px; */
   display: flex;
+  flex-direction: column;
+
+  @include onDesktop--m {
+    flex-direction: row;
+  }
   gap: 30px;
 
   &--activate {

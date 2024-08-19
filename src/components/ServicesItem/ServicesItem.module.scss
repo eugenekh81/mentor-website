@@ -1,13 +1,17 @@
-@import '../../assets/styles/utils/_vars';
-@import '../../assets//styles/utils/animations';
 @import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
+@import '../../assets//styles/utils/animations';
 
 .service {
   padding: 0 0 30px;
   display: flex;
   flex-direction: column;
 
-  width: 33%;
+  width: 100%;
+  @include onDesktop--m {
+    width: 33%;
+  }
+
   text-align: justify;
   font-size: 18px;
 
@@ -60,7 +64,7 @@
 
 .content {
   height: 100%;
-  padding: 0 30px;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
 }
@@ -121,5 +125,14 @@
 }
 
 .button {
-  margin: 0 auto;;
+  margin: 0 auto;
+  width: calc(100% - 24px);
+  justify-content: center;
+  font-size: 24px;
+
+  height: 48px;
+
+  @include onDesktop--m {
+    width: unset;
+  }
 }
