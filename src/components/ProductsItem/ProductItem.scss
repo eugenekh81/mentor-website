@@ -1,23 +1,25 @@
-@import '../../assets/styles/utils/_vars.scss';
+@import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 
 .product {
   position: relative;
 
-  $screen-size: 1170px;
   background-color: #f1f3f9;
   border-radius: 12px;
   box-shadow: $shadow--card;
 
-  width: calc(($screen-size * 0.8 - 20px * 3) / 4);
-  transition: all 0.5s;
+  width: 100%;
 
+  @include onDesktop--m {
+    width: calc((100vh * 0.8 - 20px * 3) / 4);
+  }
+
+  transition: all 0.5s;
   overflow: hidden;
 
   &__backdrop {
     position: absolute;
-
     background-color: #e4e7f0;
-
     border-radius: 50%;
 
     transform: translate(-50%, -50%);

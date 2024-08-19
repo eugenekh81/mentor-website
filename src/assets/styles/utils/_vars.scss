@@ -9,17 +9,18 @@ $color--vscode-orange: #fc9867;
 $color--vscode-blue: #78cde8;
 $shadow--card: 2px 4px 12px #00000014;
 
-$section-padding-desktop: 94px 0 94px;
 
 .vivid-red {
   color: $color--vivid-red;
 }
 
 :root {
+  --section-padding-desktop: 48px 0 48px;
   --section-title-font-size: 40px;
   --results-icon-size: 48px;
   @include onDesktop--m {
     --section-title-font-size: 50px;
     --results-icon-size: 96px;
+    --section-padding-desktop: 94px 0 94px;
   }
 }

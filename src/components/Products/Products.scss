@@ -1,4 +1,5 @@
-@import '../../assets/styles/utils/_vars.scss';
+@import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 
 .products {
   &__list:not(:last-child) {
@@ -12,7 +13,10 @@
     display: flex;
     gap: 20px;
 
-    width: 80%;
+    width: 100%;
+
+    @include onDesktop--m {
+      width: 80%;
+    }
   }
 }
-

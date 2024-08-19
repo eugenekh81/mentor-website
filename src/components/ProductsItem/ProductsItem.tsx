@@ -24,7 +24,7 @@ export const ProductsItem: React.FC<Props> = ({ title, spriteId, imgSrc }) => {
         if (backdrop.current) {
           setTop(() => `${e.offsetY}px`);
           setLeft(() => `${e.offsetX}px`);
-          setSize('440px');
+          setSize('700px');
           setBorderRadius('0%');
         }
       });

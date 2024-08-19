@@ -3,7 +3,7 @@ import { Header } from '../../components/Header';
 import { Banner } from '../../components/Banner';
 import { Services } from '../../components/Services';
 import { Results } from '../../components/Results';
-// import { Products } from '../../components/Products';
+import { Products } from '../../components/Products';
 // import { About } from '../../components/About';
 // import { Portfolio } from '../../components/Portfolio';
 // import { Reviews } from '../../components/Reviews';
@@ -55,7 +55,7 @@ export const HomePage: React.FC = () => {
       <Banner />
       <Services />
       <Results />
-      {/* <Products /> */}
+      <Products />
       {/* <About /> */}
       {/* <Portfolio /> */}
       {/* <Reviews /> */}
