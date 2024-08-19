@@ -1,16 +1,25 @@
+@import './mixins';
+
 $color--dark-grey: #282828;
 $color--light-blue: #97b6fd;
 $color--vivid-red: #ff3800;
-$color--coral-red:#e25544;
+$color--coral-red: #e25544;
 $color--dark-violet: #322847;
 $color--vscode-orange: #fc9867;
 $color--vscode-blue: #78cde8;
 $shadow--card: 2px 4px 12px #00000014;
 
-$section-title-font-size: 50px;
-
 $section-padding-desktop: 94px 0 94px;
 
 .vivid-red {
   color: $color--vivid-red;
+}
+
+:root {
+  --section-title-font-size: 40px;
+  --results-icon-size: 48px;
+  @include onDesktop--m {
+    --section-title-font-size: 50px;
+    --results-icon-size: 96px;
+  }
 }

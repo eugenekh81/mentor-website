@@ -126,7 +126,7 @@
 .title {
   margin: 0 0 94px;
   text-align: center;
-  font-size: $section-title-font-size;
+  font-size: var(--section-title-font-size);
   font-weight: 600;
   opacity: 0;
   transform: translateY(40%);

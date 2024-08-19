@@ -1,5 +1,10 @@
+@import '../../assets/styles/utils/mixins';
+
 .results {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+
+  @include onDesktop--m {
+    gap: 30px;
+  }
 }

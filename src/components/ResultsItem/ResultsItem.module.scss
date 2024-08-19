@@ -1,3 +1,6 @@
+@import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
+
 .result {
   padding: 24px;
   width: 370px;
@@ -8,15 +11,35 @@
 
 .imageContainer {
   margin: 0 0 24px;
+  height: var(--results-icon-size);
+  width: var(--results-icon-size);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
+
 .title {
-  margin: 0 0 24px;
-  font-size: 36px;
+  margin: 0 0 18px;
   font-weight: 700;
-  line-height: 44px;
+  font-size: 26px;
+  line-height: 32px;
+
+  @include onDesktop--m {
+    margin: 0 0 24px;
+    line-height: 44px;
+
+    font-size: 36px;
+  }
 }
+
 .text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 21px;
   text-align: center;
+
+  @include onDesktop--m {
+    font-size: 18px;
+  }
 }

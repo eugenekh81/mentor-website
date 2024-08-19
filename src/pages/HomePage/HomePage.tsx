@@ -2,13 +2,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import { Banner } from '../../components/Banner';
 import { Services } from '../../components/Services';
+import { Results } from '../../components/Results';
 // import { Products } from '../../components/Products';
 // import { About } from '../../components/About';
 // import { Portfolio } from '../../components/Portfolio';
 // import { Reviews } from '../../components/Reviews';
 // import { Contacts } from '../../components/Contacts';
 // import { FAQ } from '../../components/FAQ';
-// import { Results } from '../../components/Results';
 
 export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
@@ -54,7 +54,7 @@ export const HomePage: React.FC = () => {
       <Header currentSection={currentSection} onSelect={handleSelect} />
       <Banner />
       <Services />
-      {/* <Results /> */}
+      <Results />
       {/* <Products /> */}
       {/* <About /> */}
       {/* <Portfolio /> */}
