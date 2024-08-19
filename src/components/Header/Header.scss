@@ -1,7 +1,9 @@
 @import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 
 .header {
   position: sticky;
+
   top: 0;
   z-index: 10;
   background-color: #ffffffbc;
@@ -10,15 +12,19 @@
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 
   &__content {
-
-z-index: 1;
-    height: 80px;
     display: flex;
+    height: 50px;
+
+    @include onDesktop--m {
+      height: 80px;
+    }
   }
 
   &__logo {
     margin: 0;
-    margin-right: 90px;
+    @include onDesktop--m {
+      margin-right: 90px;
+    }
   }
 
   &__buttons {
@@ -64,8 +70,13 @@ z-index: 1;
 }
 
 .logo {
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
+
+  @include onDesktop--m {
+    height: 60px;
+    width: 60px;
+  }
   align-self: center;
 
   & svg {
@@ -75,7 +86,12 @@ z-index: 1;
 }
 
 .nav {
-  display: flex;
+  display: none;
+
+  @include onDesktop--m {
+    display: flex;
+  }
+
   &__list {
     display: flex;
     gap: 40px;

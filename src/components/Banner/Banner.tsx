@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useRef } from 'react';
 import './Banner.scss';
 import { Button } from '../Button';
+
 const titleText = [
   'П',
   'р',
@@ -35,7 +36,7 @@ const titleText = [
   '<span class="vivid-red">т</span>',
   '<span class="vivid-red">о</span>',
   '<span class="vivid-red">р</span>',
-  ' ',
+  window.innerWidth < 1200 ? '<br>' : ' ',
   'з',
   ' ',
   '<span class="vivid-red">в</span>',

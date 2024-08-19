@@ -1,23 +1,30 @@
 @import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 @import '../../assets/styles/utils/animations';
 
 .banner {
   padding: 0;
   &__content {
-    padding: 40px 0 0;
-
-    height: 350px;
-    width: 100%;
+    padding: 20px 0 0;
+    height: calc(100vh - 50px);
     background: url('../../assets/images/banner/animated.gif'),
       url('../../assets/images/banner/static.gif');
-    // background-image: url('../../assets/images/banner/avatar--greet.png');
-    background-size: 530px;
-    background-position: top -30px right 0;
     background-repeat: no-repeat;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-position: center bottom;
+    background-size: contain;
+
+    @include onDesktop--m {
+      padding: 40px 0 0;
+      height: 350px;
+      width: 100%;
+      background-size: 530px;
+      background-position: top -30px right 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   &__title-container {
@@ -25,13 +32,20 @@
   }
 
   &__title {
-    margin: 0;
+    margin: 0 0 36px;
     position: relative;
 
+    font-size: 40px;
     font-weight: 700;
-    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
 
-    animation-delay: 5000ms;
+    @include onDesktop--m {
+      margin: 0;
+      font-size: 50px;
+      text-align: left;
+      animation-delay: 5000ms;
+    }
 
     &::after {
       position: absolute;

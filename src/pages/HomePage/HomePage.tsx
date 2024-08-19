@@ -54,14 +54,14 @@ export const HomePage: React.FC = () => {
     <>
       <Header currentSection={currentSection} onSelect={handleSelect} />
       <Banner />
-      <Services />
-      <Results />
-      <Products />
-      <About />
-      <Portfolio />
-      <Reviews />
-      <FAQ />
-      <Contacts />
+      {/* <Services /> */}
+      {/* <Results /> */}
+      {/* <Products /> */}
+      {/* <About /> */}
+      {/* <Portfolio /> */}
+      {/* <Reviews /> */}
+      {/* <FAQ /> */}
+      {/* <Contacts /> */}
     </>
   );
 };
