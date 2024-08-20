@@ -17,10 +17,13 @@ $shadow--card: 2px 4px 12px #00000014;
 :root {
   --section-padding-desktop: 48px 0 48px;
   --section-title-font-size: 40px;
-  --results-icon-size: 48px;
+  --results-icon-size: 72px;
+  --avatar-size: 170px;
+
   @include onDesktop--m {
     --section-title-font-size: 50px;
     --results-icon-size: 96px;
     --section-padding-desktop: 94px 0 94px;
+    --avatar-size: 345px;
   }
 }

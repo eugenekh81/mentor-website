@@ -4,7 +4,7 @@ import { Banner } from '../../components/Banner';
 import { Services } from '../../components/Services';
 import { Results } from '../../components/Results';
 import { Products } from '../../components/Products';
-// import { About } from '../../components/About';
+import { About } from '../../components/About';
 // import { Portfolio } from '../../components/Portfolio';
 // import { Reviews } from '../../components/Reviews';
 // import { Contacts } from '../../components/Contacts';
@@ -56,7 +56,7 @@ export const HomePage: React.FC = () => {
       <Services />
       <Results />
       <Products />
-      {/* <About /> */}
+      <About />
       {/* <Portfolio /> */}
       {/* <Reviews /> */}
       {/* <FAQ /> */}

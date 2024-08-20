@@ -1,3 +1,6 @@
-.image {
+@import '../../assets/styles/utils/vars';
 
+.image {
+  width: var(--avatar-size);
+  margin: 0 auto;
 }
