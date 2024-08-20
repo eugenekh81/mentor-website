@@ -51,13 +51,13 @@ export const About: React.FC = React.memo(() => {
           </div>
 
           <p className={css.ctaText}>
-            Зроби крок назустріч своєму майбутньому
+            Зроби крок назустріч своєму <span className={css.future}>майбутньому</span>
             <br />
             та забронюй свій перший безкоштовний урок зі мною
             <br />
             <br />
             <br />
-            <span>просто зараз!</span>
+            <span className={css.now}>просто зараз!</span>
           </p>
 
           <div className={css.ctaButton} ref={ctaButton}>

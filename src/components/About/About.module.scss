@@ -31,28 +31,56 @@
 }
 
 .statistics {
-  margin-bottom: 144px;
+  margin-bottom: 72px;
+  @include onDesktop--m {
+    margin-bottom: 144px;
+  }
 }
 
 .ctaText {
-  margin: 0 0 94px;
-  border-radius: 20px;
-  font-size: 36px;
-  line-height: 50px;
+  margin: 0 0 72px;
+
+  font-size: 24px;
+  line-height: 36px;
   font-weight: 600;
+
+  @include onDesktop--m {
+    margin: 0 0 94px;
+
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 600;
+  }
+
+  border-radius: 20px;
   text-align: center;
   color: #fff;
 
-  span {
-    color: $color--light-blue;
-    text-transform: uppercase;
-    font-size: 50px;
+}
+.now {
+  color: $color--light-blue;
+  text-transform: uppercase;
+  font-size: 50px;
+
+  @include onDesktop--m {
+
+  }
+}
+
+.future {
+  display: block;
+
+  font-size: 36px;
+  text-transform: unset;
+
+  @include onDesktop--m {
+    display: inline;
   }
 }
 
 .ctaButton {
   margin: 0 auto;
-  width: min-content;
+  width: max-content;
 
   opacity: 0;
   transform: translateY(50%);
