@@ -3,8 +3,12 @@ import miami from '../../assets/images/portfolio/miami.jpg';
 import soul from '../../assets/images/portfolio/the-soul.jpg';
 import ecommerce from '../../assets/images/portfolio/ecommerce.jpg';
 import './Portfolio.scss';
+import { useDesktop } from '../../hooks/useDesktop.ts';
 
 export const Portfolio: React.FC = React.memo(() => {
+  const isOnDesktop = useDesktop();
+  console.log(isOnDesktop);
+
   return (
     <section className='section portfolio' id='portfolio'>
       <div className='container'>

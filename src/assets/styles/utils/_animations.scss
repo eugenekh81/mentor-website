@@ -18,5 +18,10 @@
   to {
     transform: rotate(360deg);
   }
+}
 
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(2em, -9em);
+  }
 }

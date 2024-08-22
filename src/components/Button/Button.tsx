@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import './Button.scss';
-import classNames from 'classnames';
+import css from './Button.module.scss';
+import cn from 'classnames';
 
 type Props = {
   children: ReactNode;
@@ -13,14 +13,14 @@ export const Button: React.FC<Props> = ({ children, variant, className }) => {
 
   return (
     <button
-      className={classNames('button', className, {
-        'button--small': variant === 'small' || variant === 'services',
-        header__button: variant === 'button--header',
-        services__button: variant === 'services',
+      className={cn(css.button, className, {
+        [css.small]: variant === 'small' || variant === 'services',
+        ['header__button']: variant === 'button--header',
+        ['services__button']: variant === 'services',
       })}
     >
       {children}
-      <div className='button__arrow'></div>
+      <div className={css.arrow}></div>
     </button>
   );
 };
