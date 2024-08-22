@@ -20,7 +20,7 @@ export const Button: React.FC<Props> = ({ children, variant, className }) => {
       })}
     >
       {children}
-      <div className={css.arrow}></div>
+      <span className={css.arrow}></span>
     </button>
   );
 };
