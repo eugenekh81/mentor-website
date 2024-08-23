@@ -1,6 +1,7 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import css from './Carousel.module.scss';
+
 type Props = {
   images: string[];
 };

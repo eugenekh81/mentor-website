@@ -1,7 +1,14 @@
+@import '../utils/mixins';
+
 .container {
-  padding: 0 15px;
-  max-width: 1200px;
-  width: 100%;
-  min-width: 320px;
   margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 390px;
+
+  @include onDesktop--m {
+    max-width: 1200px;
+
+  }
+  min-width: 320px;
 }
