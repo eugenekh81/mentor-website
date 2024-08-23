@@ -2,7 +2,6 @@
 
 .carousel {
   position: relative;
-
 }
 
 .wrapper {
@@ -11,7 +10,6 @@
   margin: 0 auto;
   border: 1px solid #ededf2;
   border-radius: 12px;
-
 }
 
 .stripe {
@@ -56,21 +54,28 @@
   color: #fff;
   font-size: 18px;
 
+  background-color: lightblue;
+
   transform: translateY(-50%);
+
+  &:target,
+  &:focus,
+  &:active {
+    background-color: lightblue;
+  }
 }
 
 .prev {
   left: calc((36px - 24px) / 2);
-  &::after {
-    content: '<';
-  }
 }
 
 .next {
   right: calc((36px - 24px) / 2);
-  &::after {
-    content: '>';
-  }
+}
+
+.icon {
+  height: 12px;
+  width: 12px;
 }
 
 .dots {

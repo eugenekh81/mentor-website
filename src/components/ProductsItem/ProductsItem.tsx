@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import sprite from '../../assets/images/icons/sprite.svg';
 import './ProductItem.scss';
+import { SVGIcon } from '../SVGIcon';
 
 type Props = {
   title: string;
@@ -8,7 +8,11 @@ type Props = {
   imgSrc?: string;
 };
 
-export const ProductsItem: React.FC<Props> = ({ title, spriteId, imgSrc }) => {
+export const ProductsItem: React.FC<Props> = ({
+  title,
+  spriteId = '',
+  imgSrc,
+}) => {
   const item = useRef<HTMLLIElement | null>(null);
 
   const [top, setTop] = useState<string>('0');
@@ -55,9 +59,7 @@ export const ProductsItem: React.FC<Props> = ({ title, spriteId, imgSrc }) => {
         {imgSrc ? (
           <img src={imgSrc} alt='' className='product__icon' />
         ) : (
-          <svg className='product__icon'>
-            <use href={`${sprite}#${spriteId}`}></use>
-          </svg>
+          <SVGIcon className='product__icon' iconId={spriteId} />
         )}
         <span className='product__title'>{title}</span>
       </div>

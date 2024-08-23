@@ -1,6 +1,8 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import css from './Carousel.module.scss';
+import { SVGIcon } from '../SVGIcon';
+import { Button } from '../Button';
 
 type Props = {
   images: string[];
@@ -45,23 +47,27 @@ export const Carousel: React.FC<Props> = ({ images }) => {
         </div>
 
         <div className={css.buttons}>
-          <button
-            type='button'
+          <Button
+            variant='noArrow'
             className={cn(css.button, css.prev)}
             onClick={() => setCurrentImage(currentImage - 1)}
-          ></button>
-          <button
-            type='button'
+          >
+            <SVGIcon className={css.icon} iconId='arrowLeft' />
+          </Button>
+          <Button
+            variant='noArrow'
             className={cn(css.button, css.next)}
             onClick={() => setCurrentImage(currentImage + 1)}
-          ></button>
+          >
+            <SVGIcon className={css.icon} iconId='arrowRight' />
+          </Button>
         </div>
       </div>
       <div className={css.dots}>
         {images.map((image, i) => (
           <button
-            key={image}
             type='button'
+            key={image}
             className={cn(css.dot, { [css.activeDot]: i === currentImage })}
           ></button>
         ))}

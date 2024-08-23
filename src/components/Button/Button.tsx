@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import css from './Button.module.scss';
 import cn from 'classnames';
 
@@ -6,11 +6,15 @@ type Props = {
   children: ReactNode;
   variant?: string;
   className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-export const Button: React.FC<Props> = ({ children, variant, className }) => {
-  console.log(children, 'children');
-
+export const Button: React.FC<Props> = ({
+  children,
+  variant,
+  className,
+  onClick = () => {},
+}) => {
   return (
     <button
       className={cn(css.button, className, {
@@ -18,9 +22,10 @@ export const Button: React.FC<Props> = ({ children, variant, className }) => {
         ['header__button']: variant === 'button--header',
         ['services__button']: variant === 'services',
       })}
+      onClick={onClick}
     >
       {children}
-      <span className={css.arrow}></span>
+      {variant !== 'noArrow' && <span className={css.arrow}></span>}
     </button>
   );
 };

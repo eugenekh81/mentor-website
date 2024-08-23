@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import './FAQItem.scss';
 import sprite from '../../assets/images/icons/sprite.svg';
+import { SVGIcon } from '../SVGIcon/SVGIcon';
 
 type Props = {
   id: number;
@@ -41,8 +42,9 @@ export const FAQItem: React.FC<Props> = ({
       >
         {q}
         <svg className='FAQ__icon'>
-          <use href={`${sprite}#plus-icon`}></use>
+          <use href={`${sprite}#`}></use>
         </svg>
+        <SVGIcon className='FAQ__icon' iconId='plus-icon' />
       </h3>
       <p
         className='FAQ__answer'

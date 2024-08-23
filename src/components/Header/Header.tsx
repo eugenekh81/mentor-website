@@ -1,9 +1,9 @@
 import React from 'react';
 import './Header.scss';
-import sprite from '../../assets/images/icons/sprite.svg';
-import classNames from 'classnames';
+import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../Button';
+import { SVGIcon } from '../SVGIcon';
 
 type Props = {
   currentSection: string | null;
@@ -16,9 +16,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
       <div className='container'>
         <div className='header__content'>
           <a href='/mentor-website' className='header__logo logo'>
-            <svg>
-              <use href={`${sprite}#main-logo`}></use>
-            </svg>
+            <SVGIcon iconId='main-logo' />
           </a>
 
           <nav className='nav'>
@@ -31,7 +29,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#services',
                   })}
                 >
@@ -46,7 +44,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#products',
                   })}
                 >
@@ -61,7 +59,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#about',
                   })}
                 >
@@ -76,7 +74,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#portfolio',
                   })}
                 >
@@ -91,7 +89,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#reviews',
                   })}
                 >
@@ -106,7 +104,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#faq',
                   })}
                 >
@@ -121,7 +119,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               >
                 <NavLink
                   to=''
-                  className={classNames('nav__link', {
+                  className={cn('nav__link', {
                     'nav__link--active': currentSection === '#contacts',
                   })}
                 >
@@ -130,15 +128,14 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               </li>
             </ul>
           </nav>
+
           <div className='header__buttons'>
             <a
               href='https://t.me/js_mentor'
               target='_blank'
               className='header__link tg'
             >
-              <svg className='header__icon'>
-                <use href={`${sprite}#telegram`}></use>
-              </svg>
+              <SVGIcon className='header__icon' iconId='telegram' />
             </a>
             <div className='header__button'>
               <Button variant='small'>Безкоштовний урок</Button>
