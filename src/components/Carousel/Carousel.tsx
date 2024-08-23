@@ -56,16 +56,15 @@ export const Carousel: React.FC<Props> = ({ images }) => {
             onClick={() => setCurrentImage(currentImage + 1)}
           ></button>
         </div>
-
-        <div className={css.dots}>
-          {images.map((image, i) => (
-            <button
-              key={image}
-              type='button'
-              className={cn(css.dot, { [css.activeDot]: i === currentImage })}
-            ></button>
-          ))}
-        </div>
+      </div>
+      <div className={css.dots}>
+        {images.map((image, i) => (
+          <button
+            key={image}
+            type='button'
+            className={cn(css.dot, { [css.activeDot]: i === currentImage })}
+          ></button>
+        ))}
       </div>
     </div>
   );

@@ -2,24 +2,26 @@
 
 .carousel {
   position: relative;
+
 }
 
 .wrapper {
   overflow: hidden;
   width: 80%;
   margin: 0 auto;
+  border: 1px solid #ededf2;
+  border-radius: 12px;
+
 }
 
 .stripe {
   display: flex;
-
   transition: transform 0.3s ease-in-out;
 }
 
 .slideOuter {
-  border: 1px solid #000;
   display: flex;
-  padding: 30px;
+  padding: 12px;
   border-radius: 12px;
   width: 100%;
   flex-shrink: 0;
@@ -58,14 +60,14 @@
 }
 
 .prev {
-  left: 4px;
+  left: calc((36px - 24px) / 2);
   &::after {
     content: '<';
   }
 }
 
 .next {
-  right: 4px;
+  right: calc((36px - 24px) / 2);
   &::after {
     content: '>';
   }

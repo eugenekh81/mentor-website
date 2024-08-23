@@ -64,8 +64,12 @@
     margin: 0 0 30px;
     font-size: 24px;
     line-height: 1.5;
-
+    font-size: 20px;
     text-align: justify;
+
+    @include onDesktop--m {
+      font-size: 24px;
+    }
 
     &:last-child {
       margin: 0;
