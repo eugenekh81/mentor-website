@@ -1,22 +1,23 @@
 import React from 'react';
+import cn from 'classnames';
 import miami from '../../assets/images/portfolio/miami.jpg';
 import soul from '../../assets/images/portfolio/the-soul.jpg';
 import ecommerce from '../../assets/images/portfolio/ecommerce.jpg';
-import './Portfolio.scss';
+import css from './Portfolio.module.scss';
 import { useDesktop } from '../../hooks/useDesktop.ts';
+import { Carousel } from '../Carousel/Carousel.tsx';
+
+const images = [miami, soul, ecommerce];
 
 export const Portfolio: React.FC = React.memo(() => {
   const isOnDesktop = useDesktop();
   console.log(isOnDesktop);
 
   return (
-    <section className='section portfolio' id='portfolio'>
+    <section className={cn('section', css.portfolio)} id='portfolio'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title'>
-            {/* ПОРТФОЛІО */}
-            Мої роботи
-          </h2>
+          <h2 className='section__title'>Мої роботи</h2>
           <p className='section__description'>
             Нижче ти можеш подивитися на деякі мої роботі. Я не викладаю всі їх
             тут, щоб не перевантажувати тебе інформацією. Якщо тобі цікавий
@@ -24,30 +25,32 @@ export const Portfolio: React.FC = React.memo(() => {
             Гітхабі
           </p>
 
-          <ul className='portfolio__list'>
-            <li className='portfolio__item'>
-              <h3 className='portfolio__item-title'>Лендінг "Miami Kings"</h3>
-              <a href='' className='portfolio__link'>
-                <img src={miami} alt='' className='portfolio__image' />
-              </a>
-            </li>
-            <li className='portfolio__item'>
-              <h3 className='portfolio__item-title'>
-                Інтернет-магазин мобільних пристроїв
-              </h3>
-              <a href='' className='portfolio__link'>
-                <img src={ecommerce} alt='' className='portfolio__image' />
-              </a>
-            </li>
-            <li className='portfolio__item'>
-              <h3 className='portfolio__item-title'>
-                Психологічний центр The Soul
-              </h3>
-              <a href='' className='portfolio__link'>
-                <img src={soul} alt='' className='portfolio__image' />
-              </a>
-            </li>
-          </ul>
+          {isOnDesktop ? (
+            <ul className={css.list}>
+              <li className={css.item}>
+                <h3 className={css.title}>Лендінг "Miami Kings"</h3>
+                <a href='#' className={css.link}>
+                  <img src={miami} alt='' className={css.image} />
+                </a>
+              </li>
+              <li className={css.item}>
+                <h3 className={css.title}>
+                  Інтернет-магазин мобільних пристроїв
+                </h3>
+                <a href='#' className={css.link}>
+                  <img src={ecommerce} alt='' className={css.image} />
+                </a>
+              </li>
+              <li className={css.item}>
+                <h3 className={css.title}>Психологічний центр The Soul</h3>
+                <a href='#' className={css.link}>
+                  <img src={soul} alt='' className={css.image} />
+                </a>
+              </li>
+            </ul>
+          ) : (
+            <Carousel images={images} />
+          )}
         </div>
       </div>
     </section>
