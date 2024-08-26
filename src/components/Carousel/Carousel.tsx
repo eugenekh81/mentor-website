@@ -9,55 +9,90 @@ type Props = {
 };
 
 export const Carousel: React.FC<Props> = ({ images }) => {
-  const [currentImage, setCurrentImage] = useState<number>(0);
-  const [wrapperWidth, setWrapperWidth] = useState<number>(0);
-  const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const [visibleImages, setVisibleImages] = useState(images);
+  const [activeDot, setActiveDot] = useState<number>(1);
+  const [slideWidth, setSlideWidth] = useState<number>(0);
+  const [translateX, setTranslateX] = useState<number>(0);
 
+  const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
+
+  // setting slide width
   useEffect(() => {
     if (wrapper?.current) {
       const width = wrapper.current.getBoundingClientRect().width;
-      setWrapperWidth(width);
+      setSlideWidth(width);
     }
   }, []);
 
-  const shift = wrapperWidth * currentImage * -1;
+  const handlePrev = () => {
+    setTranslateX((prev) => prev + slideWidth);
+    setActiveDot((prev) => {
+      return prev === 1 ? visibleImages.length : prev - 1;
+    });
+  };
+
+  const handleNext = () => {
+    setTranslateX((prev) => prev - slideWidth);
+
+    setActiveDot((prev) => {
+      return prev === visibleImages.length ? 1 : prev + 1;
+    });
+  };
+
+  // setting shift of the sprite on current render
+  useEffect(() => {
+    if (stripe.current) {
+      stripe.current.style.transform = `translateX(${translateX}px)`;
+    }
+  }, [translateX]);
+
+  if (translateX > 0 && stripe.current) {
+    stripe.current.style.transition = 'none';
+
+    setVisibleImages((prev) => {
+      const [first, ...last] = prev;
+
+      return [...last, first];
+    });
+
+    setTranslateX(slideWidth * (visibleImages.length - 1) * -1);
+
+    setTimeout(() => {
+      if (stripe.current) {
+        stripe.current.style.transition = 'transform 0.3s ease-in-out';
+        setTranslateX(slideWidth * (visibleImages.length - 2) * -1);
+      }
+    }, 0);
+  }
+
+  console.log(visibleImages);
 
   return (
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
-        <div
-          className={css.stripe}
-          style={{ transform: `translateX(${shift}px)` }}
-        >
-          <div className={css.slideOuter}>
-            <div className={css.slideInner}>
-              <img src={images[0]} className={css.image} alt='1' />
+        <div className={css.stripe} ref={stripe}>
+          {visibleImages.map((image, i) => (
+            <div className={css.slideOuter}>
+              <div className={css.slideInner}>
+                <img src={image} className={css.image} alt={`Slide ${i}`} />
+              </div>
             </div>
-          </div>
-          <div className={css.slideOuter}>
-            <div className={css.slideInner}>
-              <img src={images[1]} className={css.image} alt='1' />
-            </div>
-          </div>
-          <div className={css.slideOuter}>
-            <div className={css.slideInner}>
-              <img src={images[2]} className={css.image} alt='1' />
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className={css.buttons}>
           <Button
             variant='noArrow'
             className={cn(css.button, css.prev)}
-            onClick={() => setCurrentImage(currentImage - 1)}
+            onClick={() => handlePrev()}
           >
             <SVGIcon className={css.icon} iconId='arrowLeft' />
           </Button>
           <Button
             variant='noArrow'
             className={cn(css.button, css.next)}
-            onClick={() => setCurrentImage(currentImage + 1)}
+            onClick={() => handleNext()}
           >
             <SVGIcon className={css.icon} iconId='arrowRight' />
           </Button>
@@ -68,7 +103,7 @@ export const Carousel: React.FC<Props> = ({ images }) => {
           <button
             type='button'
             key={image}
-            className={cn(css.dot, { [css.activeDot]: i === currentImage })}
+            className={cn(css.dot, { [css.activeDot]: i + 1 === activeDot })}
           ></button>
         ))}
       </div>
