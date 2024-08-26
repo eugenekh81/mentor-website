@@ -47,14 +47,15 @@
   color: #fff;
   font-size: 18px;
 
-  background-color: lightblue !important;
+  background-color: lightblue;
 
   transform: translateY(-50%);
 
   &:target,
   &:focus,
-  &:active {
-    background-color: lightblue !important;
+  &:active,
+  &:hover {
+    background-color: lightblue;
   }
 }
 
