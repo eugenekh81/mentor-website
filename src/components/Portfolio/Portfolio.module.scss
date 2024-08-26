@@ -25,10 +25,16 @@
 .title {
   width: 100%;
 }
-.image {
-  width: 290px;
-  object-fit: contain;
-  border-radius: 6px;
 
+.image {
+  border-radius: 8px;
+
+  width: 100%;
+  object-fit: contain;
   box-shadow: 0px 1px 7px 2px #00000040;
+
+  @include onDesktop--m {
+    width: 290px;
+    border-radius: 6px;
+  }
 }

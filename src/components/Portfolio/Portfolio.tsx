@@ -7,7 +7,23 @@ import css from './Portfolio.module.scss';
 import { useDesktop } from '../../hooks/useDesktop.ts';
 import { Carousel } from '../Carousel/Carousel.tsx';
 
-const images = [miami, soul, ecommerce];
+const items = [
+  {
+    id: 1,
+    title: 'Лендінг "Miami Kings',
+    imgUrl: miami,
+  },
+  {
+    id: 2,
+    title: 'Інтернет-магазин мобільних пристроїв',
+    imgUrl: ecommerce,
+  },
+  {
+    id: 3,
+    title: 'Психологічний центр The Soul',
+    imgUrl: soul,
+  },
+];
 
 export const Portfolio: React.FC = React.memo(() => {
   const isOnDesktop = useDesktop();
@@ -49,7 +65,18 @@ export const Portfolio: React.FC = React.memo(() => {
               </li>
             </ul>
           ) : (
-            <Carousel images={images} />
+            <Carousel>
+              {items.map((item, i) => (
+                <a href='#'>
+                  <h3>{item.title}</h3>
+                  <img
+                    src={item.imgUrl}
+                    className={css.image}
+                    alt={`Slide ${i}`}
+                  />
+                </a>
+              ))}
+            </Carousel>
           )}
         </div>
       </div>

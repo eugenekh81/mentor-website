@@ -1,15 +1,21 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, {
+  MutableRefObject,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import cn from 'classnames';
 import css from './Carousel.module.scss';
 import { SVGIcon } from '../SVGIcon';
 import { Button } from '../Button';
 
 type Props = {
-  images: string[];
+  children: ReactNode[];
 };
 
-export const Carousel: React.FC<Props> = ({ images }) => {
-  const [visibleImages, setVisibleImages] = useState(images);
+export const Carousel: React.FC<Props> = ({ children }) => {
+  const [visibleImages, setVisibleImages] = useState(children);
   const [activeDot, setActiveDot] = useState<number>(1);
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [translateX, setTranslateX] = useState<number>(0);
@@ -73,9 +79,9 @@ export const Carousel: React.FC<Props> = ({ images }) => {
     stripe.current.style.transition = 'none';
 
     setVisibleImages((prev) => {
-      const copy:string[] = [...prev];
+      const copy: ReactNode[] = [...prev];
 
-      const last: string = copy.pop() || '';
+      const last: ReactNode = copy.pop() || '';
 
       return [last, ...copy];
     });
@@ -96,11 +102,9 @@ export const Carousel: React.FC<Props> = ({ images }) => {
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
         <div className={css.stripe} ref={stripe}>
-          {visibleImages.map((image, i) => (
+          {visibleImages.map((child) => (
             <div className={css.slideOuter}>
-              <div className={css.slideInner}>
-                <img src={image} className={css.image} alt={`Slide ${i}`} />
-              </div>
+              <div className={css.slideInner}>{child}</div>
             </div>
           ))}
         </div>
@@ -123,10 +127,10 @@ export const Carousel: React.FC<Props> = ({ images }) => {
         </div>
       </div>
       <div className={css.dots}>
-        {images.map((image, i) => (
+        {visibleImages.map((image, i) => (
           <button
             type='button'
-            key={image}
+            key={i}
             className={cn(css.dot, { [css.activeDot]: i + 1 === activeDot })}
           ></button>
         ))}
