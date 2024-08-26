@@ -28,9 +28,7 @@
 .slideInner {
 }
 
-.button,
-.button:active,
-.button:target {
+.button {
   padding: 0;
   margin: 0;
 
@@ -49,14 +47,14 @@
   color: #fff;
   font-size: 18px;
 
-  background-color: lightblue;
+  background-color: lightblue !important;
 
   transform: translateY(-50%);
 
   &:target,
   &:focus,
   &:active {
-    background-color: lightblue;
+    background-color: lightblue !important;
   }
 }
 
