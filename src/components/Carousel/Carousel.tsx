@@ -76,7 +76,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
 
     setTimeout(() => {
       if (stripe.current) {
-        stripe.current.style.transition = 'transform 0.3s ease-in-out';
+        stripe.current.style.transition = 'transform 0.7s ease-in-out';
         setTranslateX(slideWidth * (visibleImages.length - 2) * -1);
       }
     }, 0);
@@ -100,7 +100,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
 
     setTimeout(() => {
       if (stripe.current) {
-        stripe.current.style.transition = 'transform 0.3s ease-in-out';
+        stripe.current.style.transition = 'transform 0.7s ease-in-out';
         setTranslateX(slideWidth * -1);
       }
     }, 0);
