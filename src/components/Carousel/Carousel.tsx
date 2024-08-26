@@ -73,9 +73,9 @@ export const Carousel: React.FC<Props> = ({ images }) => {
     stripe.current.style.transition = 'none';
 
     setVisibleImages((prev) => {
-      const copy: string[] = [...prev];
+      const copy:string[] = [...prev];
 
-      const last: string = copy.pop();
+      const last: string = copy.pop() || '';
 
       return [last, ...copy];
     });
