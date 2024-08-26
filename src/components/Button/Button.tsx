@@ -7,7 +7,7 @@ type Props = {
   variant?: string;
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  ref: MutableRefObject<HTMLButtonElement | null>;
+  ref?: MutableRefObject<HTMLButtonElement | null>;
 };
 
 export const Button: React.FC<Props> = ({

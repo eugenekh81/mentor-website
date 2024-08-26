@@ -34,8 +34,6 @@ export const Carousel: React.FC<Props> = ({ children }) => {
     console.log('first render');
   }, []);
 
-  const buttonNext: MutableRefObject<HTMLButtonElement | null> = useRef(null);
-
   useEffect(() => {
     console.log('second render');
     if (stripe.current && autoSlide) {
@@ -132,7 +130,6 @@ export const Carousel: React.FC<Props> = ({ children }) => {
             variant='noArrow'
             className={cn(css.button, css.next)}
             onClick={() => handleNext()}
-            ref={buttonNext}
           >
             <SVGIcon className={css.icon} iconId='arrowRight' />
           </Button>
