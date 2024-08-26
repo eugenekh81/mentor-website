@@ -66,6 +66,30 @@ export const Carousel: React.FC<Props> = ({ images }) => {
     }, 0);
   }
 
+  if (
+    translateX < slideWidth * (visibleImages.length - 1) * -1 &&
+    stripe.current
+  ) {
+    stripe.current.style.transition = 'none';
+
+    setVisibleImages((prev) => {
+      const copy: string[] = [...prev];
+
+      const last: string = copy.pop();
+
+      return [last, ...copy];
+    });
+
+    setTranslateX(0);
+
+    setTimeout(() => {
+      if (stripe.current) {
+        stripe.current.style.transition = 'transform 0.3s ease-in-out';
+        setTranslateX(slideWidth * -1);
+      }
+    }, 0);
+  }
+
   console.log(visibleImages);
 
   return (
