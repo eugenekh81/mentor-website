@@ -127,7 +127,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
         </div>
       </div>
       <div className={css.dots}>
-        {visibleImages.map((image, i) => (
+        {visibleImages.map((_, i) => (
           <button
             type='button'
             key={i}
