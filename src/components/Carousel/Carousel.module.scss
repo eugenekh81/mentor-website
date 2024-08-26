@@ -28,7 +28,9 @@
 .slideInner {
 }
 
-.button {
+.button,
+.button:active,
+.button:target {
   padding: 0;
   margin: 0;
 
