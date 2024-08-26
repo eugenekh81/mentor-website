@@ -48,12 +48,12 @@ export const Portfolio: React.FC = React.memo(() => {
             <ul className={css.list}>
               {items.map((item) => (
                 <li className={css.item} key={item.id}>
-                  <h3 className={css.title}>{item.title}</h3>
                   <a
                     href={item.externalUrl}
                     target='_blank'
                     className={css.link}
                   >
+                    <h3 className={css.title}>{item.title}</h3>
                     <img
                       src={item.imgUrl}
                       alt={`Slide ${item.id}`}
