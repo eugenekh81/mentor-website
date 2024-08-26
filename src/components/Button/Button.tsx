@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactNode } from 'react';
+import React, { MouseEventHandler, MutableRefObject, ReactNode } from 'react';
 import css from './Button.module.scss';
 import cn from 'classnames';
 
@@ -7,6 +7,7 @@ type Props = {
   variant?: string;
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  ref: MutableRefObject<HTMLButtonElement | null>;
 };
 
 export const Button: React.FC<Props> = ({
@@ -14,6 +15,7 @@ export const Button: React.FC<Props> = ({
   variant,
   className,
   onClick = () => {},
+  ref,
 }) => {
   return (
     <button
@@ -23,6 +25,7 @@ export const Button: React.FC<Props> = ({
         ['services__button']: variant === 'services',
       })}
       onClick={onClick}
+      ref={ref}
     >
       {children}
       {variant !== 'noArrow' && <span className={css.arrow}></span>}

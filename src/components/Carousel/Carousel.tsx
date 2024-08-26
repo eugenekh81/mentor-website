@@ -19,7 +19,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
   const [activeDot, setActiveDot] = useState<number>(1);
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [translateX, setTranslateX] = useState<number>(0);
-
+  const [autoSlide, setAutoSlide] = useState(false);
   const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
@@ -29,7 +29,19 @@ export const Carousel: React.FC<Props> = ({ children }) => {
       const width = wrapper.current.getBoundingClientRect().width;
       setSlideWidth(width);
     }
+
+    setAutoSlide(true);
+    console.log('first render');
   }, []);
+
+  const buttonNext: MutableRefObject<HTMLButtonElement | null> = useRef(null);
+
+  useEffect(() => {
+    console.log('second render');
+    if (stripe.current && autoSlide) {
+      setInterval(() => handleNext(), 2000);
+    }
+  }, [autoSlide]);
 
   const handlePrev = () => {
     setTranslateX((prev) => prev + slideWidth);
@@ -96,8 +108,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
     }, 0);
   }
 
-  console.log(visibleImages);
-
+  console.log(translateX, activeDot);
   return (
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
@@ -121,6 +132,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
             variant='noArrow'
             className={cn(css.button, css.next)}
             onClick={() => handleNext()}
+            ref={buttonNext}
           >
             <SVGIcon className={css.icon} iconId='arrowRight' />
           </Button>
