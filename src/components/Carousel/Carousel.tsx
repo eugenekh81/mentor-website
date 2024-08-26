@@ -31,11 +31,9 @@ export const Carousel: React.FC<Props> = ({ children }) => {
     }
 
     setAutoSlide(true);
-    console.log('first render');
   }, []);
 
   useEffect(() => {
-    console.log('second render');
     if (stripe.current && autoSlide) {
       setInterval(() => handleNext(), 2000);
     }
@@ -100,13 +98,12 @@ export const Carousel: React.FC<Props> = ({ children }) => {
 
     setTimeout(() => {
       if (stripe.current) {
-        stripe.current.style.transition = 'transform 0.7s ease-in-out';
+        stripe.current.style.transition = '';
         setTranslateX(slideWidth * -1);
       }
     }, 0);
   }
 
-  console.log(translateX, activeDot);
   return (
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
