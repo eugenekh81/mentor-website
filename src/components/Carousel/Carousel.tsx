@@ -35,7 +35,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     if (stripe.current && autoSlide) {
-      setInterval(() => handleNext(), 2000);
+      // setInterval(() => handleNext(), 2000);
     }
   }, [autoSlide]);
 
@@ -107,7 +107,15 @@ export const Carousel: React.FC<Props> = ({ children }) => {
   return (
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
-        <div className={css.stripe} ref={stripe}>
+        <div
+          className={css.stripe}
+          style={{ translate: `${-100 * activeDot}%`}}
+          ref={stripe}
+          onTouchStart={(e) => console.log(e)}
+          onTouchMove={(e) => {
+            console.log(e.touches[0].clientX);
+          }}
+        >
           {visibleImages.map((child) => (
             <div className={css.slideOuter}>
               <div className={css.slideInner}>{child}</div>
