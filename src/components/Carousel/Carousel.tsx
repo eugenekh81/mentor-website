@@ -1,4 +1,10 @@
-import React, { MutableRefObject, ReactNode, useRef, useState } from 'react';
+import React, {
+  MutableRefObject,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import cn from 'classnames';
 import css from './Carousel.module.scss';
 import { SVGIcon } from '../SVGIcon';
@@ -12,6 +18,20 @@ export const Carousel: React.FC<Props> = ({ children }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
   const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const nextBtn = document.querySelector(
+        `.${css.next}`
+      ) as HTMLButtonElement;
+
+      console.log(nextBtn, 'nextBtn');
+
+      if (nextBtn) {
+        setInterval(() => nextBtn.click(), 3000);
+      }
+    }, 500);
+  }, []);
 
   const handlePrev = () => {
     const btn: HTMLButtonElement | null = document.querySelector(

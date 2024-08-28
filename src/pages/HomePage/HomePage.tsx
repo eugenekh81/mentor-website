@@ -20,9 +20,9 @@ export const HomePage: React.FC = () => {
         const sectionStart = section.offsetTop;
         const sectionHeight = section.scrollHeight;
         const sectionEnd = sectionStart + sectionHeight;
-        console.log(
-          `Window scroll: ${window.scrollY}, Section offsetTop: ${sectionStart}, Section scroll height: ${sectionEnd}, Current section: ${section.id}`
-        );
+        // console.log(
+        //   `Window scroll: ${window.scrollY}, Section offsetTop: ${sectionStart}, Section scroll height: ${sectionEnd}, Current section: ${section.id}`
+        // );
 
         return (
           // window.scrollY >= section.offsetTop

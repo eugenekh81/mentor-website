@@ -16,8 +16,8 @@ export const About: React.FC = React.memo(() => {
           '.' + css.ctaButton
         );
         if (button) {
-          const buttonHeight = button?.getBoundingClientRect().height;
-          console.log(buttonHeight, '<<<<');
+          // const buttonHeight = button?.getBoundingClientRect().height;
+          // console.log(buttonHeight, '<<<<');
 
           const buttonPosition: number = button.offsetTop;
 
