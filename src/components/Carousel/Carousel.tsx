@@ -15,11 +15,11 @@ type Props = {
 };
 
 export const Carousel: React.FC<Props> = ({ children }) => {
-  const [visibleImages, setVisibleImages] = useState(children);
-  const [activeDot, setActiveDot] = useState<number>(1);
   const [slideWidth, setSlideWidth] = useState<number>(0);
-  const [translateX, setTranslateX] = useState<number>(0);
-  const [autoSlide, setAutoSlide] = useState(false);
+  const [activeDot, setActiveDot] = useState<number>(0);
+  const [visibleImages, setVisibleImages] = useState(children);
+  // const [translateX, setTranslateX] = useState<number>(0);
+  // const [autoSlide, setAutoSlide] = useState(false);
   const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
@@ -30,92 +30,95 @@ export const Carousel: React.FC<Props> = ({ children }) => {
       setSlideWidth(width);
     }
 
-    setAutoSlide(true);
+    // setAutoSlide(true);
   }, []);
 
-  useEffect(() => {
-    if (stripe.current && autoSlide) {
-      // setInterval(() => handleNext(), 2000);
-    }
-  }, [autoSlide]);
-
   const handlePrev = () => {
-    setTranslateX((prev) => prev + slideWidth);
-    setActiveDot((prev) => {
-      return prev === 1 ? visibleImages.length : prev - 1;
-    });
-  };
+    const btn: HTMLButtonElement | null = document.querySelector(
+      `.${css.prev}`
+    );
+    if (btn) btn.disabled = true;
 
-  const handleNext = () => {
-    setTranslateX((prev) => prev - slideWidth);
-
-    setActiveDot((prev) => {
-      return prev === visibleImages.length ? 1 : prev + 1;
-    });
-  };
-
-  // setting shift of the sprite on current render
-  useEffect(() => {
     if (stripe.current) {
-      stripe.current.style.transform = `translateX(${translateX}px)`;
+      stripe.current.style.translate = '0%';
+
+      setTimeout(() => {
+        if (stripe.current) {
+          const sprEl = document.querySelector(
+            `.${css.stripe}`
+          ) as HTMLDivElement;
+
+          const last = sprEl.children[2];
+          const first = sprEl.children[0] as HTMLDivElement;
+          console.log(last, first);
+
+          first.before(last);
+          sprEl.style.transition = 'none';
+          sprEl.style.translate = '-100%';
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        if (stripe.current) {
+          stripe.current.style.transition = 'translate 1s ease-in-out';
+          if (btn) btn.disabled = false;
+        }
+      }, 1100);
     }
-  }, [translateX]);
 
-  if (translateX > 0 && stripe.current) {
-    stripe.current.style.transition = 'none';
-
-    setVisibleImages((prev) => {
-      const [first, ...last] = prev;
-
-      return [...last, first];
-    });
-
-    setTranslateX(slideWidth * (visibleImages.length - 1) * -1);
-
-    setTimeout(() => {
-      if (stripe.current) {
-        stripe.current.style.transition = 'transform 0.7s ease-in-out';
-        setTranslateX(slideWidth * (visibleImages.length - 2) * -1);
+    setActiveDot((prev) => {
+      if (prev > 0) {
+        return prev - 1;
       }
-    }, 0);
-  }
 
-  if (
-    translateX < slideWidth * (visibleImages.length - 1) * -1 &&
-    stripe.current
-  ) {
-    stripe.current.style.transition = 'none';
-
-    setVisibleImages((prev) => {
-      const copy: ReactNode[] = [...prev];
-
-      const last: ReactNode = copy.pop() || '';
-
-      return [last, ...copy];
+      return 2;
     });
+  };
 
-    setTranslateX(0);
+  // HANDLENEXT DONE
+  const handleNext = () => {
+    const btn: HTMLButtonElement | null = document.querySelector(
+      `.${css.next}`
+    );
+    if (btn) btn.disabled = true;
 
-    setTimeout(() => {
-      if (stripe.current) {
-        stripe.current.style.transition = '';
-        setTranslateX(slideWidth * -1);
+    if (stripe.current) {
+      stripe.current.style.translate = '-200%';
+
+      setTimeout(() => {
+        if (stripe.current) {
+          const first = stripe.current.children[0] as HTMLDivElement;
+          const last = stripe.current.children[2] as HTMLDivElement;
+
+          last.after(first);
+          stripe.current.style.transition = 'none';
+          stripe.current.style.translate = '-100%';
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        if (stripe.current) {
+          stripe.current.style.transition = 'translate 1s ease-in-out';
+          if (btn) btn.disabled = false;
+        }
+      }, 1100);
+    }
+
+    setActiveDot((prev) => {
+      if (prev < 2) {
+        return prev + 1;
       }
-    }, 0);
-  }
+
+      return 0;
+    });
+  };
+
+  console.log(activeDot);
 
   return (
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
-        <div
-          className={css.stripe}
-          style={{ translate: `${-100 * activeDot}%`}}
-          ref={stripe}
-          onTouchStart={(e) => console.log(e)}
-          onTouchMove={(e) => {
-            console.log(e.touches[0].clientX);
-          }}
-        >
+        <div className={css.stripe} ref={stripe}>
           {visibleImages.map((child) => (
             <div className={css.slideOuter}>
               <div className={css.slideInner}>{child}</div>
@@ -145,7 +148,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
           <button
             type='button'
             key={i}
-            className={cn(css.dot, { [css.activeDot]: i + 1 === activeDot })}
+            className={cn(css.dot, { [css.activeDot]: i === activeDot })}
           ></button>
         ))}
       </div>

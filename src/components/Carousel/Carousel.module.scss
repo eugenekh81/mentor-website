@@ -5,27 +5,36 @@
 }
 
 .wrapper {
-  overflow: hidden;
-  width: 80%;
   margin: 0 auto;
-  border: 1px solid #ededf2;
+
+  width: 80%;
+
   border-radius: 12px;
+  border: 1px solid #ededf2;
+
+  overflow: hidden;
 }
 
 .stripe {
   display: flex;
-  transition: translate 0.7s ease-in-out;
+  translate: -100%;
+  transition: translate 1s ease-in-out;
 }
 
 .slideOuter {
   display: flex;
-  padding: 12px;
   border-radius: 12px;
   width: 100%;
   flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .slideInner {
+  padding: 12px;
+
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .button {
