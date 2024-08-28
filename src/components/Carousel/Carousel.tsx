@@ -1,10 +1,4 @@
-import React, {
-  MutableRefObject,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { MutableRefObject, ReactNode, useRef, useState } from 'react';
 import cn from 'classnames';
 import css from './Carousel.module.scss';
 import { SVGIcon } from '../SVGIcon';
@@ -15,23 +9,9 @@ type Props = {
 };
 
 export const Carousel: React.FC<Props> = ({ children }) => {
-  const [slideWidth, setSlideWidth] = useState<number>(0);
   const [activeDot, setActiveDot] = useState<number>(0);
-  const [visibleImages, setVisibleImages] = useState(children);
-  // const [translateX, setTranslateX] = useState<number>(0);
-  // const [autoSlide, setAutoSlide] = useState(false);
   const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
-
-  // setting slide width
-  useEffect(() => {
-    if (wrapper?.current) {
-      const width = wrapper.current.getBoundingClientRect().width;
-      setSlideWidth(width);
-    }
-
-    // setAutoSlide(true);
-  }, []);
 
   const handlePrev = () => {
     const btn: HTMLButtonElement | null = document.querySelector(
@@ -119,7 +99,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
     <div className={css.carousel}>
       <div className={css.wrapper} ref={wrapper}>
         <div className={css.stripe} ref={stripe}>
-          {visibleImages.map((child) => (
+          {children.map((child) => (
             <div className={css.slideOuter}>
               <div className={css.slideInner}>{child}</div>
             </div>
@@ -144,7 +124,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
         </div>
       </div>
       <div className={css.dots}>
-        {visibleImages.map((_, i) => (
+        {children.map((_, i) => (
           <button
             type='button'
             key={i}
