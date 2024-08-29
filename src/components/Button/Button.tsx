@@ -1,4 +1,11 @@
-import React, { ForwardedRef, MouseEventHandler, ReactNode } from 'react';
+import React, {
+  ForwardedRef,
+  ForwardRefExoticComponent,
+  MouseEventHandler,
+  MutableRefObject,
+  ReactNode,
+  RefAttributes,
+} from 'react';
 import css from './Button.module.scss';
 import cn from 'classnames';
 
@@ -7,10 +14,12 @@ type Props = {
   variant?: string;
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  // ref?: MutableRefObject<HTMLButtonElement | null>;
+  ref?: MutableRefObject<HTMLButtonElement | null>;
 };
 
-export const Button: React.FC<Props> = React.forwardRef(
+export const Button: ForwardRefExoticComponent<
+  Omit<Props, 'ref'> & RefAttributes<HTMLButtonElement>
+> = React.forwardRef(
   (
     { children, variant, className, onClick = () => {} },
     ref: ForwardedRef<HTMLButtonElement>
