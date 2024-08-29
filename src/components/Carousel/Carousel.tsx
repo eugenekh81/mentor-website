@@ -16,7 +16,6 @@ type Props = {
 
 export const Carousel: React.FC<Props> = ({ children }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
-  const wrapper: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   useEffect(() => {
@@ -117,7 +116,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
 
   return (
     <div className={css.carousel}>
-      <div className={css.wrapper} ref={wrapper}>
+      <div className={css.wrapper}>
         <div className={css.stripe} ref={stripe}>
           {children.map((child) => (
             <div className={css.slideOuter}>
