@@ -12,55 +12,58 @@ import { Button } from '../Button';
 
 type Props = {
   children: ReactNode[];
+  className: string;
 };
 
-export const Carousel: React.FC<Props> = ({ children }) => {
+export const Carousel: React.FC<Props> = ({ children, className }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const prev: MutableRefObject<HTMLButtonElement | null> = useRef(null);
+  const next: MutableRefObject<HTMLButtonElement | null> = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      const nextBtn = document.querySelector(
-        `.${css.next}`
-      ) as HTMLButtonElement;
-
-      console.log(nextBtn, 'nextBtn');
-
-      if (nextBtn) {
-        setInterval(() => nextBtn.click(), 3000);
-      }
-    }, 500);
+    // setTimeout(() => {
+    //   const nextBtn = document.querySelector(
+    //     `.${css.next}`
+    //   ) as HTMLButtonElement;
+    //   console.log(nextBtn, 'nextBtn');
+    //   if (nextBtn) {
+    //     setInterval(() => nextBtn.click(), 3000);
+    //   }
+    // }, 500);
   }, []);
 
   const handlePrev = () => {
-    const btn: HTMLButtonElement | null = document.querySelector(
-      `.${css.prev}`
-    );
-    if (btn) btn.disabled = true;
+    // const btn: HTMLButtonElement | null = document.querySelector(
+    //   `.${css.prev}`
+    // );
+    if (prev.current) prev.current.disabled = true;
+
+    console.log(prev.current);
 
     if (stripe.current) {
       stripe.current.style.translate = '0%';
 
       setTimeout(() => {
         if (stripe.current) {
-          const sprEl = document.querySelector(
-            `.${css.stripe}`
-          ) as HTMLDivElement;
+          // const sprEl = document.querySelector(
+          //   `.${css.className}`
+          // ) as HTMLDivElement;
 
-          const last = sprEl.children[2];
-          const first = sprEl.children[0] as HTMLDivElement;
+          const last = stripe.current.children[children.length - 1];
+          const first = stripe.current.children[0] as HTMLDivElement;
           console.log(last, first);
 
           first.before(last);
-          sprEl.style.transition = 'none';
-          sprEl.style.translate = '-100%';
+          stripe.current.style.transition = 'none';
+          stripe.current.style.translate = '-100%';
         }
       }, 1000);
 
       setTimeout(() => {
         if (stripe.current) {
           stripe.current.style.transition = 'translate 1s ease-in-out';
-          if (btn) btn.disabled = false;
+          if (prev.current) prev.current.disabled = false;
         }
       }, 1100);
     }
@@ -70,16 +73,16 @@ export const Carousel: React.FC<Props> = ({ children }) => {
         return prev - 1;
       }
 
-      return 2;
+      return children.length - 1;
     });
   };
 
   // HANDLENEXT DONE
   const handleNext = () => {
-    const btn: HTMLButtonElement | null = document.querySelector(
-      `.${css.next}`
-    );
-    if (btn) btn.disabled = true;
+    // const btn: HTMLButtonElement | null = document.querySelector(
+    //   `.${css.next}`
+    // );
+    if (next.current) next.current.disabled = true;
 
     if (stripe.current) {
       stripe.current.style.translate = '-200%';
@@ -87,7 +90,9 @@ export const Carousel: React.FC<Props> = ({ children }) => {
       setTimeout(() => {
         if (stripe.current) {
           const first = stripe.current.children[0] as HTMLDivElement;
-          const last = stripe.current.children[2] as HTMLDivElement;
+          const last = stripe.current.children[
+            children.length - 1
+          ] as HTMLDivElement;
 
           last.after(first);
           stripe.current.style.transition = 'none';
@@ -98,13 +103,13 @@ export const Carousel: React.FC<Props> = ({ children }) => {
       setTimeout(() => {
         if (stripe.current) {
           stripe.current.style.transition = 'translate 1s ease-in-out';
-          if (btn) btn.disabled = false;
+          if (next.current) next.current.disabled = false;
         }
       }, 1100);
     }
 
     setActiveDot((prev) => {
-      if (prev < 2) {
+      if (prev < children.length - 1) {
         return prev + 1;
       }
 
@@ -112,14 +117,12 @@ export const Carousel: React.FC<Props> = ({ children }) => {
     });
   };
 
-  console.log(activeDot);
-
   return (
     <div className={css.carousel}>
       <div className={css.wrapper}>
-        <div className={css.stripe} ref={stripe}>
-          {children.map((child) => (
-            <div className={css.slideOuter}>
+        <div className={cn(css.stripe, className)} ref={stripe}>
+          {children.map((child, i) => (
+            <div className={css.slideOuter} key={`Item-${i}`}>
               <div className={css.slideInner}>{child}</div>
             </div>
           ))}
@@ -130,6 +133,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
             variant='noArrow'
             className={cn(css.button, css.prev)}
             onClick={() => handlePrev()}
+            ref={prev}
           >
             <SVGIcon className={css.icon} iconId='arrowLeft' />
           </Button>
@@ -137,6 +141,7 @@ export const Carousel: React.FC<Props> = ({ children }) => {
             variant='noArrow'
             className={cn(css.button, css.next)}
             onClick={() => handleNext()}
+            ref={next}
           >
             <SVGIcon className={css.icon} iconId='arrowRight' />
           </Button>

@@ -1,4 +1,5 @@
-@import '../../assets/styles/utils/_vars.scss';
+@import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 
 .review {
   box-sizing: border-box;
@@ -7,7 +8,6 @@
   display: flex;
   flex-direction: column;
 
-  width: calc((100% - 30px * 2) / 3);
   border-radius: 12px;
   // box-shadow: 0 6px 30px 1px rgba(0, 0, 0, 0.25);
   box-shadow: $shadow--card;
@@ -15,6 +15,10 @@
   background-image: url('../../assets/images/icons/quote.svg');
   background-repeat: no-repeat;
   background-position: 95% 5%;
+
+  @include onDesktop--m {
+    width: calc((100% - 30px * 2) / 3);
+  }
 
   &__header {
     margin: 0 0 8px;

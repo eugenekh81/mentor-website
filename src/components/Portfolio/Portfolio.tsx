@@ -10,16 +10,17 @@ import { Carousel } from '../Carousel/Carousel.tsx';
 const items = [
   {
     id: 1,
-    title: 'Лендінг "Miami Kings',
-    imgUrl: miami,
-    externalUrl: 'https://eugenekh81.github.io/layout_miami/',
-  },
-  {
-    id: 2,
     title: 'Інтернет-магазин',
     imgUrl: ecommerce,
     externalUrl: 'https://eugenekh81.github.io/react_phone-catalog/',
   },
+  {
+    id: 2,
+    title: 'Лендінг "Miami Kings',
+    imgUrl: miami,
+    externalUrl: 'https://eugenekh81.github.io/layout_miami/',
+  },
+
   {
     id: 3,
     title: 'Психологічний центр The Soul',
@@ -64,9 +65,14 @@ export const Portfolio: React.FC = React.memo(() => {
               ))}
             </ul>
           ) : (
-            <Carousel>
+            <Carousel className={css.portfolio}>
               {items.map((item, i) => (
-                <a href={item.externalUrl} className={css.link} target='_blank'>
+                <a
+                  key={item.id}
+                  href={item.externalUrl}
+                  className={css.link}
+                  target='_blank'
+                >
                   <h3 className={css.title}>{item.title}</h3>
                   <img
                     src={item.imgUrl}
