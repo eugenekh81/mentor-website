@@ -41,8 +41,6 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
   const enableButtons = () => {
     if (prev.current) prev.current.disabled = false;
     if (next.current) next.current.disabled = false;
-
-    console.log(prev.current, next.current);
   };
 
   const disableTransition = () => {
@@ -62,10 +60,6 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
 
       setTimeout(() => {
         if (stripe.current) {
-          // const sprEl = document.querySelector(
-          //   `.${css.className}`
-          // ) as HTMLDivElement;
-
           const last = stripe.current.children[children.length - 1];
           const first = stripe.current.children[0] as HTMLDivElement;
           console.log(last, first);
