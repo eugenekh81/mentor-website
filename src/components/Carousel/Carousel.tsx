@@ -33,14 +33,29 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
     // }, 500);
   }, []);
 
-  const handlePrev = () => {
-    // const btn: HTMLButtonElement | null = document.querySelector(
-    //   `.${css.prev}`
-    // );
+  const disableButtons = () => {
     if (prev.current) prev.current.disabled = true;
     if (next.current) next.current.disabled = true;
+  };
 
-    console.log(prev.current);
+  const enableButtons = () => {
+    if (prev.current) prev.current.disabled = false;
+    if (next.current) next.current.disabled = false;
+
+    console.log(prev.current, next.current);
+  };
+
+  const disableTransition = () => {
+    if (stripe.current) stripe.current.style.transition = 'none';
+  };
+
+  const enableTransition = () => {
+    if (stripe.current)
+      stripe.current.style.transition = 'translate 1s ease-in-out';
+  };
+
+  const handlePrev = () => {
+    disableButtons();
 
     if (stripe.current) {
       stripe.current.style.translate = '0%';
@@ -56,17 +71,14 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
           console.log(last, first);
 
           first.before(last);
-          stripe.current.style.transition = 'none';
+          disableTransition();
           stripe.current.style.translate = '-100%';
         }
       }, 1000);
 
       setTimeout(() => {
-        if (stripe.current) {
-          stripe.current.style.transition = 'translate 1s ease-in-out';
-          if (prev.current) prev.current.disabled = false;
-          if (next.current) next.current.disabled = false;
-        }
+        enableTransition();
+        enableButtons();
       }, 1100);
     }
 
@@ -81,11 +93,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
 
   // HANDLENEXT DONE
   const handleNext = () => {
-    // const btn: HTMLButtonElement | null = document.querySelector(
-    //   `.${css.next}`
-    // );
-    if (next.current) next.current.disabled = true;
-    if (prev.current) prev.current.disabled = true;
+    disableButtons();
 
     if (stripe.current) {
       stripe.current.style.translate = '-200%';
@@ -98,17 +106,14 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
           ] as HTMLDivElement;
 
           last.after(first);
-          stripe.current.style.transition = 'none';
+          disableTransition();
           stripe.current.style.translate = '-100%';
         }
       }, 1000);
 
       setTimeout(() => {
-        if (stripe.current) {
-          stripe.current.style.transition = 'translate 1s ease-in-out';
-          if (prev.current) prev.current.disabled = false;
-          if (next.current) next.current.disabled = false;
-        }
+        enableTransition();
+        enableButtons();
       }, 1100);
     }
 
