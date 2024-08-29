@@ -12,7 +12,7 @@ import { Button } from '../Button';
 
 type Props = {
   children: ReactNode[];
-  className: string;
+  className?: string;
 };
 
 export const Carousel: React.FC<Props> = ({ children, className }) => {
