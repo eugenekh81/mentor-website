@@ -38,6 +38,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
     //   `.${css.prev}`
     // );
     if (prev.current) prev.current.disabled = true;
+    if (next.current) next.current.disabled = true;
 
     console.log(prev.current);
 
@@ -64,6 +65,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
         if (stripe.current) {
           stripe.current.style.transition = 'translate 1s ease-in-out';
           if (prev.current) prev.current.disabled = false;
+          if (next.current) next.current.disabled = false;
         }
       }, 1100);
     }
@@ -83,6 +85,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
     //   `.${css.next}`
     // );
     if (next.current) next.current.disabled = true;
+    if (prev.current) prev.current.disabled = true;
 
     if (stripe.current) {
       stripe.current.style.translate = '-200%';
@@ -103,6 +106,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
       setTimeout(() => {
         if (stripe.current) {
           stripe.current.style.transition = 'translate 1s ease-in-out';
+          if (prev.current) prev.current.disabled = false;
           if (next.current) next.current.disabled = false;
         }
       }, 1100);

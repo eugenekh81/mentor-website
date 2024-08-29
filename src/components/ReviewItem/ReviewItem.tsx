@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReviewStars } from '../ReviewStars';
-import './ReviewItem.scss';
+import cn from 'classnames';
+import css from'./ReviewItem.module.scss';
 
 type Props = {
   name: string;
@@ -9,31 +10,31 @@ type Props = {
   avatarSrc: string | null;
 };
 
-export const ReviewItem: React.FC<Props> = ({
+export const ReviewItem: React.FC<Props> = React.memo(({
   name,
   reviewDate,
   reviewText,
   avatarSrc,
 }) => {
   return (
-    <li className='reviews__item review'>
-      <div className='review__header'>
-        <div className='review__avatar-container'>
-          <img src={avatarSrc || ''} alt='' className='review__avatar' />
+    <article className={cn('reviews__item', css.review)}>
+      <div className={css.header}>
+        <div className={css.avatarContainer}>
+          <img src={avatarSrc || ''} alt='' className={css.avatar} />
         </div>
 
-        <div className='review__info'>
-          <h3 className='review__name'>{name}</h3>
-          <div className='review__rating'>
+        <div className={css.info}>
+          <h3 className={css.name}>{name}</h3>
+          <div className={css.info}>
             <ReviewStars />
-            <div className='review__date'>{reviewDate}</div>
+            <div className={css.date}>{reviewDate}</div>
           </div>
         </div>
       </div>
       <p
-        className='review__text'
+        className={css.text}
         dangerouslySetInnerHTML={{ __html: reviewText }}
       />
-    </li>
+    </article>
   );
-};
+});
