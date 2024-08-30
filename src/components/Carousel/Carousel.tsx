@@ -17,6 +17,7 @@ type Props = {
 
 export const Carousel: React.FC<Props> = ({ children, className }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
+  const [transitionValue, setTransitionValue] = useState('none');
   const stripe: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const prev: MutableRefObject<HTMLButtonElement | null> = useRef(null);
   const next: MutableRefObject<HTMLButtonElement | null> = useRef(null);
@@ -31,6 +32,10 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
     //     setInterval(() => nextBtn.click(), 3000);
     //   }
     // }, 500);
+
+    if (stripe.current) {
+      setTransitionValue(getComputedStyle(stripe.current).transition);
+    }
   }, []);
 
   const disableButtons = () => {
@@ -48,8 +53,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
   };
 
   const enableTransition = () => {
-    if (stripe.current)
-      stripe.current.style.transition = 'translate 1s ease-in-out';
+    if (stripe.current) stripe.current.style.transition = transitionValue;
   };
 
   const handlePrev = () => {
@@ -62,7 +66,6 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
         if (stripe.current) {
           const last = stripe.current.children[children.length - 1];
           const first = stripe.current.children[0] as HTMLDivElement;
-          console.log(last, first);
 
           first.before(last);
           disableTransition();
