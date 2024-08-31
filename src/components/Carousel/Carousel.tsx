@@ -1,6 +1,8 @@
 import React, {
   MutableRefObject,
   ReactNode,
+  TouchEvent,
+  TouchEventHandler,
   useEffect,
   useRef,
   useState,
@@ -123,10 +125,24 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
     });
   };
 
+  //   const handleMove = (e: TouchEvent<HTMLDivElement>) => {
+  //     console.log(e.touches[0].clientX);
+  //     if (stripe.current) {
+  //       const currentPosition = getComputedStyle(stripe.current).translate;
+  // console.log(currentPosition);
+
+  //       stripe.current.style.translate = `calc(${currentPosition} - ${e.touches[0].clientX}px)`;
+  //     }
+  //   };
+
   return (
     <div className={css.carousel}>
       <div className={css.wrapper}>
-        <div className={cn(css.stripe, className)} ref={stripe}>
+        <div
+          className={cn(css.stripe, className)}
+          ref={stripe}
+          // onTouchMove={handleMove}
+        >
           {children.map((child, i) => (
             <div className={css.slideOuter} key={`Item-${i}`}>
               <div className={css.slideInner}>{child}</div>
