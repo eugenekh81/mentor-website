@@ -1,8 +1,6 @@
 import React, {
   MutableRefObject,
   ReactNode,
-  TouchEvent,
-  TouchEventHandler,
   useEffect,
   useRef,
   useState,

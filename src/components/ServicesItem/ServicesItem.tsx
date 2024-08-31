@@ -1,6 +1,5 @@
 import { Button } from '../Button';
 import css from './ServicesItem.module.scss';
-import cn from 'classnames';
 
 interface Problem {
   id: number;
@@ -41,7 +40,7 @@ export const ServicesItem: React.FC<Props> = ({
         </ul>
       </div>
 
-      <Button variant='services' className={cn(css.button, 'services__button')}>
+      <Button variant='noArrow' className={css.button}>
         Безкоштовний урок
       </Button>
     </li>
