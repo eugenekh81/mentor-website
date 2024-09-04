@@ -2,8 +2,7 @@ import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
-import './FAQItem.scss';
-import sprite from '../../assets/images/icons/sprite.svg';
+import css from './FAQItem.module.scss';
 import { SVGIcon } from '../SVGIcon/SVGIcon';
 
 type Props = {
@@ -30,24 +29,21 @@ export const FAQItem: React.FC<Props> = ({
 
   return (
     <li
-      className='FAQ__item'
+      className={css.item}
       onClick={() => {
         setSelectedId(selectedId === id ? 0 : id);
       }}
     >
       <h3
-        className={classNames('FAQ__question', {
-          'FAQ__question--open': id === selectedId,
+        className={classNames(css.question, {
+          [css.question_open]: id === selectedId,
         })}
       >
         {q}
-        <svg className='FAQ__icon'>
-          <use href={`${sprite}#`}></use>
-        </svg>
-        <SVGIcon className='FAQ__icon' iconId='plus-icon' />
+        <SVGIcon className={css.icon} iconId='plus-icon' />
       </h3>
       <p
-        className='FAQ__answer'
+        className={css.answer}
         style={{ height }}
         ref={content}
         dangerouslySetInnerHTML={{ __html: a }}

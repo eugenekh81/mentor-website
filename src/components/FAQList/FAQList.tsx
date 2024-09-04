@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { faqs } from './FAQs';
 import { FAQItem } from '../FAQItem';
+import css from './FAQList.module.scss';
 
 export const FAQList: React.FC = () => {
   const [selectedId, setSelectedId] = useState<number>(0);
@@ -9,7 +10,7 @@ export const FAQList: React.FC = () => {
     setSelectedId((prev) => (prev === id ? 0 : id));
   };
   return (
-    <ul className='FAQ__list'>
+    <ul className={css.list}>
       {faqs.map((faq) => (
         <FAQItem
           key={faq.id}
