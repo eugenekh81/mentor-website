@@ -45,8 +45,8 @@
   position: absolute;
   top: 50%;
 
-  height: 24px;
-  width: 24px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
 
   display: flex;
@@ -57,9 +57,10 @@
   color: #fff;
   font-size: 18px;
 
-  background-color: lightblue;
-
   transform: translateY(-50%);
+
+  transition: all 0.15s ease-in-out;
+  background-color: lightblue;
 
   &:target,
   &:focus,
@@ -67,14 +68,18 @@
   &:hover {
     background-color: lightblue;
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .prev {
-  left: calc((36px - 24px) / 2);
+  left: calc((32px - 48px) / 2);
 }
 
 .next {
-  right: calc((36px - 24px) / 2);
+  right: calc((32px - 48px) / 2);
 }
 
 .icon {
