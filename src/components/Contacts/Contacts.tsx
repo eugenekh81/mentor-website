@@ -1,11 +1,13 @@
 import cn from 'classnames';
-import sprite from '../../assets/images/icons/sprite.svg';
 
 import css from './Contacts.module.scss';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
+import { SVGIcon } from '../SVGIcon';
+import { useDesktop } from '../../hooks/useDesktop';
 
 export const Contacts = () => {
+  const isOnDesktop = useDesktop();
   return (
     <section className={cn('section', css.contacts)} id='contacts'>
       <div className='container'>
@@ -19,16 +21,13 @@ export const Contacts = () => {
                 Телеграм, якшо у тебе залишились питання
               </p>
               <div className={css.buttons}>
-                  <Button>Безкоштовний урок</Button>
+                <Button variant={!isOnDesktop ? 'small' : ''}>
+                  Безкоштовний урок
+                </Button>
 
-                  <a
-                    href='https://t.me/js_mentor'
-                    target='_blank'
-                  >
-                    <svg className={css.icon}>
-                      <use href={`${sprite}#telegram`}></use>
-                    </svg>
-                  </a>
+                <a href='https://t.me/js_mentor' target='_blank'>
+                  <SVGIcon iconId='telegram' className={css.icon} />
+                </a>
               </div>
             </div>
           </div>

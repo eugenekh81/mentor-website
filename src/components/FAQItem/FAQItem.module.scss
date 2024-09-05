@@ -1,4 +1,5 @@
 @import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
 
 .item {
   position: relative;
@@ -28,10 +29,15 @@
   position: relative;
   text-align: left;
 
-  font-size: 22px;
   font-weight: 500;
-
   border-radius: 30px;
+
+  width: 95%;
+
+  @include onDesktop--m {
+    font-weight: 500;
+    font-size: 22px;
+  }
 
   &_open .icon {
     transform: translateY(-50%) rotate(-45deg);
@@ -50,7 +56,11 @@
 
   text-align: justify;
 
-  font-size: 18px;
+  font-size: 14px;
+
+  @include onDesktop--m {
+    font-size: 18px;
+  }
 
   &--open {
     height: 100%;
@@ -60,26 +70,27 @@
 .icon {
   padding: 4px;
   position: absolute;
-  font-weight: 400;
+  top: 50%;
+
+  right: -16px;
+
+  @include onDesktop--m {
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   height: 28px;
   width: 28px;
-  stroke-width: 2px;
 
-  /*     background-image: url('../../assets/images/icons/plus.svg');
-    background-size: 18px;
-    background-position: center;
-    background-repeat: no-repeat; */
+  stroke-width: 2px;
+  font-weight: 400;
 
   color: #b3b3b3;
   border: 1px solid #b3b3b3;
   border-radius: 50%;
 
-  top: 50%;
   transform: translateY(-50%) rotate(0deg);
   transition: all 0.3s ease;
-  right: 20px;
 }
