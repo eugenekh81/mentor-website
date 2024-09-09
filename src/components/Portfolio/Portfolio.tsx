@@ -4,7 +4,6 @@ import miami from '../../assets/images/portfolio/miami.jpg';
 import soul from '../../assets/images/portfolio/the-soul.jpg';
 import ecommerce from '../../assets/images/portfolio/ecommerce.jpg';
 import css from './Portfolio.module.scss';
-import { useDesktop } from '../../hooks/useDesktop.ts';
 import { Carousel } from '../Carousel/Carousel.tsx';
 
 const items = [
@@ -30,9 +29,6 @@ const items = [
 ];
 
 export const Portfolio: React.FC = React.memo(() => {
-  const isOnDesktop = useDesktop();
-  console.log(isOnDesktop);
-
   return (
     <section className={cn('section', css.portfolio)} id='portfolio'>
       <div className='container'>
@@ -45,44 +41,37 @@ export const Portfolio: React.FC = React.memo(() => {
             Гітхабі
           </p>
 
-          {isOnDesktop ? (
-            <ul className={css.list}>
-              {items.map((item) => (
-                <li className={css.item} key={item.id}>
-                  <a
-                    href={item.externalUrl}
-                    target='_blank'
-                    className={css.link}
-                  >
-                    <h3 className={css.title}>{item.title}</h3>
-                    <img
-                      src={item.imgUrl}
-                      alt={`Slide ${item.id}`}
-                      className={css.image}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <Carousel className={css.portfolio}>
-              {items.map((item, i) => (
-                <a
-                  key={item.id}
-                  href={item.externalUrl}
-                  className={css.link}
-                  target='_blank'
-                >
+          <ul className={css.list}>
+            {items.map((item) => (
+              <li className={css.item} key={item.id}>
+                <a href={item.externalUrl} target='_blank' className={css.link}>
                   <h3 className={css.title}>{item.title}</h3>
                   <img
                     src={item.imgUrl}
+                    alt={`Slide ${item.id}`}
                     className={css.image}
-                    alt={`Slide ${i}`}
                   />
                 </a>
-              ))}
-            </Carousel>
-          )}
+              </li>
+            ))}
+          </ul>
+          <Carousel className={css.portfolio}>
+            {items.map((item, i) => (
+              <a
+                key={item.id}
+                href={item.externalUrl}
+                className={css.link}
+                target='_blank'
+              >
+                <h3 className={css.title}>{item.title}</h3>
+                <img
+                  src={item.imgUrl}
+                  className={css.image}
+                  alt={`Slide ${i}`}
+                />
+              </a>
+            ))}
+          </Carousel>
         </div>
       </div>
     </section>

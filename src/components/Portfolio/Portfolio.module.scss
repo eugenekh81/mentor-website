@@ -2,11 +2,18 @@
 @import '../../assets/styles/utils/mixins';
 
 .portfolio {
+  display: block;
+
+  @include onDesktop--m {
+  }
 }
 
 .list {
-  display: flex;
-  gap: 50px;
+  display: none;
+  @include onDesktop--m {
+    display: flex;
+    gap: 50px;
+  }
 }
 
 .item {

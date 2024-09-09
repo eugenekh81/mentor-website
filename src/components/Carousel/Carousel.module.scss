@@ -1,8 +1,13 @@
 @import '../../assets/styles/utils/vars';
 
 .carousel {
+
   position: relative;
   user-select: none;
+
+  @include onDesktop--m {
+    display: none;
+  }
 }
 
 .wrapper {

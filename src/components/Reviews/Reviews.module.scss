@@ -1,0 +1,19 @@
+@import '../../assets/styles/utils/mixins';
+
+.reviews {
+}
+
+.list {
+  display: none;
+
+  @include onDesktop--m {
+    display: flex;
+  }
+
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 30px;
+  height: 908px;
+}
