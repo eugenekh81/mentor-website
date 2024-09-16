@@ -29,7 +29,10 @@ export const ServicesItem: React.FC<Props> = ({
         {title}
       </h3>
       <div className={css.content}>
-        <p className={css.description}>{description}</p>
+        <p
+          className={css.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
         <ul className={css.problems}>
           {problems.map((p) => (

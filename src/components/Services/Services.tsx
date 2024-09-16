@@ -14,7 +14,7 @@ export const servicesData = [
     id: 1,
     imgUrl: girl,
     title: 'Студентів курсів',
-    description: 'якщо ти навчаєшся на курсах веб-розробки та:',
+    description: 'якщо ти навчаєшся на курсах веб&#8209;розробки та:',
     problems: [
       { id: 11, problem: 'не встигаєш за програмою' },
       { id: 21, problem: 'маєш прогалини в знаннях' },
@@ -26,7 +26,7 @@ export const servicesData = [
     id: 2,
     imgUrl: beginner,
     title: 'Початківців',
-    description: 'якщо ти хочеш почати вивчати веб-розробку, але ти:',
+    description: 'якщо ти хочеш почати вивчати веб&#8209;розробку, але ти:',
     problems: [
       { id: 12, problem: 'не впевнений, чи це “твоє”' },
       { id: 22, problem: 'не хочеш купляти курс' },
