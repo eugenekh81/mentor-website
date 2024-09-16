@@ -15,7 +15,7 @@ import React, { useCallback, useEffect, useState, lazy } from 'react';
 
 import { Banner } from '../../components/Banner/Banner';
 import Header from '../../components/Header/Header';
-import { Portfolio } from 'src/components/Portfolio';
+import { Portfolio } from '../../components/Portfolio';
 
 const Services = lazy(() =>
   import('../../components/Services').then(({ Services }) => ({
