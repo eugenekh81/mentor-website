@@ -13,7 +13,7 @@
 .wrapper {
   margin: 0 auto;
 
-  width: 80%;
+  width: 100%;
 
   border-radius: 12px;
   // border: 1px solid #ededf2;
@@ -80,11 +80,11 @@
 }
 
 .prev {
-  left: calc((32px - 48px) / 2);
+  left: calc((32px - 60px) / 2);
 }
 
 .next {
-  right: calc((32px - 48px) / 2);
+  right: calc((32px - 60px) / 2);
 }
 
 .icon {
