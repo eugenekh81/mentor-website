@@ -24,8 +24,8 @@
   justify-content: center;
   align-items: center;
 
-  // opacity: 0;
-  // transform: translateY(50%);
+  opacity: 0;
+  transform: translateY(70%);
   transition: all 1s ease;
 
   &:nth-child(1) {
@@ -88,9 +88,7 @@
   .appear:nth-child(#{$i}) {
     opacity: 1;
     transform: translateY(0);
-    @include onDesktop--m {
-      transition-delay: calc(100ms * #{$i});
-    }
+    transition-delay: calc(100ms * #{$i});
   }
 }
 

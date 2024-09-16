@@ -1,53 +1,17 @@
-import React, { useCallback, useEffect, useState, lazy } from 'react';
-
-/* #region LAZY IMPORTS */
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { Banner } from '../../components/Banner/Banner';
 import { Header } from '../../components/Header';
 import { Portfolio } from '../../components/Portfolio';
-
-const Services = lazy(() =>
-  import('../../components/Services').then(({ Services }) => ({
-    default: Services,
-  }))
-);
-
-const Results = lazy(() =>
-  import('../../components/Results').then(({ Results }) => ({
-    default: Results,
-  }))
-);
-
-const Products = lazy(() =>
-  import('../../components/Products').then(({ Products }) => ({
-    default: Products,
-  }))
-);
-
-const About = lazy(() =>
-  import('../../components/About').then(({ About }) => ({
-    default: About,
-  }))
-);
-
-const Reviews = lazy(() =>
-  import('../../components/Reviews').then(({ Reviews }) => ({
-    default: Reviews,
-  }))
-);
-
-const Contacts = lazy(() =>
-  import('../../components/Contacts').then(({ Contacts }) => ({
-    default: Contacts,
-  }))
-);
-
-const FAQ = lazy(() =>
-  import('../../components/FAQ').then(({ FAQ }) => ({
-    default: FAQ,
-  }))
-);
-/* #endregion */
+import {
+  Services,
+  Results,
+  Products,
+  About,
+  Reviews,
+  FAQ,
+  Contacts,
+} from './LazyImports';
 
 export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);

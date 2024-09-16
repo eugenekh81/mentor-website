@@ -9,7 +9,7 @@ import girl from '../../assets/images/services/girl.gif';
 
 import css from './Services.module.scss';
 
-export const servicesData = [
+const servicesData = [
   {
     id: 1,
     imgUrl: girl,
