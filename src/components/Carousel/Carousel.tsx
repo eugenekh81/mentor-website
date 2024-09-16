@@ -15,6 +15,8 @@ type Props = {
   className?: string;
 };
 
+const slideTime = 500;
+
 export const Carousel: React.FC<Props> = ({ children, className }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
   const [transitionValue, setTransitionValue] = useState('none');
@@ -23,16 +25,6 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
   const next: MutableRefObject<HTMLButtonElement | null> = useRef(null);
 
   useEffect(() => {
-    // setTimeout(() => {
-    //   const nextBtn = document.querySelector(
-    //     `.${css.next}`
-    //   ) as HTMLButtonElement;
-    //   console.log(nextBtn, 'nextBtn');
-    //   if (nextBtn) {
-    //     setInterval(() => nextBtn.click(), 3000);
-    //   }
-    // }, 500);
-
     if (stripe.current) {
       setTransitionValue(getComputedStyle(stripe.current).transition);
     }
@@ -71,12 +63,12 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
           disableTransition();
           stripe.current.style.translate = '-100%';
         }
-      }, 1000);
+      }, slideTime);
 
       setTimeout(() => {
         enableTransition();
         enableButtons();
-      }, 1100);
+      }, slideTime * 1.1);
     }
 
     setActiveDot((prev) => {
@@ -106,12 +98,12 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
           disableTransition();
           stripe.current.style.translate = '-100%';
         }
-      }, 1000);
+      }, slideTime);
 
       setTimeout(() => {
         enableTransition();
         enableButtons();
-      }, 1100);
+      }, slideTime * 1.1);
     }
 
     setActiveDot((prev) => {
@@ -122,16 +114,6 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
       return 0;
     });
   };
-
-  //   const handleMove = (e: TouchEvent<HTMLDivElement>) => {
-  //     console.log(e.touches[0].clientX);
-  //     if (stripe.current) {
-  //       const currentPosition = getComputedStyle(stripe.current).translate;
-  // console.log(currentPosition);
-
-  //       stripe.current.style.translate = `calc(${currentPosition} - ${e.touches[0].clientX}px)`;
-  //     }
-  //   };
 
   return (
     <div className={css.carousel}>
