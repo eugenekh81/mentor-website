@@ -25,3 +25,9 @@
     transform: rotateZ(60deg) translate(2em, -9em);
   }
 }
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}

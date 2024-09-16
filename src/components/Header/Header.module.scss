@@ -1,0 +1,92 @@
+@import '../../assets/styles/utils/vars';
+@import '../../assets/styles/utils/mixins';
+@import '../../assets/styles/utils/animations';
+
+.header {
+  position: sticky;
+
+  top: 0;
+  z-index: 10;
+  background-color: #ffffffbc;
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+
+  opacity: 0;
+
+  animation: appear 1s;
+  animation-fill-mode: forwards;
+}
+
+.content {
+  display: flex;
+  height: 50px;
+
+  @include onDesktop--m {
+    height: 80px;
+  }
+}
+
+.headerLogo {
+  margin: 0;
+  @include onDesktop--m {
+    margin-right: 90px;
+  }
+}
+
+.buttons {
+  margin: 0;
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.9s ease;
+
+  &:hover {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+}
+
+.button {
+  transition: all 0.9s ease;
+  align-self: center;
+
+  &:hover {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  width: 40px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+
+  @include onDesktop--m {
+    height: 60px;
+    width: 60px;
+  }
+  align-self: center;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}
