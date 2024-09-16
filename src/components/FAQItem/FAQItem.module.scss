@@ -14,12 +14,13 @@
   &:last-child {
     border-bottom: 1px solid #b3b3b3;
   }
-
-  &:hover svg {
-    background-color: $color--dark-violet;
-    color: #fff;
-    stroke-width: 3px;
-    border-color: $color--dark-violet;
+  @include onDesktop--m {
+    &:hover svg {
+      background-color: $color--dark-violet;
+      color: #fff;
+      stroke-width: 3px;
+      border-color: $color--dark-violet;
+    }
   }
 }
 
