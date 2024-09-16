@@ -1,57 +1,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
-import './Banner.scss';
+import css from './Banner.module.scss';
+import cn from 'classnames';
 import { Button } from '../Button';
-
-const titleText = [
-  'П',
-  'р',
-  'и',
-  'в',
-  'і',
-  'т',
-  '!<br />М',
-  'е',
-  'н',
-  'е',
-  ' ',
-  'з',
-  'в',
-  'а',
-  'т',
-  'и',
-  ' ',
-  '<span class="vivid-red">Є</span>',
-  '<span class="vivid-red">в</span>',
-  '<span class="vivid-red">г</span>',
-  '<span class="vivid-red">е</span>',
-  '<span class="vivid-red">н</span><br />',
-  'Я',
-  ' ',
-  '-',
-  ' ',
-  '<span class="vivid-red">м</span>',
-  '<span class="vivid-red">е</span>',
-  '<span class="vivid-red">н</span>',
-  '<span class="vivid-red">т</span>',
-  '<span class="vivid-red">о</span>',
-  '<span class="vivid-red">р</span>',
-  window.innerWidth < 1200 ? '<br>' : ' ',
-  'з',
-  ' ',
-  '<span class="vivid-red">в</span>',
-  '<span class="vivid-red">е</span>',
-  '<span class="vivid-red">б</span>',
-  '<span class="vivid-red">-</span>',
-  '<span class="vivid-red">р</span>',
-  '<span class="vivid-red">о</span>',
-  '<span class="vivid-red">з</span>',
-  '<span class="vivid-red">р</span>',
-  '<span class="vivid-red">о</span>',
-  '<span class="vivid-red">б</span>',
-  '<span class="vivid-red">к</span>',
-  '<span class="vivid-red">и</span>',
-];
+import { titleText } from './titleText.ts';
 
 export const Banner: React.FC = React.memo(() => {
   const title = useRef<HTMLHeadingElement | null>(null);
@@ -68,9 +20,10 @@ export const Banner: React.FC = React.memo(() => {
         }, currentDelay);
         title.current.style.animationDelay = `${currentDelay}ms`;
       }
+
       setTimeout(() => {
         if (title.current) {
-          title.current.classList.add('banner__title--no-cursor');
+          title.current.classList.add(css.noCursor);
         }
       }, 4200);
     }
@@ -86,13 +39,13 @@ export const Banner: React.FC = React.memo(() => {
   }, [button]);
 
   return (
-    <section className='section banner' id='banner'>
+    <section className={cn('section', css.banner)} id='banner'>
       <div className='container'>
-        <div className='banner__content'>
-          <div className='banner__title-container'>
-            <h1 className='banner__title' ref={title}></h1>
+        <div className={css.content}>
+          <div className={css.titleContainer}>
+            <h1 className={css.title} ref={title}></h1>
           </div>
-          <div className='banner__button' ref={button}>
+          <div className={css.button} ref={button}>
             <Button>Безкоштовний урок</Button>
           </div>
         </div>
