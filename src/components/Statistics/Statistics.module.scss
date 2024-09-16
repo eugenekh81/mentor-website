@@ -1,0 +1,141 @@
+@import '../../assets/styles/utils/mixins';
+
+.statistics {
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 70px;
+
+  @include onDesktop--m {
+    gap: 100px;
+    flex-direction: row;
+  }
+
+  justify-content: space-around;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // opacity: 0;
+  // transform: translateY(50%);
+  transition: all 1s ease;
+
+  &:nth-child(1) {
+    width: 90px;
+
+    @include onDesktop--m {
+      width: calc(33% - 200px);
+    }
+  }
+
+  &:nth-child(2) {
+    width: 110px;
+
+    @include onDesktop--m {
+      width: calc(33% - 200px);
+    }
+  }
+
+  &:nth-child(3) {
+    width: 106px;
+    @include onDesktop--m {
+      width: calc(33% - 200px);
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .wreathIcon {
+    position: absolute;
+    flex-shrink: 0;
+
+    width: 80px;
+
+    &Left {
+      left: -50px;
+      @include onDesktop--m {
+        left: -80px;
+      }
+    }
+
+    &Right {
+      right: -50px;
+      @include onDesktop--m {
+        right: -80px;
+      }
+    }
+
+    @include onDesktop--m {
+      height: 180px;
+      width: 120px;
+    }
+  }
+}
+
+@for $i from 1 through 3 {
+  .appear:nth-child(#{$i}) {
+    opacity: 1;
+    transform: translateY(0);
+    @include onDesktop--m {
+      transition-delay: calc(100ms * #{$i});
+    }
+  }
+}
+
+.number {
+  font-size: 28px;
+  font-weight: 600;
+
+  @include onDesktop--m {
+    font-size: 60px;
+  }
+
+  color: #fff;
+  width: fit-content;
+
+  span {
+    position: relative;
+    right: 8px;
+
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+    &::after {
+      font-size: inherit;
+      font-weight: 600;
+      color: #fff;
+      content: '+';
+      position: absolute;
+      left: calc(100% + 2px);
+    }
+
+    &:first-child {
+      right: 20px;
+    }
+    &:last-child {
+      right: 16px;
+    }
+  }
+}
+
+.text {
+  font-size: 28px;
+  font-weight: 600;
+
+  @include onDesktop--m {
+    font-size: 44px;
+  }
+
+  text-transform: uppercase;
+}
