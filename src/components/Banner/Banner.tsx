@@ -8,25 +8,28 @@ import { titleText } from './titleText.ts';
 export const Banner: React.FC = React.memo(() => {
   const title = useRef<HTMLHeadingElement | null>(null);
   const button = useRef<HTMLDivElement | null>(null);
+  const delayTime = 1000;
 
   useEffect(() => {
-    if (title.current) {
-      for (let i = 0; i < titleText.length; i++) {
-        const currentDelay = 60 * i + 60 * Math.random();
+    setTimeout(() => {
+      if (title.current) {
+        for (let i = 0; i < titleText.length; i++) {
+          const currentDelay = 60 * i + 60 * Math.random();
+          setTimeout(() => {
+            if (title.current) {
+              title.current.innerHTML += titleText[i];
+            }
+          }, currentDelay);
+          title.current.style.animationDelay = `${currentDelay}ms`;
+        }
+
         setTimeout(() => {
           if (title.current) {
-            title.current.innerHTML += titleText[i];
+            title.current.classList.add(css.noCursor);
           }
-        }, currentDelay);
-        title.current.style.animationDelay = `${currentDelay}ms`;
+        }, 4200);
       }
-
-      setTimeout(() => {
-        if (title.current) {
-          title.current.classList.add(css.noCursor);
-        }
-      }, 4200);
-    }
+    }, delayTime);
   }, [title]);
 
   useEffect(() => {
