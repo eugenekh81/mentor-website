@@ -16,9 +16,6 @@ export const About: React.FC = React.memo(() => {
           '.' + css.ctaButton
         );
         if (button) {
-          // const buttonHeight = button?.getBoundingClientRect().height;
-          // console.log(buttonHeight, '<<<<');
-
           const buttonPosition: number = button.offsetTop;
 
           const appearY = window.scrollY + window.innerHeight - 94;

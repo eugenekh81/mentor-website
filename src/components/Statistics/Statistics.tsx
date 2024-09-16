@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import './Statistics.scss';
+import css from './Statistics.module.scss';
+import cn from 'classnames';
 import sprite from '../../assets/images/icons/sprite.svg';
 import CountUp from 'react-countup';
 
@@ -13,75 +14,89 @@ export const Statistics: React.FC = () => {
       const blockPosition = listRef.current?.getBoundingClientRect().top;
 
       if (blockPosition && blockPosition < window.innerHeight - 50) {
-        const items = document.querySelectorAll('.statistics__item');
+        const items = document.querySelectorAll('.' + css.item);
+
         if (items.length) {
           items.forEach((item) => {
-            item.classList.add('statistics__item--appear');
+            item.classList.add(css.appear);
           });
         }
       }
     });
-  }, [listRef.current]);
+  }, []);
 
   return (
-    <div className='statistics' ref={stat}>
-      <ul className='statistics__list' ref={listRef}>
-        <>
-          <li className='statistics__item'>
-            <p className='statistics__number'>
+    <div className={css.statistics} ref={stat}>
+      <ul className={css.list} ref={listRef}>
+        <li className={css.item}>
+          <svg className={cn(css.wreathIcon, css.wreathIconLeft)}>
+            <use href={`${sprite}#wreath--left`}></use>
+          </svg>
+          <div className={css.info}>
+            <p className={css.number}>
               <CountUp
                 enableScrollSpy
                 scrollSpyOnce
                 start={0}
-                end={100}
-                duration={10}
+                end={200}
+                duration={4}
                 formattingFn={(value) =>
-                  `${value.toLocaleString().replace(',', ' ')}`
+                  `${value.toLocaleString().replace(',', '')}`
                 }
               />
             </p>
-            <p className='statistics__text'>Учнів</p>
-            <svg>
-              <use href={`${sprite}#wreath`}></use>
-            </svg>
-          </li>
-          <li className='statistics__item'>
-            <p className='statistics__number'>
+            <p className={css.text}>Учнів</p>
+          </div>
+          <svg className={cn(css.wreathIcon, css.wreathIconRight)}>
+            <use href={`${sprite}#wreath--right`}></use>
+          </svg>
+        </li>
+        <li className={css.item}>
+          <svg className={cn(css.wreathIcon, css.wreathIconLeft)}>
+            <use href={`${sprite}#wreath--left`}></use>
+          </svg>
+          <div className={css.info}>
+            <p className={css.number}>
               <CountUp
                 enableScrollSpy
                 scrollSpyOnce
                 start={0}
-                end={1200}
-                duration={10}
+                end={2400}
+                duration={4}
                 formattingFn={(value) =>
-                  `${value.toLocaleString().replace(',', ' ')}`
+                  `${value.toLocaleString().replace(',', '')}`
                 }
               />
             </p>
-            <p className='statistics__text'>Уроків</p>
-            <svg>
-              <use href={`${sprite}#wreath`}></use>
-            </svg>
-          </li>
-          <li className='statistics__item'>
-            <p className='statistics__number'>
+            <p className={css.text}>Уроків</p>
+          </div>
+          <svg className={cn(css.wreathIcon, css.wreathIconRight)}>
+            <use href={`${sprite}#wreath--right`}></use>
+          </svg>
+        </li>
+        <li className={css.item}>
+          <svg className={cn(css.wreathIcon, css.wreathIconLeft)}>
+            <use href={`${sprite}#wreath--left`}></use>
+          </svg>
+          <div className={css.info}>
+            <p className={css.number}>
               <CountUp
                 enableScrollSpy
                 scrollSpyOnce
                 start={0}
-                end={1500}
-                duration={10}
+                end={2800}
+                duration={4}
                 formattingFn={(value) =>
-                  `${value.toLocaleString().replace(',', ' ')}`
+                  `${value.toLocaleString().replace(',', '')}`
                 }
               />
             </p>
-            <p className='statistics__text'>Годин</p>
-            <svg>
-              <use href={`${sprite}#wreath`}></use>
-            </svg>
-          </li>
-        </>
+            <p className={css.text}>Годин</p>
+          </div>
+          <svg className={cn(css.wreathIcon, css.wreathIconRight)}>
+            <use href={`${sprite}#wreath--right`}></use>
+          </svg>
+        </li>
       </ul>
     </div>
   );
