@@ -15,6 +15,7 @@ import React, { useCallback, useEffect, useState, lazy } from 'react';
 
 import { Banner } from '../../components/Banner/Banner';
 import Header from '../../components/Header/Header';
+import { Portfolio } from 'src/components/Portfolio';
 
 const Services = lazy(() =>
   import('../../components/Services').then(({ Services }) => ({
@@ -40,11 +41,11 @@ const About = lazy(() =>
   }))
 );
 
-const Portfolio = lazy(() =>
-  import('../../components/Portfolio').then(({ Portfolio }) => ({
-    default: Portfolio,
-  }))
-);
+// const Portfolio = lazy(() =>
+//   import('../../components/Portfolio').then(({ Portfolio }) => ({
+//     default: Portfolio,
+//   }))
+// );
 
 const Reviews = lazy(() =>
   import('../../components/Reviews').then(({ Reviews }) => ({
