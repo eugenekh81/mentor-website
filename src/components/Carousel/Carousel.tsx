@@ -68,7 +68,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
       setTimeout(() => {
         enableTransition();
         enableButtons();
-      }, slideTime * 1.05);
+      }, slideTime * 1.1);
     }
 
     setActiveDot((prev) => {
@@ -103,7 +103,7 @@ export const Carousel: React.FC<Props> = ({ children, className }) => {
       setTimeout(() => {
         enableTransition();
         enableButtons();
-      }, slideTime * 1.05);
+      }, slideTime * 1.1);
     }
 
     setActiveDot((prev) => {
