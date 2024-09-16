@@ -146,3 +146,5 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
     </header>
   );
 };
+
+export default Header;
