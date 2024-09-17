@@ -1,10 +1,9 @@
 import React from 'react';
 import css from './Header.module.scss';
-import nav from './Nav.module.scss';
 import cn from 'classnames';
-import { NavLink } from 'react-router-dom';
 import { Button } from '../Button';
 import { SVGIcon } from '../SVGIcon';
+import { Nav } from '../Nav';
 
 type Props = {
   currentSection: string | null;
@@ -20,115 +19,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
             <SVGIcon iconId='main-logo' />
           </a>
 
-          <nav className={nav.nav}>
-            <ul className={nav.list}>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('services');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#services',
-                  })}
-                >
-                  Допомога
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('contacts');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#results',
-                  })}
-                >
-                  Результати
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('products');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#products',
-                  })}
-                >
-                  Технології
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('about');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#about',
-                  })}
-                >
-                  Про мене
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('portfolio');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#portfolio',
-                  })}
-                >
-                  Портфоліо
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('reviews');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#reviews',
-                  })}
-                >
-                  Відгуки
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('faq');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#faq',
-                  })}
-                >
-                  ЧаПи
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
+          <Nav currentSection={currentSection} onSelect={onSelect} />
 
           <div className={css.buttons}>
             <a
