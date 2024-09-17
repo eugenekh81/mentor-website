@@ -42,14 +42,14 @@
 
     transition: transform 0.3s;
   }
+}
 
-  &:hover,
-  .active {
-    color: $color--vivid-red;
+.link:hover,
+.active {
+  color: $color--vivid-red;
 
-    &::after {
-      transform-origin: bottom left;
-      transform: scaleX(1);
-    }
+  &::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
   }
 }

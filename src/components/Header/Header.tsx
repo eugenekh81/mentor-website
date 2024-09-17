@@ -40,6 +40,21 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               <li
                 className={nav.item}
                 onClick={() => {
+                  onSelect('contacts');
+                }}
+              >
+                <NavLink
+                  to=''
+                  className={cn(nav.link, {
+                    [nav.active]: currentSection === '#results',
+                  })}
+                >
+                  Результати
+                </NavLink>
+              </li>
+              <li
+                className={nav.item}
+                onClick={() => {
                   onSelect('products');
                 }}
               >
@@ -110,21 +125,6 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
                   })}
                 >
                   ЧаПи
-                </NavLink>
-              </li>
-              <li
-                className={nav.item}
-                onClick={() => {
-                  onSelect('contacts');
-                }}
-              >
-                <NavLink
-                  to=''
-                  className={cn(nav.link, {
-                    [nav.active]: currentSection === '#contacts',
-                  })}
-                >
-                  Контакти
                 </NavLink>
               </li>
             </ul>

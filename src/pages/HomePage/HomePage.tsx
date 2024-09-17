@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
 
         return (
           // window.scrollY >= section.offsetTop
-          window.scrollY < sectionEnd - 94
+          window.scrollY < sectionEnd - 74
         );
       }
     });
@@ -44,13 +44,15 @@ export const HomePage: React.FC = () => {
     const sections = document.querySelectorAll('.section');
     const section = [...sections].find((s) => s.id === id);
     if (section instanceof HTMLElement) {
-      window.scrollTo({ top: section.offsetTop - 94 });
+      const sectionStart = section.offsetTop;
+      window.scrollTo({ top: sectionStart });
     }
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, []);
+  console.log(currentSection);
 
   return (
     <>
