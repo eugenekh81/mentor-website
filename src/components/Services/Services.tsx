@@ -69,7 +69,7 @@ export const Services: React.FC = React.memo(() => {
   }, []);
 
   return (
-    <section className='section services' id='services'>
+    <section className={cn('section', css.services)} id='services'>
       <h2 className={cn('section__title', css.title)} ref={servicesTitle}>
         {/* ПРОГРАМИ */}
         Для кого?
@@ -78,11 +78,11 @@ export const Services: React.FC = React.memo(() => {
         <div className='section__content'>
           <ul
             className={cn(css.list, {
-              // 'services__list--activate': showList,
+              [css.visible]: showList,
             })}
           >
-            {servicesData.map((s) => (
-              <ServicesItem key={s.id} {...s} />
+            {servicesData.map((service) => (
+              <ServicesItem key={service.id} {...service} />
             ))}
           </ul>
 

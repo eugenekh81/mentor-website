@@ -8,8 +8,19 @@
   flex-direction: column;
 
   width: 100%;
+
+  @include onMobile {
+    scale: 0.8;
+    translate: 0 5%;
+    opacity: 0;
+    animation: fade-in-slide linear forwards;
+    animation-timeline: view();
+    animation-range: 150px 350px;
+  }
+
   @include onDesktop--m {
     width: 33%;
+    transition-property: all;
   }
 
   text-align: justify;
@@ -17,13 +28,16 @@
 
   line-height: 1.5;
 
-  // opacity: 0;
+  @include onDesktop--m {
+    opacity: 0;
+    transform: translateY(20%);
+  }
 
   border-radius: 12px;
   box-shadow: $shadow--card;
 
   overflow: hidden;
-  // transform: translateY(20%);
+
   transition: all 0.9s ease;
 
   &:nth-child(1) {
@@ -67,6 +81,7 @@
   padding: 0 12px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
@@ -134,6 +149,5 @@
 
   @include onDesktop--m {
     width: unset;
-    font-size: 14px;
   }
 }
