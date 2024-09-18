@@ -9,14 +9,14 @@
 
   width: 100%;
 
-  @include onMobile {
-    scale: 0.8;
-    translate: 0 5%;
-    opacity: 0;
-    animation: fade-in-slide linear forwards;
-    animation-timeline: view();
-    animation-range: 150px 350px;
-  }
+  // @include onMobile {
+  //   scale: 0.8;
+  //   translate: 0 5%;
+  //   opacity: 0;
+  //   animation: fade-in-slide linear forwards;
+  //   animation-timeline: view();
+  //   animation-range: 150px 350px;
+  // }
 
   @include onDesktop--m {
     width: 33%;

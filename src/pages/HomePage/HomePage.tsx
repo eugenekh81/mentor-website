@@ -12,6 +12,7 @@ import {
   FAQ,
   Contacts,
 } from './LazyImports';
+import { MobileOverlay } from '../../components/MobileOverlay';
 
 export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
@@ -66,6 +67,7 @@ export const HomePage: React.FC = () => {
       <Reviews />
       <FAQ />
       <Contacts />
+      <MobileOverlay />
     </>
   );
 };
