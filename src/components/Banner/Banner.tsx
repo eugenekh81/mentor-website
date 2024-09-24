@@ -52,7 +52,7 @@ export const Banner: React.FC = React.memo(() => {
             <h1 className={css.title} ref={title}></h1>
           </div>
           <div className={css.button} ref={button}>
-            <Button onClick={() => setIsOpen(true)}>Безкоштовний урок</Button>
+            <Button onClick={() => setIsOpen()}>Безкоштовний урок</Button>
           </div>
         </div>
       </div>
