@@ -5,9 +5,13 @@ import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { SVGIcon } from '../SVGIcon';
 import { useDesktop } from '../../hooks/useDesktop';
+import { ModalContext } from '../Context/ModalContext';
+import { useContext } from 'react';
 
 export const Contacts = () => {
   const isOnDesktop = useDesktop();
+  const { setIsOpen } = useContext(ModalContext);
+
   return (
     <section className={cn('section', css.contacts)} id='contacts'>
       <div className='container'>
@@ -21,7 +25,10 @@ export const Contacts = () => {
                 Телеграм, якшо у тебе залишились питання
               </p>
               <div className={css.buttons}>
-                <Button variant={!isOnDesktop ? 'small' : ''}>
+                <Button
+                  variant={!isOnDesktop ? 'small' : ''}
+                  onClick={() => setIsOpen()}
+                >
                   Безкоштовний урок
                 </Button>
 

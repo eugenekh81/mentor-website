@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import css from './Header.module.scss';
 import cn from 'classnames';
 import { Button } from '../Button';
 import { SVGIcon } from '../SVGIcon';
 import { Nav } from '../Nav';
+import { ModalContext } from '../Context/ModalContext';
 
 type Props = {
   currentSection: string | null;
@@ -11,6 +12,8 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
+  const { setIsOpen } = useContext(ModalContext);
+
   return (
     <header className={css.header}>
       <div className='container'>
@@ -30,7 +33,9 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
               <SVGIcon className={css.icon} iconId='telegram' />
             </a>
             <div className={css.button}>
-              <Button variant='small'>Безкоштовний урок</Button>
+              <Button variant='small' onClick={() => setIsOpen()}>
+                Безкоштовний урок
+              </Button>
             </div>
           </div>
         </div>

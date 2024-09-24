@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import css from './About.module.scss';
 
 import { Statistics } from '../Statistics';
 import { Button } from '../Button';
 import { Avatar } from '../Avatar';
+import { ModalContext } from '../Context/ModalContext';
 
 export const About: React.FC = React.memo(() => {
   const ctaButton = useRef(null);
@@ -27,7 +28,7 @@ export const About: React.FC = React.memo(() => {
       });
     }
   }, []);
-
+  const { setIsOpen } = useContext(ModalContext);
   return (
     <section className={cn('section', css.about)} id='about'>
       <div className='container'>
@@ -48,7 +49,8 @@ export const About: React.FC = React.memo(() => {
           </div>
 
           <p className={css.ctaText}>
-            Зроби крок назустріч своєму <span className={css.future}>майбутньому</span>
+            Зроби крок назустріч своєму{' '}
+            <span className={css.future}>майбутньому</span>
             <br />
             та забронюй свій перший безкоштовний урок зі мною
             <br />
@@ -58,7 +60,7 @@ export const About: React.FC = React.memo(() => {
           </p>
 
           <div className={css.ctaButton} ref={ctaButton}>
-            <Button>Безкоштовний урок</Button>
+            <Button onClick={() => setIsOpen()}>Безкоштовний урок</Button>
           </div>
         </div>
       </div>

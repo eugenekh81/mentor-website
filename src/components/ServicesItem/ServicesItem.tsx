@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { Button } from '../Button';
+import { ModalContext } from '../Context/ModalContext';
 import css from './ServicesItem.module.scss';
 
 interface Problem {
@@ -19,6 +21,7 @@ export const ServicesItem: React.FC<Props> = ({
   description,
   problems,
 }) => {
+  const { setIsOpen } = useContext(ModalContext);
   return (
     <li className={css.service}>
       <div className={css.imageContainer}>
@@ -44,7 +47,7 @@ export const ServicesItem: React.FC<Props> = ({
             ))}
           </ul>
         </div>
-        <Button variant='noArrow' className={css.button}>
+        <Button variant='noArrow' className={css.button} onClick={() => setIsOpen()}>
           Безкоштовний урок
         </Button>
       </div>

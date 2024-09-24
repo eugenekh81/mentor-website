@@ -11,9 +11,7 @@ export const Banner: React.FC = React.memo(() => {
   const button = useRef<HTMLDivElement | null>(null);
   const delayTime = 1000;
 
-  const { isOpen, setIsOpen } = useContext(ModalContext);
-
-  console.log(isOpen, 'is modalOpen?');
+  const { setIsOpen } = useContext(ModalContext);
 
   useEffect(() => {
     setTimeout(() => {

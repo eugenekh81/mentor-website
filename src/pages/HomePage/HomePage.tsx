@@ -12,11 +12,12 @@ import {
   FAQ,
   Contacts,
 } from './LazyImports';
+import { Modal } from '../../components/Modal';
 // import { MobileOverlay } from '../../components/MobileOverlay';
 
 export const HomePage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
-  
+
   const handleScroll = useCallback(() => {
     const sections = document.querySelectorAll('.section');
     const scrollSection = [...sections].find((section) => {
@@ -67,6 +68,7 @@ export const HomePage: React.FC = () => {
       <Reviews />
       <FAQ />
       <Contacts />
+      <Modal />
     </>
   );
 };

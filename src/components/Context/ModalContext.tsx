@@ -2,7 +2,8 @@ import React, { ReactNode, useState } from 'react';
 
 const initialContextValue = {
   isOpen: false,
-  setIsOpen: (v: boolean) => {},
+  setIsOpen: () => {},
+  setIsClosed: () => {},
 };
 
 export const ModalContext = React.createContext(initialContextValue);
@@ -14,15 +15,17 @@ type Props = {
 export const ModalContextProvider: React.FC<Props> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const save = (value: boolean) => {
-    console.log('opening modal');
-
-    setIsOpen(value);
+  const open = () => {
+    setIsOpen(true);
+  };
+  const close = () => {
+    setIsOpen(false);
   };
 
   const value = {
     isOpen,
-    setIsOpen: save,
+    setIsOpen: open,
+    setIsClosed: close,
   };
 
   return (
