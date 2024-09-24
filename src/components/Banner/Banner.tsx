@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect, useRef } from 'react';
 import css from './Banner.module.scss';
 import cn from 'classnames';
 import { Button } from '../Button';
 import { titleText } from './titleText.ts';
+import { ModalContext } from '../Context/ModalContext.tsx';
 
 export const Banner: React.FC = React.memo(() => {
   const title = useRef<HTMLHeadingElement | null>(null);
   const button = useRef<HTMLDivElement | null>(null);
   const delayTime = 1000;
+
+  const { isOpen, setIsOpen } = useContext(ModalContext);
+
+  console.log(isOpen, 'is modalOpen?');
 
   useEffect(() => {
     setTimeout(() => {
@@ -49,7 +54,7 @@ export const Banner: React.FC = React.memo(() => {
             <h1 className={css.title} ref={title}></h1>
           </div>
           <div className={css.button} ref={button}>
-            <Button>Безкоштовний урок</Button>
+            <Button onClick={() => setIsOpen(true)}>Безкоштовний урок</Button>
           </div>
         </div>
       </div>
