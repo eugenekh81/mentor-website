@@ -31,9 +31,9 @@
   padding: 0;
 
   height: 100%;
-  width: calc(100% - 20px);
+  width: 90%;
 
-  max-width: calc(600px - 10%);
+  max-width: 600px;
   max-height: 90%;
 
   @include onDesktop--m {
