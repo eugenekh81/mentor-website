@@ -31,9 +31,11 @@ export const Modal: React.FC = () => {
           <iframe
             src='https://scheduler.zoom.us/eugene-khablenko/trial-lesson?embed=true'
             style={{
-              width: '100%',
+              display: 'block',
               height: '100%',
+              width: '100%',
               borderRadius: '8px',
+              overflow: 'hidden',
             }}
           ></iframe>
           <button
