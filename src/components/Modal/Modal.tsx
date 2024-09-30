@@ -28,7 +28,15 @@ export const Modal: React.FC = () => {
     <div className={cn(css.modal, { [css.visible]: isOpen })}>
       <div className={css.backdrop} ref={modal}>
         <div className={css.window}>
-          Hello world!
+          <iframe
+            src='https://scheduler.zoom.us/eugene-khablenko/trial-lesson?embed=true'
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '8px',
+              overflow: 'hidden',
+            }}
+          ></iframe>
           <button
             type='button'
             className={css.button}
