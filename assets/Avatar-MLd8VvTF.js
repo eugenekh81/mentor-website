@@ -1,1 +1,0 @@
-import{j as a}from"./index-CiFVRV9n.js";const s="/mentor-website/assets/avatar-Nx5Qt2yR.png",t="_image_g4il4_20",i={"vivid-red":"_vivid-red_g4il4_1",image:t},r=()=>a.jsx("img",{src:s,alt:"Avatar",className:i.image});export{r as A};
