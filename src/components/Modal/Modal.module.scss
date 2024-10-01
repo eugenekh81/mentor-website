@@ -52,9 +52,11 @@
 
   translate: -50% -40%;
   transition: all 700ms ease-in-out;
+  pointer-events: none;
 
   .visible & {
     translate: -50% -50%;
+    pointer-events: all;
   }
 }
 
