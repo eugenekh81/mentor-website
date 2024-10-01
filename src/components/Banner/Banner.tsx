@@ -30,7 +30,7 @@ export const Banner: React.FC = React.memo(() => {
           if (title.current) {
             title.current.classList.add(css.noCursor);
           }
-        }, 4200);
+        }, 6000);
       }
     }, delayTime);
   }, [title]);
