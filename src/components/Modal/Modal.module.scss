@@ -10,12 +10,10 @@
   left: 0;
   right: 0;
 
-  z-index: 100;
-
   opacity: 0;
   pointer-events: none;
 
-  transition: all 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
   &.visible {
     opacity: 1;
     pointer-events: all;
@@ -36,10 +34,8 @@
   max-width: 600px;
   max-height: 90%;
 
-  z-index: 2;
-
-  height: 100%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
 
   top: 50%;
   left: 50%;
@@ -49,10 +45,9 @@
     max-height: 95%;
     max-width: 900px;
   }
-
+overflow: visible;
   translate: -50% -40%;
   transition: all 700ms ease-in-out;
-  pointer-events: none;
 
   .visible & {
     translate: -50% -50%;
@@ -72,13 +67,12 @@
 
   translate: -50% -50%;
   border-radius: 8px;
-  
+
   overflow: hidden;
-  pointer-events: none;
 
   &::after {
     position: absolute;
-    z-index: 1;
+
     top: 50%;
     left: 50%;
 
@@ -99,11 +93,10 @@
     background-size: cover;
     background-position: left 0 top 0;
     background-repeat: no-repeat;
-    // filter: blur(4px);
+    filter: blur(4px);
     border-radius: inherit;
 
     animation: spin 9s linear infinite;
-    pointer-events: none;
   }
 }
 
