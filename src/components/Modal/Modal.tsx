@@ -27,26 +27,28 @@ export const Modal: React.FC = () => {
   return ReactDom.createPortal(
     <div className={cn(css.modal, { [css.visible]: isOpen })}>
       <div className={css.backdrop} ref={modal}>
-        <div className={css.window}>
-          <iframe
-            src='https://scheduler.zoom.us/eugene-khablenko/trial-lesson?embed=true'
-            style={{
-              display: 'block',
-              height: '100%',
-              width: '100%',
-              borderRadius: '8px',
-              overflow: 'hidden',
-            }}
-          ></iframe>
+        <div className={css.windowWrapper}>
+          <div className={css.animationWrapper}>
+            <div className={css.window}>
+              <iframe
+                src='https://scheduler.zoom.us/eugene-khablenko/trial-lesson?embed=true'
+                style={{
+                  display: 'block',
+                  height: '100%',
+                  width: '100%',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                }}
+              ></iframe>
+            </div>
+          </div>
           <button
             type='button'
             className={css.button}
             onClick={() => setIsClosed()}
-          >
-            
-          </button>
+          ></button>
         </div>
-      </div>{' '}
+      </div>
     </div>,
     document.getElementById('modal')!
   );

@@ -60,13 +60,6 @@
 .button {
   transition: all 0.9s ease;
   align-self: center;
-
-  @include onDesktop--m {
-    &:hover {
-      transform: scale(0.9);
-      transition-duration: 0.3s;
-    }
-  }
 }
 
 .icon {
