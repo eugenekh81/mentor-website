@@ -20,6 +20,16 @@
   text-align: left;
   cursor: pointer;
 
+  &:active,
+  &:target {
+    animation-name: button-click;
+    animation-duration: 100ms;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+
   @include onDesktop--m {
     margin: 0;
     padding: 12px 24px;
@@ -42,6 +52,11 @@
 
   &:hover {
     background-color: #c52a20;
+
+    @include onDesktop--m {
+      transform: scale(0.9);
+      transition-duration: 0.3s;
+    }
 
     & .button__arrow {
       width: 44px;

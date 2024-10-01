@@ -43,3 +43,17 @@
     scale: 1;
   }
 }
+
+@keyframes button-click {
+  0% {
+    scale: 1;
+  }
+
+  35% {
+    scale: 0.92;
+  }
+
+  100% {
+    scale: 1;
+  }
+}

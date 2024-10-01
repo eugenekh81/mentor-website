@@ -61,9 +61,11 @@
   transition: all 0.9s ease;
   align-self: center;
 
-  &:hover {
-    transform: scale(0.9);
-    transition-duration: 0.3s;
+  @include onDesktop--m {
+    &:hover {
+      transform: scale(0.9);
+      transition-duration: 0.3s;
+    }
   }
 }
 

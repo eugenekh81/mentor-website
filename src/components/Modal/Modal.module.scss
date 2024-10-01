@@ -1,4 +1,5 @@
 @import '../../assets/styles/utils/mixins';
+@import '../../assets/styles/utils/animations';
 
 .modal {
   position: fixed;
@@ -99,6 +100,12 @@
   }
   &::after {
     rotate: -45deg;
+  }
 
+  &:active {
+    animation-name: button-click;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
   }
 }
