@@ -16,7 +16,7 @@ export const Contacts = () => {
     <section className={cn('section', css.contacts)} id='contacts'>
       <div className='container'>
         <div className='section__content'>
-          <h2 className='section__title'>Контакти</h2>
+          <h2 className={cn('section__title', css.title)}>Контакти</h2>
           <div className={css.content}>
             <Avatar />
             <div className={css.description}>
