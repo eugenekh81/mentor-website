@@ -43,7 +43,7 @@ export const Modal: React.FC = () => {
             className={css.button}
             onClick={() => setIsClosed()}
           >
-            x
+            
           </button>
         </div>
       </div>{' '}
