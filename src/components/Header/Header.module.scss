@@ -30,9 +30,6 @@
 
 .headerLogo {
   margin: 0;
-  @include onDesktop--m {
-    margin-right: 90px;
-  }
 }
 
 .buttons {
