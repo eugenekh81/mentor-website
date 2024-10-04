@@ -22,6 +22,7 @@
 .content {
   display: flex;
   height: 50px;
+  justify-content: space-between;
 
   @include onDesktop--m {
     height: 80px;
@@ -34,7 +35,6 @@
 
 .buttons {
   margin: 0;
-  margin-left: auto;
   display: flex;
   gap: 20px;
 }
