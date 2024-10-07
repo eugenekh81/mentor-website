@@ -63,6 +63,7 @@ body {
   /* place-items: center; */
 
   min-height: 100vh;
+  transition-property: none;
 
   &:first-child {
     padding: 0 0 50px;
