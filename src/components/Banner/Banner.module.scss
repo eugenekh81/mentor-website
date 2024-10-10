@@ -45,7 +45,7 @@
 
   font-size: 40px;
   font-weight: 700;
-  line-height: 60px;
+  line-height: 50px;
   text-align: center;
 
   text-shadow: 4px 4px 4px #ccc;
@@ -53,6 +53,7 @@
   @include onDesktop--m {
     margin: 0;
     font-size: 50px;
+    line-height: 60px;
     text-align: left;
     animation-delay: 5000ms;
   }
