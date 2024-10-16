@@ -54,7 +54,7 @@ export const HomePage: React.FC = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, []);
-  console.log(currentSection);
+  // console.log(currentSection);
 
   return (
     <>
