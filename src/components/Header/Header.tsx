@@ -18,7 +18,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
     <header className={css.header}>
       <div className='container'>
         <div className={css.content}>
-          <a href='/mentor-website' className={cn(css.headerLogo, css.logo)}>
+          <a href='/' className={cn(css.headerLogo, css.logo)}>
             <SVGIcon iconId='main-logo' />
           </a>
 

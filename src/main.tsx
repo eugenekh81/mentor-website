@@ -6,7 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { ModalContextProvider } from './components/Context/ModalContext';
 const router = createBrowserRouter([
   {
-    path: '/mentor-website',
+    path: '/',
     element: <HomePage />,
   },
 ]);
