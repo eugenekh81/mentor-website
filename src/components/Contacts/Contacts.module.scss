@@ -74,3 +74,12 @@
   );
   background-clip: text;
 }
+
+.tgIcon {
+  transition-duration: 0.3s;
+  @include onDesktop--m {
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}
