@@ -101,7 +101,7 @@ export const Modal: React.FC = () => {
 
               <div className={css.buttons}>
                 <a
-                  href='https://t.me/js_mentor'
+                  href='https://t.me/eugene_k81'
                   target='_blank'
                   className={css.tgIcon}
                 >

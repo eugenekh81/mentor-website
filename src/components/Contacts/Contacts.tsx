@@ -33,7 +33,7 @@ export const Contacts = () => {
                 </Button>
 
                 <a
-                  href='https://t.me/js_mentor'
+                  href='https://t.me/eugene_k81'
                   target='_blank'
                   className={css.tgIcon}
                 >

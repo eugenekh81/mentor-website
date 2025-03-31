@@ -33,7 +33,7 @@
 
   display: flex;
   max-width: 600px;
-  height: 683px;
+  height: 543px;
 
   width: 95%;
 
@@ -42,8 +42,7 @@
   transform: translate(-50%, -50%);
 
   @include onDesktop--m {
-    // max-height: 90%;
-    height: 862px;
+    height: 870px;
     max-width: 900px;
   }
 
@@ -62,7 +61,7 @@
   height: 100%;
 
   @include onDesktop--m {
-    height: 862px;
+    height: 100%;
   }
 
   border-radius: 8px;
@@ -100,7 +99,7 @@
 }
 
 .window {
-  padding: 32px 16px 16px;
+  padding: 16px;
 
   @include onDesktop--m {
     padding: 32px;
@@ -121,7 +120,7 @@
   h2 {
     margin: 0 0 16px;
 
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     text-align: center;
 
@@ -135,7 +134,7 @@
   h3 {
     margin: 0 0 12px;
 
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
 
@@ -146,21 +145,23 @@
   }
 
   .listTitle {
-    margin: 0 0 24px;
+    margin: 0 0 18px;
+    font-size: 16px;
 
     @include onDesktop--m {
+      font-size: 32px;
       margin: 0 0 48px;
     }
   }
 
   & ol {
-    margin: 0 0 24px;
+    margin: 0 0 18px;
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 8px;
 
-    font-size: 16px;
+    font-size: 14px;
 
     @include onDesktop--m {
       margin: 0 0 48px;
@@ -168,13 +169,18 @@
     }
 
     li {
+      font-size: inherit;
       font-weight: 600;
 
       span {
         font-family: sans-serif;
-        font-size: 12px;
+        font-size: 10px;
         font-style: italic;
         color: grey;
+
+        @include onDesktop--m {
+          font-size: 14px;
+        }
       }
     }
   }

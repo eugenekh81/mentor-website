@@ -26,7 +26,7 @@ export const Header: React.FC<Props> = ({ currentSection, onSelect }) => {
 
           <div className={css.buttons}>
             <a
-              href='https://t.me/js_mentor'
+              href='https://t.me/eugene_k81'
               target='_blank'
               className={cn('tg', css.link)}
             >
