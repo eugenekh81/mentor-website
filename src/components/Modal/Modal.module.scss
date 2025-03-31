@@ -31,41 +31,40 @@
   position: absolute;
   padding: 0;
 
+  display: flex;
   max-width: 600px;
-  max-height: 90%;
+  height: 683px;
 
-  height: 95%;
   width: 95%;
 
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
 
   @include onDesktop--m {
-    max-height: 90%;
+    // max-height: 90%;
+    height: 862px;
     max-width: 900px;
   }
-overflow: visible;
-  translate: -50% -40%;
+
+  overflow: visible;
   transition: all 700ms ease-in-out;
 
   .visible & {
-    translate: -50% -50%;
     pointer-events: all;
   }
 }
 
 .animationWrapper {
-  position: fixed;
+  position: relative;
   z-index: 33;
-
-  height: 100%;
   width: 100%;
+  height: 100%;
 
-  top: 50%;
-  left: 50%;
+  @include onDesktop--m {
+    height: 862px;
+  }
 
-  translate: -50% -50%;
   border-radius: 8px;
 
   overflow: hidden;
@@ -101,17 +100,94 @@ overflow: visible;
 }
 
 .window {
-  position: absolute;
+  padding: 32px 16px 16px;
+
+  @include onDesktop--m {
+    padding: 32px;
+  }
+
+  position: relative;
   top: 3px;
   left: 3px;
   z-index: 10;
-  height: calc(100% - 6px);
+  height: fit-content;
   width: calc(100% - 6px);
 
   background-color: #fff;
   border-radius: 8px;
 
   transition: all 700ms ease-in-out;
+
+  h2 {
+    margin: 0 0 16px;
+
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+
+    @include onDesktop--m {
+      margin: 0 0 36px;
+
+      font-size: 36px;
+    }
+  }
+
+  h3 {
+    margin: 0 0 12px;
+
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+
+    @include onDesktop--m {
+      font-size: 24px;
+      margin: 0 0 24px;
+    }
+  }
+
+  .listTitle {
+    margin: 0 0 24px;
+
+    @include onDesktop--m {
+      margin: 0 0 48px;
+    }
+  }
+
+  & ol {
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+
+    font-size: 16px;
+
+    @include onDesktop--m {
+      margin: 0 0 48px;
+      font-size: 24px;
+    }
+
+    li {
+      font-weight: 600;
+
+      span {
+        font-family: sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        color: grey;
+      }
+    }
+  }
+}
+
+.accent {
+  color: $color--vivid-red;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .button {
@@ -181,5 +257,38 @@ overflow: visible;
     animation-duration: 200ms;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
+  }
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  @include onDesktop--m {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.link {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 900;
+  background: linear-gradient(
+    270deg,
+    #ff4070 6.6%,
+    #934eea 50.38%,
+    #0080ff 93.89%
+  );
+  background-clip: text;
+}
+
+.tgIcon {
+  transition-duration: 0.3s;
+  @include onDesktop--m {
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 }

@@ -13,10 +13,7 @@ export const Contacts = () => {
   const { setIsOpen } = useContext(ModalContext);
 
   return (
-    <section
-      className={cn('section', css.contacts)}
-      id='contacts'
-    >
+    <section className={cn('section', css.contacts)} id='contacts'>
       <div className='container'>
         <div className='section__content'>
           <h2 className={cn('section__title', css.title)}>Контакти</h2>
@@ -40,10 +37,7 @@ export const Contacts = () => {
                   target='_blank'
                   className={css.tgIcon}
                 >
-                  <SVGIcon
-                    iconId='telegram'
-                    className={css.icon}
-                  />
+                  <SVGIcon iconId='telegram' className={css.icon} />
                 </a>
               </div>
             </div>

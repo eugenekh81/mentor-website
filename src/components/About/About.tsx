@@ -29,6 +29,7 @@ export const About: React.FC = React.memo(() => {
     }
   }, []);
   const { setIsOpen } = useContext(ModalContext);
+  
   return (
     <section className={cn('section', css.about)} id='about'>
       <div className='container'>
